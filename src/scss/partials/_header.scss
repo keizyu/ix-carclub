@@ -24,6 +24,22 @@
 
     }
 
+    &__logo {
+        width: 290px;
+        height: 106px;
+        background: transparent url('../img/fst-logo-bkg.png') no-repeat;
+        position: absolute;
+        background-size: contain;
+        top: 0;
+        left: 0;
+        z-index: 2;
+
+        img {
+            width: 160px;
+            margin: 20px 46px;
+        }
+    }
+
     &__header {
 
         .ccnav__icon-toggle {
@@ -151,7 +167,8 @@
 
     .ccnav {
         margin: 0;
-        background-color: $white;
+        background-color: $grey-1;
+
 
         /* Hide the navigation menu by default */
         &__toggle + a,
@@ -180,8 +197,14 @@
 
         }
 
-        .menu > li > a {
-            padding: 0;
+        .menu > li {
+
+            border-top: 2px solid white;
+            
+            > a {
+                padding: 0;
+            }
+
         }
 
         /* Change menu item's width to 100% */
@@ -223,6 +246,19 @@
                 display: none;
             }
 
+        }
+
+        &__logo {
+            width: auto;
+            height: auto;
+            background: none;
+            position: relative;
+            display: inline-block;
+
+            img {
+                width: 130px;
+                margin: 11px 0 0 14px;
+            }
         }
 
     }
