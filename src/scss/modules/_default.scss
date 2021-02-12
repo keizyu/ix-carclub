@@ -1,0 +1,25 @@
+*,
+*::after,
+*::before {
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+	font: 1.4rem 'Avenir', Helvetica, Arial; //14px
+    color: $black;
+}
+
+a {
+	text-decoration: none;
+	outline: none;
+}
+
+img {
+	width: 100%;
+	max-width: 100%;
+}
