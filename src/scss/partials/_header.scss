@@ -12,7 +12,6 @@
     &__social {
     	text-align: right;
         color: $black;
-        font-size: 14px;
         padding: 7px;
         margin: 0;
         display: flex;
@@ -68,7 +67,6 @@
     a {
         display: block;
         color: $white;
-        font-size: 14px;
 
         &:hover {
         	text-decoration:none;
@@ -110,7 +108,6 @@
 
             a {
                 color: $black;
-                font-size: 14px;
                 padding: 15px 20px;
 
                 &:hover {
@@ -142,10 +139,8 @@
 
 .ccnav .menu > li > a:hover {
     background-color: $white;
-    color: $brand-primary;
+    color: $black;
 }
-
-
 
 
 
@@ -169,20 +164,24 @@
             display: block;
         }
 
-        &__toggle {
+        &__toggle, .menu > li > a > span {
             display: block;
             background-color: $grey-1;
             padding: 14px 20px;
             color: $black;
-            font-size: 12px;
             font-weight: 900;
             text-transform: uppercase;
             border: none;
+            font-size: 1.2rem;
 
             &:hover {
                 background-color: $grey-1;
             }
 
+        }
+
+        .menu > li > a {
+            padding: 0;
         }
 
         /* Change menu item's width to 100% */
@@ -202,29 +201,20 @@
                     background-color: $brand-primary;
                 }
 
-            }
+                a {
+                    padding: 5px 40px;
+                    color: $white;
 
-            ul .toggle,
-            ul a {
-                padding: 0 40px;
+                    &:hover {
+                        color: $black;
+                    }
+                }
+
             }
 
             li {
                 display: block;
                 width: 100%;
-            }
-
-            li ul li .toggle,
-            ul a,
-            ul ul a {
-                padding: 12px 20px 12px 33px;
-        		color: $white;
-        		font-size: 14px;
-            }
-
-            li ul li .toggle,
-            ul ul a {
-                background-color: $brand-primary;
             }
 
             /* Hide menus on hover */
@@ -235,21 +225,6 @@
 
         }
 
-        a:hover,
-        ul ul ul a {
-            background-color: $white;
-        }
-
-    }
-
-
-}
-
-@media all and (max-width : 330px) {
-
-    .ccnav ul li {
-        display: block;
-        width: 94%;
     }
 
 }
