@@ -1,3 +1,256 @@
-.header {
+.ccnav {
+
+    margin: 0;
+    padding: 0;
+    background-color: #E32313;
+
+    [id^=drop],
+    &__toggle {
+        display: none;
+    }
+
+    &__social {
+    	text-align: right;
+        color: black;
+        font-size: 14px;
+        padding: 7px;
+        margin: 0;
+        display: flex;
+        justify-content: flex-end;
+
+        .facebook-logo{
+            width: 14px;
+            height: 14px;
+        }
+
+    }
+
+    &__header {
+
+        .ccnav__icon-toggle {
+            background-color: #E32313;
+            cursor: pointer;
+            float: right;
+            padding: 28px 20px;
+            position: relative;
+            user-select: none;
+
+            .ccnav__icon {
+                background: white;
+                display: block;
+                height: 2px;
+                width: 20px;
+                position: relative;
+
+                &:before,
+                &:after {
+                    background: white;
+                    content: " ";
+                    display: block;
+                    height: 100%;
+                    width: 100%;
+                    position: absolute;
+                }
+
+                &::before {
+                    top: 5px;
+                }
+
+                &::after {
+                    top: -5px;
+                }
+            }
+
+        }
+
+    }
+
+    a {
+        display: block;
+        color: white;
+        font-size: 14px;
+
+        &:hover {
+        	text-decoration:none;
+        }
+    }
+
+    ul {
+        float: right;
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        position: relative;
+
+        li {
+            margin: 0px;
+            display: inline-block;
+            float: left;
+            background-color: #E32313;
+
+            /* Display Dropdowns on Hover */
+            &:hover > ul {
+                display: block;
+            }
+
+        }
+
+        ul {
+            display: none;
+            position: absolute;
+            z-index: 999;
+
+            /* Subnav Dropdown */
+            li {
+                width: 200px;
+                float: none;
+                display: list-item;
+                position: relative;
+                background-color: white;
+            }
+
+            a {
+                color: black;
+                font-size: 14px;
+                padding: 15px 20px;
+
+                &:hover {
+                    background-color: #E6E6E6;
+                }
+            }
+
+        }
+
+    }
+
+
+    /* Since we'll have the "ul li" "float:left"
+     * we need to add a clear after the container. */
+    &::after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+
+}
+
+
+.ccnav .menu > li > a {
+    text-transform: uppercase;
+    font-weight: bolder;
+    padding: 24px 25px;
+}
+
+.ccnav .menu > li > a:hover {
+    background-color: white;
+    color: #E32313;
+}
+
+
+
+
+
+/* Media Queries
+--------------------------------------------- */
+
+@media all and (max-width : 768px) {
+
+    .ccnav {
+        margin: 0;
+        background-color: #ffffff;
+
+        /* Hide the navigation menu by default */
+        &__toggle + a,
+        .menu {
+            display: none;
+        }
+
+        /* Display Dropdown when clicked on Parent Lable */
+        [id^=drop]:checked + ul {
+            display: block;
+        }
+
+        &__toggle {
+            display: block;
+            background-color: #E6E6E6;
+            padding: 14px 20px;
+            color: black;
+            font-size: 12px;
+            font-weight: 900;
+            text-transform: uppercase;
+            border: none;
+
+            &:hover {
+                background-color: #e6e6e6;
+            }
+
+        }
+
+        /* Change menu item's width to 100% */
+        ul {
+
+            ul {
+                /* Hide Dropdowns by Default */
+                float: none;
+                position: static;
+                color: #ffffff;
+
+                /* Subnav Dropdown */
+                li {
+                    display: block;
+                    width: 100%;
+                    border-bottom: 2px solid #ffffff;
+                    background-color: #E32313;
+                }
+
+            }
+
+            ul .toggle,
+            ul a {
+                padding: 0 40px;
+            }
+
+            li {
+                display: block;
+                width: 100%;
+            }
+
+            li ul li .toggle,
+            ul a,
+            ul ul a {
+                padding: 12px 20px 12px 33px;
+        		color: #FFF;
+        		font-size: 14px;
+            }
+
+            li ul li .toggle,
+            ul ul a {
+                background-color: #E32313;
+            }
+
+            /* Hide menus on hover */
+            ul li:hover > ul,
+            li:hover > ul {
+                display: none;
+            }
+
+        }
+
+        a:hover,
+        ul ul ul a {
+            background-color: white;
+        }
+
+    }
+
+
+}
+
+@media all and (max-width : 330px) {
+
+    .ccnav ul li {
+        display: block;
+        width: 94%;
+    }
 
 }
