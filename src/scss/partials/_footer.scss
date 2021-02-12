@@ -1,3 +1,106 @@
-.footer {
+$size: 14px;
+$line: 1px solid #000;
 
+footer {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	text-align: center;
+	p {
+		font-size: $size;
+	}
+}
+
+.first-section {
+	width: 100%;
+	height: 100px;
+	display: flex;
+    border-bottom: $line;
+    &_logo {
+        width: 25%;
+    }
+    &_datos {
+        width: 75%;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        p {
+            text-align: center;
+        }
+    }
+}
+
+.second-section {
+	width: 100%;
+	height: 50px;
+	display: flex;
+    &_datos {
+        width: 75%;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        p {
+            padding-left: 50px;
+        }
+    }
+    &_logo {
+        width: 25%;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+@media all and (max-width: 768px) {
+    footer{
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        text-align: center;
+    }
+	.first-section {
+		width: 100%;
+		height: auto;
+		display: flex;
+		flex-direction: column;
+        &_logo {
+            width: 100%;
+            height: 80px;
+        }
+        &_datos {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            padding: 5px;
+            p {
+                padding-bottom: 15px;
+            }
+        }
+	}
+	.second-section {
+		width: 100%;
+		height: auto;
+		display: flex;
+		flex-direction: column;
+		padding-top: 15px;
+        &_datos {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            p {
+                padding-left: 0;
+                padding-bottom: 10px;
+            }
+        }
+        &_logo {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding-top: 40px;
+        }
+	}
 }
