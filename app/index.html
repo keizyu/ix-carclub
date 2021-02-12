@@ -14,7 +14,71 @@
     </head>
     <body>
 
-        <header class="header">
+        <header class="ccnav__header">
+
+            <div class="ccnav__social">
+        		<div class="ccnav__social-item"><strong>(+506) 4100-4400</strong></div>
+                <div class="ccnav__social-item"><img class="facebook-logo" src="images/f_logo.svg" alt=""></div>
+            </div>
+
+            <nav class="ccnav">
+                <!-- <div id="logo"></div> -->
+                <!-- <img class="logo-car" src="images/Logo-CarCLub.sv" alt="logo"> -->
+
+
+                <label for="drop" class="ccnav__toggle ccnav__icon-toggle">
+                    <span class="ccnav__icon"></span>
+                </label>
+                <input type="checkbox" id="drop" />
+
+                <ul class="menu" >
+
+                    <li>
+
+                        <label for="drop-1" class="ccnav__toggle">SERVICIOS</label>
+
+                        <a href="${side.url @ context='unsafe'}" title="${side.navName}" target="_self">
+                            SERVICIOS
+                        </a>
+
+                        <input type="checkbox" id="drop-1" />
+
+                        <ul class="ccnav__menu-subnav">
+                            <li><a href="#">Llantas</a></li>
+                            <li><a href="#">Cambio de Aceite</a></li>
+                            <li><a href="#">Frenos</a></li>
+                            <li><a href="#">Alineamientos</a></li>
+                            <li><a href="#">Amortiguadores</a></li>
+                            <li><a href="#">Baterias</a></li>
+                            <li><a href="#">Balanceo</a></li>
+                            <li><a href="#">Otros</a></li>
+                        </ul>
+
+                    </li>
+
+                <li>
+                    <label class="ccnav__toggle">CARCLUB M&Oacute;VIL</label>
+                    <a href="#" class="nose"><span>CARCLUB M&Oacute;VIL</span></a>
+                </li>
+
+                <li>
+                    <label class="ccnav__toggle">AGENDA TU CITA</label>
+                    <a href="#" class="nose"><span>AGENDA TU CITA</span></a>
+                </li>
+
+                <li>
+                    <label class="ccnav__toggle">SOBRE NOSOTROS</label>
+                    <a href="#" class="nose"><span>SOBRE NOSOTROS</span></a>
+                </li>
+
+                <li>
+                    <label class="ccnav__toggle">CONT&Aacute;CTANOS</label>
+                    <a href="#" class="nose"><span>CONT&Aacute;CTANOS</span></a>
+                </li>
+
+
+            	</ul>
+            </nav>
 
         </header>
 
