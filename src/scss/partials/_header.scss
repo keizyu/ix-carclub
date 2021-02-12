@@ -2,7 +2,7 @@
 
     margin: 0;
     padding: 0;
-    background-color: #E32313;
+    background-color: $brand-primary;
 
     [id^=drop],
     &__toggle {
@@ -11,7 +11,7 @@
 
     &__social {
     	text-align: right;
-        color: black;
+        color: $black;
         font-size: 14px;
         padding: 7px;
         margin: 0;
@@ -28,7 +28,7 @@
     &__header {
 
         .ccnav__icon-toggle {
-            background-color: #E32313;
+            background-color: $brand-primary;
             cursor: pointer;
             float: right;
             padding: 28px 20px;
@@ -36,7 +36,7 @@
             user-select: none;
 
             .ccnav__icon {
-                background: white;
+                background: $white;
                 display: block;
                 height: 2px;
                 width: 20px;
@@ -67,7 +67,7 @@
 
     a {
         display: block;
-        color: white;
+        color: $white;
         font-size: 14px;
 
         &:hover {
@@ -86,7 +86,6 @@
             margin: 0px;
             display: inline-block;
             float: left;
-            background-color: #E32313;
 
             /* Display Dropdowns on Hover */
             &:hover > ul {
@@ -106,16 +105,16 @@
                 float: none;
                 display: list-item;
                 position: relative;
-                background-color: white;
+                background-color: $white;
             }
 
             a {
-                color: black;
+                color: $black;
                 font-size: 14px;
                 padding: 15px 20px;
 
                 &:hover {
-                    background-color: #E6E6E6;
+                    background-color: $grey-1;
                 }
             }
 
@@ -142,8 +141,8 @@
 }
 
 .ccnav .menu > li > a:hover {
-    background-color: white;
-    color: #E32313;
+    background-color: $white;
+    color: $brand-primary;
 }
 
 
@@ -157,7 +156,7 @@
 
     .ccnav {
         margin: 0;
-        background-color: #ffffff;
+        background-color: $white;
 
         /* Hide the navigation menu by default */
         &__toggle + a,
@@ -172,16 +171,16 @@
 
         &__toggle {
             display: block;
-            background-color: #E6E6E6;
+            background-color: $grey-1;
             padding: 14px 20px;
-            color: black;
+            color: $black;
             font-size: 12px;
             font-weight: 900;
             text-transform: uppercase;
             border: none;
 
             &:hover {
-                background-color: #e6e6e6;
+                background-color: $grey-1;
             }
 
         }
@@ -193,14 +192,14 @@
                 /* Hide Dropdowns by Default */
                 float: none;
                 position: static;
-                color: #ffffff;
+                color: $white;
 
                 /* Subnav Dropdown */
                 li {
                     display: block;
                     width: 100%;
                     border-bottom: 2px solid #ffffff;
-                    background-color: #E32313;
+                    background-color: $brand-primary;
                 }
 
             }
@@ -219,13 +218,13 @@
             ul a,
             ul ul a {
                 padding: 12px 20px 12px 33px;
-        		color: #FFF;
+        		color: $white;
         		font-size: 14px;
             }
 
             li ul li .toggle,
             ul ul a {
-                background-color: #E32313;
+                background-color: $brand-primary;
             }
 
             /* Hide menus on hover */
@@ -238,7 +237,7 @@
 
         a:hover,
         ul ul ul a {
-            background-color: white;
+            background-color: $white;
         }
 
     }
