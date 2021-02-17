@@ -6,12 +6,17 @@
 }
 
 html {
-    font-size: 62.5%;
+	font-size: 62.5%;
+	// 
+	height: 100%;
 }
 
 body {
 	font: 1.4rem 'Avenir', Helvetica, Arial; //14px
-    color: $black;
+	color: $black;
+	// 
+	display: flex;
+    flex-direction: column;
 }
 
 a {

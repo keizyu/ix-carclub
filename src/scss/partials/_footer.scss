@@ -1,20 +1,28 @@
 $size: 14px;
 $line: 1px solid #000;
 
+html, body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+.main{
+    flex: 1 0 auto;
+}
+// 
 footer {
     background-color: #fff;
 	left: 0;
 	bottom: 0;
-	width: 100%;
-    text-align: center;
+    width: 100%;
+    flex-shrink: 0;
 	p {
 		font-size: $size;
 	}
-}
-
-.footer,
-.push {
-  height: 10px;
 }
 
 .first-section {
