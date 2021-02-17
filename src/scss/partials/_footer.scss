@@ -2,6 +2,7 @@ $size: 14px;
 $line: 1px solid #000;
 
 footer {
+    
     background-color: #fff;
 	position: fixed;
 	left: 0;
@@ -11,6 +12,11 @@ footer {
 	p {
 		font-size: $size;
 	}
+}
+
+.footer,
+.push {
+  height: 150px;
 }
 
 .first-section {
