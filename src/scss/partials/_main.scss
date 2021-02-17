@@ -1,13 +1,12 @@
-// .main{
-//     flex: 1 0 auto;
-// }
-
-section h2{
-    text-align: center;
-    font-size: 25px;
+.main {
+    flex: 1 0 auto;
 }
 
-.section-title{
+section h2 {
+    text-align: center;
+}
+
+.section-title {
     background-image: url('https://placedog.net/1180/450');
     background-size: cover;
     background-position: center;
@@ -23,7 +22,7 @@ section h2{
     }
 }
 
-.section-us{
+.section-us {
     width: 100%;
     height: 350px;
     text-align: center;
