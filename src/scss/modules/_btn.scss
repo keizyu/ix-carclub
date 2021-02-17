@@ -4,11 +4,20 @@
     cursor: pointer;
     border: none;
     background-color: $grey-3;
-    padding: 8px 40px;   
+    padding: 8px 40px;  
+    &:hover{
+        background-color: lighten($grey-3, 10%)
+    } 
     &-red{
         background-color: $brand-primary;
+        &:hover{
+            background-color: lighten($brand-primary, 10%)
+        }
     }
     &-black{
         background-color: $black;
+        &:hover{
+            background-color: lighten($black, 10%)
+        }
     }
 }
