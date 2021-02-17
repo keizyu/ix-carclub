@@ -3,7 +3,6 @@ $line: 1px solid #000;
 
 footer {
     background-color: #fff;
-	position: fixed;
 	left: 0;
 	bottom: 0;
 	width: 100%;
@@ -15,7 +14,7 @@ footer {
 
 .footer,
 .push {
-  height: 150px;
+  height: 10px;
 }
 
 .first-section {
@@ -62,11 +61,11 @@ footer {
 }
 @media all and (max-width: 768px) {
     footer{
-        position: fixed;
         left: 0;
         bottom: 0;
         width: 100%;
         text-align: center;
+        height: auto;
     }
 	.first-section {
 		width: 100%;
