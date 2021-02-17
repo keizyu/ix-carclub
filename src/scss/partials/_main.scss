@@ -1,3 +1,80 @@
 .main {
+    flex: 1 0 auto;
+}
+
+.section {
+
+    padding: 50px 0;
+
+    h2 {
+        text-align: center;
+    }
+
+    .container {
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    .box {
+        padding: 2rem;
+    }
+
+    &-hero {
+
+        background-image: url('https://placedog.net/1180/450');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        height: 450px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+
+    }
+
+    &-us {
+        width: 100%;
+        text-align: center;
+    }
+
+    &-services {
+        background-color: $grey-1;
+        width: 100%;
+    }
+
+    &-date{
+
+        background-image: url('https://placedog.net/1180/350');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        height: 350px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        justify-content: center;
+
+        &-info{
+            width: 45%;
+
+            h2 { margin-top: 0 }
+        }
+    }
+
+    @media all and (min-width: 769px){
+        .grid-with-border {
+            [class*=col-], [class*=col_], [class~=col] {
+
+                &:nth-child(3n + 2) .box {
+                    border-left: 1px solid $grey-3;
+                    border-right: 1px solid $grey-3;
+                }
+
+            }
+        }
+    }
 
 }
