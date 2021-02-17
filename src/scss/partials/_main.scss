@@ -28,6 +28,14 @@ section h2{
     }
 }
 
+@media all and (max-width: 768px){
+    .section-us{
+        height: auto;
+        padding-top: 0;
+    }
+}
+
+
 .section-services{
     background-color: $grey-1;
     width: 100%;
@@ -36,6 +44,13 @@ section h2{
     div{
         text-align: start;
         padding: 5px 10px;
+    }
+}
+
+@media all and (max-width: 768px){
+    .section-services{
+        height: auto;
+        padding-top: 5px;
     }
 }
 
