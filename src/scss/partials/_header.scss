@@ -112,6 +112,8 @@
             display: none;
             position: absolute;
             z-index: 999;
+            box-shadow: 0 0 20px 6px transparentize($grey-2, .5);
+            top: 67px;
 
             /* Subnav Dropdown */
             li {
@@ -135,7 +137,6 @@
 
     }
 
-
     /* Since we'll have the "ul li" "float:left"
      * we need to add a clear after the container. */
     &::after {
@@ -158,6 +159,11 @@
     color: $black;
 }
 
+.ccnav__menu-subnav:hover + a {
+    background-color: $white;
+    color: $black
+}
+
 
 
 /* Media Queries
@@ -171,7 +177,7 @@
 
 
         /* Hide the navigation menu by default */
-        &__toggle + a,
+        .ccnav__menu-subnav + a,
         .menu {
             display: none;
         }
@@ -200,7 +206,7 @@
         .menu > li {
 
             border-top: 2px solid white;
-            
+
             > a {
                 padding: 0;
             }
