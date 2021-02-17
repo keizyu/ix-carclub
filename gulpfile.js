@@ -8,6 +8,7 @@ var gulp = require('gulp'),
     header  = require('gulp-header'),
     rename = require('gulp-rename'),
     cssnano = require('gulp-cssnano'),
+    fileinclude = require('gulp-file-include'),
     sourcemaps = require('gulp-sourcemaps'),
     package = require('./package.json');
 
@@ -65,8 +66,22 @@ gulp.task('bs-reload', function () {
     browserSync.reload();
 });
 
-gulp.task('start', ['css', 'js', 'browser-sync'], function () {
+gulp.task('fileinclude', function() {
+    gulp.src([
+        'src/html/*.html',
+        '!src/html/**/header.html', // ignore
+        '!src/html/**/footer.html' // ignore
+        ])
+        .pipe(fileinclude({
+            prefix: '@@',
+            basepath: '@file'
+        }))
+        .pipe(gulp.dest('app'))
+        .pipe(browserSync.reload({stream:true}));
+});
+
+gulp.task('start', ['css', 'js', 'browser-sync', 'fileinclude'], function () {
     gulp.watch("src/scss/**/*.scss", ['css']);
     gulp.watch("src/js/*.js", ['js']);
-    gulp.watch("app/*.html", ['bs-reload']);
+    gulp.watch("src/html/**/*.html", ['fileinclude']);
 });
