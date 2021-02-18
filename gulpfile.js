@@ -3,7 +3,8 @@ var gulp = require('gulp'),
     sass = require('gulp-sass'),
     browserSync = require('browser-sync'),
     autoprefixer = require('gulp-autoprefixer'),
-    uglify = require('gulp-uglify'),
+    // uglify = require('gulp-uglify'),
+    uglify = require('gulp-uglifyes'),
     jshint = require('gulp-jshint'),
     header  = require('gulp-header'),
     rename = require('gulp-rename'),
@@ -46,7 +47,10 @@ gulp.task('js',function(){
     .pipe(jshint.reporter('default'))
     .pipe(header(banner, { package : package }))
     .pipe(gulp.dest('app/assets/js'))
-    .pipe(uglify())
+    .pipe(uglify({
+        mangle: false,
+        ecma: 6
+    }))
     .on('error', function (err) { gutil.log(gutil.colors.red('[Error]'), err.toString()); })
     .pipe(header(banner, { package : package }))
     .pipe(rename({ suffix: '.min' }))
