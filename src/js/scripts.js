@@ -5,10 +5,10 @@
     // CarClub JS
     
     const checkbox = document.getElementById('drop');
-    const icon = document.getElementsByClassName('ccnav__icon');
+    const nav = document.getElementById('ccnav');
     
     checkbox.addEventListener('change', () => {
-      checkbox.classList.toggle('is-active');
+      nav.classList.toggle('is-active');
       console.log('test');
     });
 
