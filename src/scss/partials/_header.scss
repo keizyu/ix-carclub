@@ -6,7 +6,7 @@
 
     [id^=drop],
     &__toggle {
-        display: none;
+        display: none; 
     }
 
     &__social {
@@ -59,7 +59,7 @@
 
                 &:before,
                 &:after {
-                    background: white;
+                    background: $white;
                     content: " ";
                     display: block;
                     height: 100%;
@@ -163,7 +163,6 @@
     background-color: $white;
     color: $black
 }
-
 
 
 /* Media Queries
