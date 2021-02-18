@@ -199,7 +199,6 @@
             &:hover {
                 background-color: $grey-1;
             }
-
         }
 
         .menu > li {
@@ -210,6 +209,11 @@
                 padding: 0;
             }
 
+        }
+
+        .is-active{
+            background-color: tomato; // 
+            color: palegreen;
         }
 
         /* Change menu item's width to 100% */

@@ -7,8 +7,9 @@
     const checkbox = document.getElementById('drop');
     const icon = document.getElementsByClassName('ccnav__icon');
     
-    checkbox.addEventListener('change', function(){
+    checkbox.addEventListener('change', () => {
       checkbox.classList.toggle('is-active');
+      console.log('test');
     });
 
   });
