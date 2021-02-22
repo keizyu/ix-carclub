@@ -165,6 +165,8 @@
 }
 
 
+
+
 /* Media Queries
 --------------------------------------------- */
 
@@ -212,8 +214,14 @@
         }
 
         .is-active{
-            background-color: tomato; // 
-            color: palegreen;
+            border-color: transparent;
+
+            .ccnav__icon:before {
+                transform: translate(0%, -90%) rotate(-45deg);
+            }
+            .ccnav__icon:after {
+                transform: translate(0%, 80%) rotate(45deg);
+            }
         }
 
         /* Change menu item's width to 100% */
