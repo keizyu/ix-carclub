@@ -215,12 +215,13 @@
 
         .is-active{
             border-color: transparent;
-
+            
             .ccnav__icon:before {
-                transform: translate(0%, -90%) rotate(-45deg);
+                transform: translate(-50%, -50%) rotate(-45deg);
+                top: -2px;
             }
             .ccnav__icon:after {
-                transform: translate(0%, 80%) rotate(45deg);
+                transform: translate(0%, 50%) rotate(45deg);
             }
         }
 
