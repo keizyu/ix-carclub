@@ -4,10 +4,12 @@
     cursor: pointer;
     border: none;
     background-color: $grey-3;
-    padding: 8px 40px;  
+    padding: 8px 40px;
+    display: inline-block;
+
     &:hover{
         background-color: lighten($grey-3, 10%)
-    } 
+    }
     &-red{
         background-color: $brand-primary;
         &:hover{
