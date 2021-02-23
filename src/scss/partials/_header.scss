@@ -16,6 +16,7 @@
         margin: 0;
         display: flex;
         justify-content: flex-end;
+        background-color: $white;
 
         .facebook-logo{
             width: 14px;
@@ -28,7 +29,7 @@
         width: 290px;
         height: 106px;
         background: transparent url('../img/fst-logo-bkg.png') no-repeat;
-        position: absolute;
+        position: fixed;
         background-size: contain;
         top: 0;
         left: 0;
@@ -41,6 +42,9 @@
     }
 
     &__header {
+
+        position: absolute;
+        width: 100%;
 
         .ccnav__icon-toggle {
             background-color: $brand-primary;
@@ -138,6 +142,11 @@
 
         }
 
+    }
+
+    &.sticky {
+        position: fixed;
+        width: 100%;
     }
 
     /* Since we'll have the "ul li" "float:left"
