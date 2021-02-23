@@ -1,7 +1,6 @@
-(function ($, window, document, undefined) {
-  "use strict";
+(function (window, document, undefined) {
+    'use strict';
 
-  $(function () {
     // CarClub JS
 
     const checkbox = document.getElementById('drop');
@@ -28,6 +27,5 @@
 
     });
 
-});
 
-})(jQuery, window, document);
+})(window, document);
