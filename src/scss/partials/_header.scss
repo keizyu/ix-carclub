@@ -17,9 +17,22 @@
         display: flex;
         justify-content: flex-end;
 
+        &-item{
+            margin-right: 30px;
+        }
+
+        .anima{
+            padding-top: 2px;
+        }
+
         .facebook-logo{
-            width: 14px;
-            height: 14px;
+            fill: black;
+
+            &:hover{
+                fill: #1877F2;
+                // background-color: powderblue;
+                cursor: pointer;
+            }
         }
 
     }
