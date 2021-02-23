@@ -1,12 +1,16 @@
 (function ($, window, document, undefined) {
-
-  'use strict';
+  "use strict";
 
   $(function () {
+    // CarClub JS
 
-      // CarClub JS
+    const checkbox = document.getElementById('drop');
+    const nav = document.getElementById('ccnav');
 
+    checkbox.addEventListener('change', () => {
+        nav.classList.toggle('is-active');
+    });
 
-  });
+});
 
 })(jQuery, window, document);

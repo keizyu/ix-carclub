@@ -56,15 +56,18 @@
                 height: 2px;
                 width: 20px;
                 position: relative;
+                transition: all .25s ease-in-out;
 
                 &:before,
                 &:after {
-                    background: white;
+                    background: $white;
                     content: " ";
                     display: block;
                     height: 100%;
                     width: 100%;
                     position: absolute;
+                    transform: translate(0, 0);
+                    transition: transform .25s ease-in-out;
                 }
 
                 &::before {
@@ -166,6 +169,7 @@
 
 
 
+
 /* Media Queries
 --------------------------------------------- */
 
@@ -196,11 +200,12 @@
             text-transform: uppercase;
             border: none;
             font-size: 1.2rem;
+        }
 
+        .menu > li > a > span {
             &:hover {
                 background-color: $grey-1;
             }
-
         }
 
         .menu > li {
@@ -211,6 +216,19 @@
                 padding: 0;
             }
 
+        }
+
+        &.is-active .ccnav__icon {
+            background-color: transparent ;
+
+            &::before {
+                top: auto;
+                transform: rotate(-45deg);
+            }
+            &::after {
+                top: auto;
+                transform: rotate(45deg);
+            }
         }
 
         /* Change menu item's width to 100% */
@@ -228,6 +246,10 @@
                     width: 100%;
                     border-bottom: 2px solid #ffffff;
                     background-color: $brand-primary;
+
+                    &:last-child {
+                        border: 0;
+                    }
                 }
 
                 a {
