@@ -73,8 +73,7 @@ gulp.task('bs-reload', function () {
 gulp.task('fileinclude', function() {
     gulp.src([
         'src/html/*.html',
-        '!src/html/**/header.html', // ignore
-        '!src/html/**/footer.html' // ignore
+        '!src/html/components/*.html' // ignore
         ])
         .pipe(fileinclude({
             prefix: '@@',
