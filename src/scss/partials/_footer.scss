@@ -14,9 +14,22 @@ footer {
 	height: 100px;
 	display: flex;
     border-bottom: $line;
+
     &_logo {
         width: 25%;
+        text-align: center;
+
+        img {
+            width: 120px;
+            filter: grayscale(100%);
+
+            &:hover {
+                filter: initial;
+            }
+        }
+
     }
+
     &_datos {
         width: 75%;
         display: flex;
@@ -26,6 +39,7 @@ footer {
             text-align: center;
         }
     }
+
 }
 
 .second-section {

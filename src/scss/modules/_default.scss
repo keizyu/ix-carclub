@@ -21,6 +21,16 @@ body {
 a {
 	text-decoration: none;
 	outline: none;
+	color: $black;
+
+	&.blue {
+		color: $blue;
+	}
+
+	&:hover {
+		color: $blue;
+		text-decoration: underline;
+	}
 }
 
 img {

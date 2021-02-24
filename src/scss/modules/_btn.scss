@@ -8,7 +8,9 @@
     display: inline-block;
 
     &:hover{
-        background-color: lighten($grey-3, 10%)
+        color: $white;
+        background-color: lighten($grey-3, 10%);
+        text-decoration: none;
     }
     &-red{
         background-color: $brand-primary;
