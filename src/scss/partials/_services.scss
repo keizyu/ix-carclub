@@ -1,0 +1,30 @@
+.ccnav__header{
+    z-index: 1;
+}
+
+.section-servicios{
+    padding: 0 0 550px 0;
+
+    &_section-hero{
+        height: 450px;
+        background-image: url('https://dummyimage.com/1180x450/b7b7b7/fff.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        position: relative;
+        padding-bottom: 100px;
+
+        .uno{
+            position: absolute;
+            top: 20%;
+            left: 0;
+            right: 0;
+            margin: 0 auto;
+            width: 50%;
+
+            h1{
+                text-align: center;
+            }
+        }
+    }
+}
