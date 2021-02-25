@@ -75,6 +75,14 @@ footer {
         align-items: center;
         padding-top: 20px;
 
+        &_datos{
+            justify-content: space-around;
+
+            p{
+                padding: 0;
+            }
+        }
+
         &_logo{
             width: 100%;
         }
