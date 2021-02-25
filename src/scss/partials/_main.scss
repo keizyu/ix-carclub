@@ -22,6 +22,15 @@
 
     .box {
         padding: 2rem;
+
+        &-number{
+            font-size: 8rem;
+            font-weight: 900;
+        }
+
+        &-signo{
+            font-size: 2rem;
+        }
     }
 
     &-hero {
@@ -46,6 +55,10 @@
     &-us {
         width: 100%;
         text-align: center;
+
+        h3{
+            margin-top: 0;
+        }
     }
 
     &-services {
