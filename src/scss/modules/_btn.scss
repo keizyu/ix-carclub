@@ -25,3 +25,29 @@
         }
     }
 }
+
+#c-submit-button {
+    font-size: 1.2rem;
+    color: $white;
+    cursor: pointer;
+    border: none;
+    background-color: $grey-3;
+    padding: 8px 40px;
+    display: inline-block;
+    border-radius: 0;
+    box-shadow: none;
+    text-transform: uppercase;
+    background-color: $brand-primary;
+    &:hover{
+        background-color: lighten($brand-primary, 10%)
+    }
+
+}
+
+.cognito {
+    .c-forms-form label,
+    .c-forms-form .c-forms-form-title h2,
+     #c-submit-button {
+         font-family: 'Avenir' !important;
+     }
+}
