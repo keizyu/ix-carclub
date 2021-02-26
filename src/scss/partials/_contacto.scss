@@ -1,14 +1,18 @@
 .section-contacto-hero{
     background-image: url('https://dummyimage.com/1180x300/b7b7b7/fff.jpg');
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-        height: 300px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    hr{
+        width: 60%;
+    }
 }
 
 .section-contacto{
@@ -22,6 +26,6 @@
     }
 }
 
-div._NhwCw1FVEm6vBBSKrvGNA{
-    display: none;
+.cognito{
+    width: 40%;
 }
