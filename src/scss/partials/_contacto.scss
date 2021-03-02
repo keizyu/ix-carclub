@@ -1,0 +1,41 @@
+.section-contacto-hero{
+    background-image: url('https://dummyimage.com/1180x300/b7b7b7/fff.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    hr{
+        width: 60%;
+    }
+
+    h1{
+        margin: 0;
+    }
+}
+
+.section-contacto{
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+
+    &-info{
+        width: 40%;
+        text-align: center;
+    }
+}
+
+.cognito{
+    width: 40%;
+}
+
+@media all and (max-width: 992px) {
+    .cognito{
+        width: 80%;
+    }
+}
