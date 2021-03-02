@@ -38,4 +38,4 @@ $RECYCLE.BIN/
 ## Minified files
 /app/assets/css
 /app/assets/js
-/app/*.html
+/app/**/*.html
