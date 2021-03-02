@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "gridlex-mixins.scss"
+    ],
+    "names": [],
+    "file": "gridlex-mixins.css"
+}

@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "gridlex-vars.scss"
+    ],
+    "names": [],
+    "file": "gridlex-vars.css"
+}
