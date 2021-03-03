@@ -27,5 +27,28 @@
 
     });
 
+    // COUNTER NUMBER
+    function animateValue(obj, start, end, duration) {
+        let startTimestamp = null;
+        
+        const step = (timestamp) => {
+            if (!startTimestamp) startTimestamp = timestamp;
+            const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+            obj.innerHTML = Math.floor(progress * (end - start) + start);
+            if (progress < 1) {
+                window.requestAnimationFrame(step);
+            }
+        };
+        window.requestAnimationFrame(step);
+    }
+      
+    const one = document.getElementById("box-number-one");
+    animateValue(one, 0, 500, 5000);
+
+    const two = document.getElementById("box-number-two");
+    animateValue(two, 0, 1000, 10000);
+
+    const three = document.getElementById("box-number-three");
+    animateValue(three, 0, 800, 8000);
 
 })(window, document);
