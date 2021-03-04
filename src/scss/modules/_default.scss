@@ -47,3 +47,15 @@ h1 {
 h2 {
 	font-size: 2.4rem;
 }
+
+.icon {
+	display: inline-block;
+}
+
+.hidden {
+	position: absolute;
+	overflow: hidden;
+	width: 0;
+	height: 0;
+	pointer-events: none;
+}
