@@ -26,6 +26,9 @@
             fill: $grey-3;
             display: flex;
             align-items: center;
+            width: 15px;
+            height: 15px;
+            margin-top: 2px;
 
             &:hover {
                 fill: $blue;
@@ -173,19 +176,6 @@
 
 }
 
-.caret-down{
-    width: 15px;
-    fill: $white;
-
-    &:hover{
-        fill: $black;
-        background-color: $white;
-        color: $black;
-    }
-}
-
-
-
 .ccnav .menu > li > a {
     text-transform: uppercase;
     font-weight: bolder;
@@ -203,15 +193,37 @@
     }
 }
 
-.ccnav .menu > li > a:hover {
-    background-color: $white;
-    color: $black;
+.ccnav .menu > li > a {
+
+    .caret-down {
+        width: 15px;
+        margin-left: .6rem;
+        width: 15px;
+        height: 8px;
+        fill: $white;
+    }
+
+    &:hover {
+        background-color: $white;
+        color: $black;
+
+        .caret-down {
+            fill: $black;
+        }
+    }
+
 }
 
 
 .ccnav__menu-subnav:hover + a {
+
     background-color: $white;
-    color: $black
+    color: $black;
+
+    .caret-down {
+        fill: $black !important;
+    }
+
 }
 
 
