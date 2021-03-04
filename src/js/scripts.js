@@ -30,7 +30,7 @@
     // COUNTER NUMBER
     function animateValue(obj, start, end, duration) {
         let startTimestamp = null;
-        
+
         const step = (timestamp) => {
             if (!startTimestamp) startTimestamp = timestamp;
             const progress = Math.min((timestamp - startTimestamp) / duration, 1);
@@ -41,14 +41,14 @@
         };
         window.requestAnimationFrame(step);
     }
-      
+
     const one = document.getElementById("box-number-one");
-    animateValue(one, 0, 500, 5000);
+    animateValue(one, 0, 100, 5000);
 
     const two = document.getElementById("box-number-two");
-    animateValue(two, 0, 1000, 10000);
+    animateValue(two, 0, 2, 1000);
 
     const three = document.getElementById("box-number-three");
-    animateValue(three, 0, 800, 8000);
+    animateValue(three, 0, 80, 4000);
 
 })(window, document);

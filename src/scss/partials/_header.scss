@@ -3,6 +3,11 @@
     margin: 0;
     padding: 0;
     background-color: $brand-primary;
+    height: 58px;
+
+    @media all and (min-width: 769px){
+        height: 67px;
+    }
 
     [id^=drop],
     &__toggle {
@@ -17,6 +22,7 @@
         display: flex;
         justify-content: flex-end;
         background-color: $white;
+        height: 33px;
 
         &-item {
             margin-right: 16px;
