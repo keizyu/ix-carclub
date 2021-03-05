@@ -52,6 +52,32 @@ h2 {
 	display: inline-block;
 }
 
+.services-icon {
+	max-width: 80px;
+	fill: $brand-primary;
+	width: 60px;
+
+	&__container {
+		display: flex;
+		align-items: center;
+		height: 60px;
+		justify-content: center;
+	}
+
+	&.oil-icon {
+		width: 80px;
+	}
+
+	&.brakes-icon {
+		width: 80px
+	}
+
+	&.align-icon {
+		width: 48px;
+	}
+
+}
+
 .hidden {
 	position: absolute;
 	overflow: hidden;
