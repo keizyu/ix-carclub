@@ -46,7 +46,7 @@
     animateValue(one, 0, 100, 5000);
 
     const two = document.getElementById("box-number-two");
-    animateValue(two, 0, 2, 1000);
+    animateValue(two, 0, 12, 2000);
 
     const three = document.getElementById("box-number-three");
     animateValue(three, 0, 80, 4000);
