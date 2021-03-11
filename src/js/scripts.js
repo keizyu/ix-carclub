@@ -51,6 +51,12 @@
     const three = document.getElementById("box-number-three");
     animateValue(three, 0, 80, 4000);
 
+    const config = {
+        type: 'carousel',
+        startAt: 0,
+        perView: 1
+    }
+    new Glide('.glide', config).mount()
     // CAROUSEL
     // let slidePosition = 0;
     // const slides = document.getElementsByClassName('carousel__item');

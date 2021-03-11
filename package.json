@@ -23,5 +23,8 @@
     "gulp-uglifyes": "^0.2.1",
     "gulp-util": "^3.0.8",
     "jshint": "^2.8.0"
+  },
+  "dependencies": {
+    "@glidejs/glide": "^3.4.1"
   }
 }
