@@ -36,7 +36,8 @@
 
     &-hero {
 
-        background-image: url('https://dummyimage.com/1180x450/b7b7b7/fff.jpg');
+        padding: 0;
+        background-image: url('../img/hero-banner.jpg');
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
@@ -44,12 +45,71 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
-        align-items: center;
-        text-align: center;
+        align-items: flex-end;
 
-        &-info h1 {
-            margin-top: 0;
-            text-transform: uppercase;
+        @media all and (max-width: 768px){
+
+            background-image: none;
+            background-color: $brand-primary;
+
+        }
+
+
+        &-2-info {
+            width: 100%;
+            padding: 0 5%;
+            color: $white;
+
+            @media all and (min-width: 769px){
+
+                width: 60%;
+                max-width: 800px;
+                min-width: 670px;
+
+            }
+
+            h1 {
+                margin-top: 0;
+                text-transform: uppercase;
+                position: relative;
+
+                small {
+                    display: block;
+                }
+
+                &::after {
+                    position: absolute;
+                    left: 0;
+                    content: '';
+                    width: 80%;
+                    height: 6px;
+                    background: rgb(251,206,71);
+                    background: linear-gradient(90deg, rgba(251,206,71,0) 0%, rgba(251,206,71,1) 41%);
+                    margin-top: 1rem;
+
+                    @media all and (max-width: 768px){
+                        width: 100%;
+                    }
+                }
+
+                @media all and (max-width: 768px){
+
+                    margin-bottom: 4rem;
+
+                }
+
+            }
+
+            .btn {
+
+                display: table;
+                margin: 0 auto;
+                font-size: 1.4rem;
+                margin-top: 2rem;
+
+            }
+
+
         }
 
     }

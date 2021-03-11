@@ -24,6 +24,15 @@
             background-color: lighten($black, 10%)
         }
     }
+
+    &-border {
+        background-color: transparent;
+        border: 2px solid $white;
+
+        &:hover {
+            background-color: transparentize($white, 0.7);
+        }
+    }
 }
 
 #c-submit-button {
