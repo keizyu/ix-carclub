@@ -1,20 +1,23 @@
-var gulp = require('gulp'),
+const gulp = require('gulp'),
     gutil = require('gulp-util'),
     sass = require('gulp-sass'),
     browserSync = require('browser-sync'),
     autoprefixer = require('gulp-autoprefixer'),
-    // uglify = require('gulp-uglify'),
-    uglify = require('gulp-uglifyes'),
+    uglify = require('gulp-terser'),
     jshint = require('gulp-jshint'),
     header  = require('gulp-header'),
     rename = require('gulp-rename'),
     cssnano = require('gulp-cssnano'),
     fileinclude = require('gulp-file-include'),
     sourcemaps = require('gulp-sourcemaps'),
+    rollup = require('gulp-better-rollup'),
+    babel = require('rollup-plugin-babel'),
+    resolve = require('rollup-plugin-node-resolve'),
+    commonjs = require('rollup-plugin-commonjs'),
     package = require('./package.json');
 
 
-var banner = [
+const banner = [
   '/*!\n' +
   ' * Last Build ' + new Date() + '\n' +
   ' * <%= package.name %>\n' +
@@ -26,7 +29,8 @@ var banner = [
   '\n'
 ].join('');
 
-gulp.task('css', function () {
+gulp.task('css', () => {
+
     return gulp.src('src/scss/style.scss')
     .pipe(sourcemaps.init())
     .pipe(sass().on('error', sass.logError))
@@ -38,19 +42,18 @@ gulp.task('css', function () {
     .pipe(sourcemaps.write())
     .pipe(gulp.dest('app/assets/css'))
     .pipe(browserSync.reload({stream:true}));
+
 });
 
-gulp.task('js',function(){
+gulp.task('js', () => {
   gulp.src('src/js/scripts.js')
     .pipe(sourcemaps.init())
     .pipe(jshint('.jshintrc'))
     .pipe(jshint.reporter('default'))
     .pipe(header(banner, { package : package }))
+    .pipe(rollup({ plugins: [babel(), resolve(), commonjs()] }, 'umd'))
     .pipe(gulp.dest('app/assets/js'))
-    .pipe(uglify({
-        mangle: false,
-        ecma: 6
-    }))
+    .pipe(uglify())
     .on('error', function (err) { gutil.log(gutil.colors.red('[Error]'), err.toString()); })
     .pipe(header(banner, { package : package }))
     .pipe(rename({ suffix: '.min' }))
@@ -59,18 +62,19 @@ gulp.task('js',function(){
     .pipe(browserSync.reload({stream:true, once: true}));
 });
 
-gulp.task('browser-sync', function() {
+gulp.task('browser-sync', () => {
     browserSync.init(null, {
         server: {
             baseDir: "app"
         }
     });
 });
-gulp.task('bs-reload', function () {
+
+gulp.task('bs-reload', () => {
     browserSync.reload();
 });
 
-gulp.task('fileinclude', function() {
+gulp.task('fileinclude', () => {
     gulp.src([
         'src/html/**/*.html',
         '!src/html/components/*.html' // ignore
@@ -83,7 +87,7 @@ gulp.task('fileinclude', function() {
         .pipe(browserSync.reload({stream:true}));
 });
 
-gulp.task('start', ['css', 'js', 'browser-sync', 'fileinclude'], function () {
+gulp.task('start', ['css', 'js', 'browser-sync', 'fileinclude'], () => {
     gulp.watch("src/scss/**/*.scss", ['css']);
     gulp.watch("src/js/*.js", ['js']);
     gulp.watch("src/html/**/*.html", ['fileinclude']);

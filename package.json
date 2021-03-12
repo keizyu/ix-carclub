@@ -9,9 +9,11 @@
     "url": "https://github.com/keizyu/ix-carclub"
   },
   "devDependencies": {
+    "@babel/core": "^7.13.10",
     "browser-sync": "^2.11.1",
     "gulp": "^3.9.0",
     "gulp-autoprefixer": "^3.1.0",
+    "gulp-better-rollup": "^4.0.1",
     "gulp-cssnano": "^2.1.0",
     "gulp-file-include": "^2.3.0",
     "gulp-header": "^1.7.1",
@@ -19,9 +21,17 @@
     "gulp-rename": "^1.2.2",
     "gulp-sass": "^4.0.1",
     "gulp-sourcemaps": "^1.6.0",
+    "gulp-terser": "^2.0.1",
     "gulp-uglify": "^1.5.1",
     "gulp-uglifyes": "^0.2.1",
     "gulp-util": "^3.0.8",
-    "jshint": "^2.8.0"
+    "jshint": "^2.8.0",
+    "rollup": "^2.41.1",
+    "rollup-plugin-babel": "^4.4.0",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-node-resolve": "^5.2.0"
+  },
+  "dependencies": {
+    "@glidejs/glide": "^3.4.1"
   }
 }

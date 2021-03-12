@@ -2,20 +2,23 @@
 // CONFIG MODULES
 //----------------------------------*/
 
-@import 'modules/_normalize.scss';
-@import 'modules/_vars.scss';
-@import 'modules/_default.scss';
-@import 'modules/grid/gridlex.scss';
-@import 'modules/_btn.scss';
+@import 'modules/normalize';
+@import 'modules/vars';
+@import 'modules/default';
+@import 'modules/grid/gridlex';
+@import 'modules/btn';
 
+@import "node_modules/@glidejs/glide/src/assets/sass/glide.core";
+@import "node_modules/@glidejs/glide/src/assets/sass/glide.theme";
 
 //----------------------------------*\
 // PARTIALS
 //----------------------------------*/
 
-@import 'partials/_header.scss';
-@import 'partials/_main.scss';
-@import 'partials/_footer.scss';
-@import 'partials/_services.scss';
-@import 'partials/_contacto.scss';
-@import 'partials/_gracias.scss';
+@import 'partials/header';
+@import 'partials/main';
+@import 'partials/footer';
+@import 'partials/services';
+@import 'partials/contacto';
+@import 'partials/gracias';
+@import 'partials/movil';
