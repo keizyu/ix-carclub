@@ -174,7 +174,7 @@
 
 
     .menu {
-        height: 100%;
+
         > li {
             height: 100%;
         }
@@ -190,45 +190,52 @@
 
 }
 
-.ccnav .menu > li > a {
-    text-transform: uppercase;
-    font-weight: bolder;
-    padding: 24px 25px;
-    height: 100%;
+.ccnav .menu {
 
     @media all and (max-width : 1024px) and (min-width : 769px) {
-        padding-left: 12px;
-        padding-right: 12px;
+        height: 100%;
     }
 
-    @media all and (max-width : 1024px) and (min-width : 769px) {
-        font-size: 11px;
-        padding-top: 26px;
-        padding-bottom: 26px;
-    }
-}
+    > li {
+        
+        @media all and (max-width : 1024px) and (min-width : 769px) {
+            height: 100%;
+        }
 
-.ccnav .menu > li > a {
+        > a {
+            text-transform: uppercase;
+            font-weight: bolder;
+            padding: 24px 25px;
 
-    .caret-down {
-        width: 15px;
-        margin-left: .6rem;
-        width: 15px;
-        height: 8px;
-        fill: $white;
-    }
+            @media all and (max-width : 1024px) and (min-width : 769px) {
+                font-size: 11px;
+                padding-top: 26px;
+                padding-bottom: 26px;
+                padding-left: 12px;
+                padding-right: 12px;
+                height: 100%;
+            }
 
-    &:hover {
-        background-color: $white;
-        color: $black;
+            .caret-down {
+                width: 15px;
+                margin-left: .6rem;
+                width: 15px;
+                height: 8px;
+                fill: $white;
+            }
 
-        .caret-down {
-            fill: $black;
+            &:hover {
+                background-color: $white;
+                color: $black;
+
+                .caret-down {
+                    fill: $black;
+                }
+            }
+
         }
     }
-
 }
-
 
 .ccnav__menu-subnav:hover + a {
 

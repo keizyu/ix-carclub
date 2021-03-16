@@ -43,28 +43,40 @@
         background-repeat: no-repeat;
         height: 450px;
         display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: flex-end;
+        // justify-content: center;
+        align-items: center;
+
+        &__left, &__right {
+            flex: 0 1 50%;
+            align-self: center;
+        }
 
         @media all and (max-width: 768px){
 
             background-image: none;
             background-color: $brand-primary;
+            flex-direction: column;
+            justify-content: center;
 
+            &__left {
+                display: none;
+            }
         }
 
 
         &-2-info {
             width: 100%;
-            padding: 0 5%;
+            padding: 0 2rem;
             color: $white;
 
             @media all and (min-width: 769px){
 
-                width: 60%;
+                // width: 800px;
+                padding: 0;
+                padding-right: 2rem;
                 max-width: 800px;
                 min-width: 670px;
+                align-self: center;
 
             }
 
@@ -129,6 +141,12 @@
 
         h3 {
             text-align: center;
+        }
+
+        p {
+            @media all and (max-width : 768px) {
+                text-align: center;
+            }
         }
     }
 
