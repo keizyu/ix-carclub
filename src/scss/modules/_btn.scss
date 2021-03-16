@@ -41,7 +41,7 @@
     cursor: pointer;
     border: none;
     background-color: $grey-3;
-    padding: 8px 40px;
+    padding: 12px 52px;
     display: inline-block;
     border-radius: 0;
     box-shadow: none;
@@ -54,9 +54,20 @@
 }
 
 .cognito {
+
     .c-forms-form label,
     .c-forms-form .c-forms-form-title h2,
      #c-submit-button {
          font-family: 'Avenir' !important;
      }
+
+    .c-button-section {
+        text-align: center;
+
+        .c-action {
+            float: none;
+            display: inline-block;
+        }
+
+    }
 }

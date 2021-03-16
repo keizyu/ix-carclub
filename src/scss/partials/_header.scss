@@ -172,6 +172,14 @@
         width: 100%;
     }
 
+
+    .menu {
+        height: 100%;
+        > li {
+            height: 100%;
+        }
+    }
+
     /* Since we'll have the "ul li" "float:left"
      * we need to add a clear after the container. */
     &::after {
@@ -186,6 +194,7 @@
     text-transform: uppercase;
     font-weight: bolder;
     padding: 24px 25px;
+    height: 100%;
 
     @media all and (max-width : 1024px) and (min-width : 769px) {
         padding-left: 12px;
