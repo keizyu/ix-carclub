@@ -155,10 +155,10 @@
         .grid-with-border {
             [class*=col-], [class*=col_], [class~=col] {
 
-                &:nth-child(3n + 2) .box {
-                    border-left: 1px solid $grey-3;
-                    border-right: 1px solid $grey-3;
-                }
+                // &:nth-child(3n + 2) .box {
+                //     border-left: 1px solid $grey-3;
+                //     border-right: 1px solid $grey-3;
+                // }
 
             }
         }

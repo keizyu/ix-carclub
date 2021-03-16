@@ -60,7 +60,7 @@ import Glide from '@glidejs/glide';
 
         for (let i = 0; i < boxNumbers.length; i++) {
 
-            const numberValue = boxNumbers[i].getAttribute('data-number');
+            let numberValue = boxNumbers[i].getAttribute('data-number');
 
             animateValue(boxNumbers[i], 0, numberValue, 5000);
 

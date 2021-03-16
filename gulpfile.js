@@ -46,7 +46,8 @@ gulp.task('css', () => {
 });
 
 gulp.task('js', () => {
-  gulp.src('src/js/scripts.js')
+
+  return gulp.src('src/js/scripts.js')
     .pipe(sourcemaps.init())
     .pipe(jshint('.jshintrc'))
     .pipe(jshint.reporter('default'))
@@ -60,6 +61,7 @@ gulp.task('js', () => {
     .pipe(sourcemaps.write())
     .pipe(gulp.dest('app/assets/js'))
     .pipe(browserSync.reload({stream:true, once: true}));
+
 });
 
 gulp.task('browser-sync', () => {
