@@ -32,6 +32,45 @@
 
 .cognito{
     width: 40%;
+    margin: 0 auto;
+
+    .preloader {
+        display: none;
+        width: 80px;
+        height: 80px;
+
+        &:last-child {
+          display: block;
+          margin: 4rem auto;
+        }
+
+        &::after {
+          content: " ";
+          display: block;
+          width: 64px;
+          height: 64px;
+          margin: 8px;
+          border-radius: 50%;
+          border: 6px solid $grey-2;
+          border-color: $grey-2 transparent $grey-2 transparent;
+          animation: preloader 1.2s linear infinite;
+        }
+
+
+    }
+
+    @keyframes preloader {
+
+      0% {
+        transform: rotate(0deg);
+      }
+
+      100% {
+        transform: rotate(360deg);
+      }
+
+    }
+    
 }
 
 // .c-forms-form-title {
