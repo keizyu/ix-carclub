@@ -6,137 +6,149 @@ footer {
 	bottom: 0;
     width: 100%;
     flex-shrink: 0;
-}
+    padding-top: 2rem;
 
-.first-section {
-	width: 100%;
-	display: flex;
-    border-bottom: $line;
-
-    &_logo {
-        width: 25%;
+    .first-section {
+    	width: 100%;
+    	display: flex;
+        border-bottom: $line;
         text-align: center;
 
-        img {
-            width: 120px;
-            filter: grayscale(100%);
-            height: 100px;
+        &_logo {
+            width: 25%;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
 
-            &:hover {
-                filter: initial;
+            img {
+                width: 120px;
+                filter: grayscale(100%);
+                height: 100px;
+
+                &:hover {
+                    filter: initial;
+                }
+            }
+
+        }
+
+        &_datos {
+            width: 75%;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            p {
+                text-align: center;
             }
         }
 
     }
 
-    &_datos {
-        width: 75%;
-        display: flex;
-        align-items: center;
-        justify-content: space-around;
-        p {
-            text-align: center;
+    .second-section {
+    	width: 100%;
+    	display: flex;
+        &_datos {
+            width: 75%;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            p {
+                padding-left: 50px;
+            }
+        }
+        &_logo {
+            width: 25%;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
     }
 
-}
-
-.second-section {
-	width: 100%;
-	display: flex;
-    &_datos {
-        width: 75%;
-        display: flex;
-        align-items: center;
-        justify-content: flex-start;
-        p {
-            padding-left: 50px;
-        }
-    }
-    &_logo {
-        width: 25%;
-        height: 50px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
 }
 
 @media all and (max-width: 768px) {
-    .first-section{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        padding-bottom: 20px;
-    }
-    .second-section{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        padding-top: 20px;
 
-        &_datos{
-            justify-content: space-around;
+    footer {
 
-            p{
-                padding: 0;
-            }
-        }
-
-        &_logo{
-            width: 100%;
-        }
-    }
-}
-
-@media all and (max-width: 570px) {
-    footer{
         left: 0;
         bottom: 0;
         width: 100%;
         text-align: center;
         height: auto;
-    }
-	.first-section {
-		width: 100%;
-		height: auto;
-		display: flex;
-        flex-direction: column;
-        padding: 0;
-        &_logo {
-            width: 100%;
-            height: 80px;
-        }
-        &_datos {
-            width: 100%;
+
+        .first-section {
+    		width: 100%;
+    		height: auto;
+    		display: flex;
+            flex-direction: column;
+            padding: 0;
+            &_logo {
+                width: 100%;
+                height: 80px;
+            }
+            &_datos {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                padding: 5px;
+                p {
+                    padding-bottom: 15px;
+                }
+            }
+    	}
+
+        .second-section{
             display: flex;
             flex-direction: column;
-            padding: 5px;
-            p {
-                padding-bottom: 15px;
-            }
-        }
-	}
-	.second-section {
-		width: 100%;
-		height: auto;
-		display: flex;
-		flex-direction: column;
-        padding: 0;
-        &_datos {
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            p {
-                padding-left: 0;
-                padding-bottom: 10px;
-            }
-        }
-        &_logo {
-            width: 100%;
-            display: flex;
             align-items: center;
-            justify-content: center;
+            padding-top: 20px;
+
+            &_datos{
+                justify-content: space-around;
+
+                p{
+                    padding: 0;
+                }
+            }
+
+            &_logo{
+                width: 100%;
+            }
         }
-	}
+
+    }
+}
+
+@media all and (max-width: 570px) {
+
+    footer {
+
+    	.second-section {
+    		width: 100%;
+    		height: auto;
+    		display: flex;
+    		flex-direction: column;
+            padding: 0;
+            &_datos {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                p {
+                    padding-left: 0;
+                    padding-bottom: 10px;
+                }
+            }
+            &_logo {
+                width: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+    	}
+
+    }
+
+
 }

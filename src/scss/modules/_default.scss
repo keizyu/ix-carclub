@@ -61,6 +61,11 @@ h2 {
 	font-size: 2.4rem;
 }
 
+h6 {
+	font-size: 1.4rem;
+	margin: 1rem;
+}
+
 .section p {
 	font-size: 1.6rem;
 }
@@ -101,4 +106,8 @@ h2 {
 	width: 0;
 	height: 0;
 	pointer-events: none;
+}
+
+.text-center {
+	text-align: center;
 }
