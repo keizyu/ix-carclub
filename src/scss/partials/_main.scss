@@ -11,10 +11,6 @@
 
     padding: 50px 0;
 
-    h2 {
-        text-align: center;
-    }
-
     .container {
         width: 80%;
         margin: 0 auto;
@@ -34,51 +30,45 @@
         }
     }
 
+    &-us {
+        width: 100%;
+        text-align: center;
+
+        h3{
+            margin-top: 0;
+        }
+    }
+
     &-hero {
 
         padding: 0;
-        background-image: url('../img/hero-banner.jpg');
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
         height: 450px;
-        display: flex;
+        // display: flex;
         // justify-content: center;
-        align-items: center;
+        // align-items: center;
 
-        &__left, &__right {
-            flex: 0 1 50%;
-            align-self: center;
-        }
 
         @media all and (max-width: 768px){
 
-            background-image: none;
+            background-image: none !important;
             background-color: $brand-primary;
-            flex-direction: column;
             justify-content: center;
 
-            &__left {
-                display: none;
-            }
         }
 
-
-        &-2-info {
-            width: 100%;
-            padding: 0 2rem;
+        &__info {
             color: $white;
+            padding: 0 10%;
+            max-width: 800px;
 
             @media all and (min-width: 769px){
-
-                // width: 800px;
-                padding: 0;
-                padding-right: 2rem;
-                max-width: 800px;
-                min-width: 670px;
-                align-self: center;
+                padding: 0 5%;
 
             }
+
 
             h1 {
                 margin-top: 0;
@@ -93,7 +83,7 @@
                     position: absolute;
                     left: 0;
                     content: '';
-                    width: 80%;
+                    width: 100%;
                     height: 6px;
                     background: rgb(251,206,71);
                     background: linear-gradient(90deg, rgba(251,206,71,0) 0%, rgba(251,206,71,1) 41%);
@@ -124,15 +114,6 @@
 
         }
 
-    }
-
-    &-us {
-        width: 100%;
-        text-align: center;
-
-        h3{
-            margin-top: 0;
-        }
     }
 
     &-services {
@@ -173,10 +154,10 @@
         .grid-with-border {
             [class*=col-], [class*=col_], [class~=col] {
 
-                // &:nth-child(3n + 2) .box {
-                //     border-left: 1px solid $grey-3;
-                //     border-right: 1px solid $grey-3;
-                // }
+                &:nth-child(3n + 2) .box {
+                    border-left: 1px solid $grey-3;
+                    border-right: 1px solid $grey-3;
+                }
 
             }
         }

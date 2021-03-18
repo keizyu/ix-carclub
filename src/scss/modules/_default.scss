@@ -46,6 +46,9 @@ h1, h2, h3 {
 h1 {
 	font-size: 5rem;
 
+	small {
+		display: block;
+	}
 
 	@media all and (max-width: 768px){
 		font-size: 4rem;
@@ -66,8 +69,17 @@ h6 {
 	margin: 1rem;
 }
 
-.section p {
-	font-size: 1.6rem;
+.section {
+
+	h2 {
+		text-align: center;
+		margin-top: 0;
+	}
+
+	p {
+		font-size: 1.6rem;
+	}
+
 }
 
 .icon {
@@ -110,4 +122,9 @@ h6 {
 
 .text-center {
 	text-align: center;
+}
+
+.grid-middle {
+	height: 100%;
+	margin: 0 !important;
 }
