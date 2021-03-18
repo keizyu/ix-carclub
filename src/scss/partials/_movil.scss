@@ -3,28 +3,6 @@ ol, ul {
 }
 
 
-.container-img{
-    background-image: url('https://dummyimage.com/1180x450/b7b7b7/fff.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 450px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-.container-img h2{
-    font-size: 2.5rem;
-    width: 40%;
-}
-
-.container-img p{
-    text-align: center;
-    width: 40%;
-}
-
 //
 .section-info{
     width: 100%;

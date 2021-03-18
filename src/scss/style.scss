@@ -8,8 +8,9 @@
 @import 'modules/grid/gridlex';
 @import 'modules/btn';
 
-@import "node_modules/@glidejs/glide/src/assets/sass/glide.core";
-@import "node_modules/@glidejs/glide/src/assets/sass/glide.theme";
+// Carousel
+@import 'node_modules/swiper/swiper-bundle';
+
 
 //----------------------------------*\
 // PARTIALS

@@ -12,12 +12,14 @@
         background-color: lighten($grey-3, 10%);
         text-decoration: none;
     }
+
     &-red{
         background-color: $brand-primary;
         &:hover{
             background-color: lighten($brand-primary, 10%)
         }
     }
+
     &-black{
         background-color: $black;
         &:hover{
@@ -31,6 +33,11 @@
 
         &:hover {
             background-color: transparentize($white, 0.7);
+        }
+
+        &.btn-black {
+            border-color: $black;
+            color: $black
         }
     }
 }

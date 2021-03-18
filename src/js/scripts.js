@@ -1,4 +1,4 @@
-import Glide from '@glidejs/glide';
+import Swiper, { Pagination, Autoplay } from 'swiper/core';
 
 (function (window, document, undefined) {
     'use strict';
@@ -70,20 +70,19 @@ import Glide from '@glidejs/glide';
 
     ////////////// SLIDER
 
-    const slider = document.getElementsByClassName('glide');
+    Swiper.use([Pagination,Autoplay]);
 
-    if ( slider.length > 0 ) {
+    const swiper = new Swiper('.swiper-container', {
+        loop: true,
+        autoplay: {
+            delay: 2500,
+        },
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true
+        },
 
-        // CARCLUB MOVIL SLIDER
-
-        const config = {
-            type: 'carousel',
-            startAt: 0,
-            perView: 1
-        };
-
-        new Glide('.glide', config).mount();
-    }
+    });
 
 
 })(window, document);

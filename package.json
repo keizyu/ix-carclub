@@ -30,9 +30,7 @@
     "rollup": "^2.41.1",
     "rollup-plugin-babel": "^4.4.0",
     "rollup-plugin-commonjs": "^10.1.0",
-    "rollup-plugin-node-resolve": "^5.2.0"
-  },
-  "dependencies": {
-    "@glidejs/glide": "^3.4.1"
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "swiper": "^6.5.0"
   }
 }

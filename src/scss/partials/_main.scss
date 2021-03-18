@@ -142,10 +142,13 @@
 
             .btn {
 
-                display: table;
-                margin: 0 auto;
                 font-size: 1.4rem;
                 margin-top: 2rem;
+
+                &.btn-center {
+                    display: table;
+                    margin: 0 auto;
+                }
 
             }
 
