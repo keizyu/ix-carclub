@@ -52,7 +52,7 @@
         background-size: contain;
         top: 0;
         left: 0;
-        z-index: 2;
+        z-index: 3;
 
         @media all and (min-width: 769px){
             left: -32px;
@@ -68,6 +68,7 @@
 
         position: absolute;
         width: 100%;
+        z-index: 2;
 
         .ccnav__icon-toggle {
             background-color: $brand-primary;
@@ -141,7 +142,7 @@
         ul {
             display: none;
             position: absolute;
-            z-index: 999;
+            z-index: 4;
             box-shadow: 0 0 20px 6px transparentize($grey-2, .5);
             top: 67px;
 
@@ -197,7 +198,7 @@
     }
 
     > li {
-        
+
         @media all and (max-width : 1024px) and (min-width : 769px) {
             height: 100%;
         }

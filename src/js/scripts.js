@@ -5,6 +5,8 @@ import Swiper, { Pagination, Autoplay } from 'swiper/core';
 
     // CarClub JS
 
+    ////////////// ACTIVE SUBMENU
+
     const checkbox = document.getElementById('drop');
     const nav = document.getElementById('ccnav');
 
@@ -75,7 +77,7 @@ import Swiper, { Pagination, Autoplay } from 'swiper/core';
     const swiper = new Swiper('.swiper-container', {
         loop: true,
         autoplay: {
-            delay: 2500,
+            delay: 5000,
         },
         pagination: {
             el: '.swiper-pagination',
