@@ -14,6 +14,7 @@ const gulp = require('gulp'),
     babel = require('rollup-plugin-babel'),
     resolve = require('rollup-plugin-node-resolve'),
     commonjs = require('rollup-plugin-commonjs'),
+    htmlmin = require('gulp-htmlmin'),
     package = require('./package.json');
 
 
@@ -85,6 +86,7 @@ gulp.task('fileinclude', () => {
             prefix: '@@',
             basepath: '@file'
         }))
+        // .pipe(htmlmin({ collapseWhitespace: true }))
         .pipe(gulp.dest('app'))
         .pipe(browserSync.reload({stream:true}));
 });
