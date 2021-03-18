@@ -16,7 +16,6 @@ ol, ul {
 }
 
 .container-img h2{
-    text-align: center;
     font-size: 2.5rem;
     width: 40%;
 }
@@ -26,7 +25,7 @@ ol, ul {
     width: 40%;
 }
 
-// 
+//
 .section-info{
     width: 100%;
     display: flex;
@@ -35,17 +34,9 @@ ol, ul {
 
     &-content{
         width: 50%;
-
-        h2{
-            text-align: center;
-        }
     }
 }
 
-// 
-h2{
-    text-align: center;
-}
 
 .section-ourservices-container{
     width: 100%;
@@ -118,7 +109,7 @@ h2{
 }
 // kdkldkdklsdlklkds
 
-// 
+//
 .section-cita{
     display: flex;
     flex-direction: column;

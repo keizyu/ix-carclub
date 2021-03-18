@@ -46,22 +46,63 @@
         background-position: center;
         background-repeat: no-repeat;
         height: 450px;
-        // display: flex;
-        // justify-content: center;
-        // align-items: center;
-
+        background-color: $grey-1;
 
         @media all and (max-width: 768px){
 
-            background-image: none !important;
-            background-color: $brand-primary;
             justify-content: center;
 
         }
 
+        &__title{
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 300px;
+
+            .section-hero__info {
+
+                text-align: center;
+
+            }
+
+            h1 {
+                margin: 0 !important;
+            }
+
+        }
+
+        &__full {
+            display: flex;
+            min-height: 100%;
+            align-items: center;
+
+            h1 {
+                margin-top: 0;
+            }
+
+
+        }
+
+        &__home {
+            background-color: $brand-primary;
+        }
+
+        &__gracias {
+            background-color: $white;
+        }
+
+
+        &.color-black {
+            h1, h2, h3, h4, h5, h6, p {
+                color: $black;
+            }
+        }
+
         &__info {
             color: $white;
-            padding: 0 10%;
+            padding: 0 1rem;
             max-width: 800px;
 
             @media all and (min-width: 769px){
@@ -79,7 +120,7 @@
                     display: block;
                 }
 
-                &::after {
+                &.h1-line::after {
                     position: absolute;
                     left: 0;
                     content: '';
@@ -89,9 +130,6 @@
                     background: linear-gradient(90deg, rgba(251,206,71,0) 0%, rgba(251,206,71,1) 41%);
                     margin-top: 1rem;
 
-                    @media all and (max-width: 768px){
-                        width: 100%;
-                    }
                 }
 
                 @media all and (max-width: 768px){
@@ -131,24 +169,6 @@
         }
     }
 
-    &-date{
-
-        background-image: url('https://dummyimage.com/1180x350/b7b7b7/fff.jpg');
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-        height: 350px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        justify-content: center;
-
-        &-info{
-
-            h2 { margin-top: 0 }
-        }
-    }
 
     @media all and (min-width: 769px){
         .grid-with-border {
