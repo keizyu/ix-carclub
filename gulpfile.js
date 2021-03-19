@@ -80,7 +80,7 @@ gulp.task('bs-reload', () => {
 gulp.task('fileinclude', () => {
     gulp.src([
         'src/html/**/*.html',
-        '!src/html/components/*.html' // ignore
+        '!src/html/_components/*.html' // ignore
         ])
         .pipe(fileinclude({
             prefix: '@@',

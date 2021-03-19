@@ -1,4 +1,4 @@
-@@include('./components/header.html', {
+@@include('./_components/header.html', {
     'meta-title': 'Car Club móvil',
     'meta-description': 'En CarClub Firestone Costa Rica llevamos el servicio automotriz directo a su domicilio con CarClub Móvil. ¡Agende su cita!'
 })
@@ -9,7 +9,7 @@
     <div class="swiper-wrapper">
 
     <!-- Slides -->
-        @@loop('./components/swiper-slides.html', [
+        @@loop('./_components/swiper-slides.html', [
             {
                 "title": "My title",
                 "text": "<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Rerum commodi blanditiis ipsam numquam laborum corrupti dignissimos qui, accusantium molestias, accusamus temporibus? Eos officiis earum natus dolorem quos totam reprehenderit libero?</p>",
@@ -211,4 +211,4 @@
 
 </section>
 
-@@include('./components/footer.html')
+@@include('./_components/footer.html')
