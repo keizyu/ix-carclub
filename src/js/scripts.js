@@ -86,5 +86,29 @@ import Swiper, { Pagination, Autoplay } from 'swiper/core';
 
     });
 
+    ////////////// ANIMATION ON ELEMENT
+
+    const target = document.getElementsByClassName('animated');
+
+    function handleIntersection(entries) {
+
+        entries.map( entry => {
+            if ( entry.isIntersecting ) {
+                entry.target.classList.add('visible');
+            }
+            // else {
+            //     entry.target.classList.remove('visible')
+            // }
+        });
+    }
+
+    // Check if the elements are in viewport
+    
+    const observer = new IntersectionObserver(handleIntersection);
+
+    [].slice.call(target).forEach( el => {
+        observer.observe(el);
+    })
+
 
 })(window, document);
