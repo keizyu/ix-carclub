@@ -1,42 +1,35 @@
 .main {
-    flex: 1 0 auto;
-    margin-top: 100px;
 
-    @media all and (max-width : 768px) {
-        margin-top: 91px;
+    //sticky footer
+    flex: 1 0 auto;
+    margin-top: 91px;
+
+    @media all and (min-width: 769px) {
+        margin-top: 100px;
     }
+
 }
 
 .section {
 
-    padding: 50px 0;
+    padding: 6rem 0;
 
-    .container {
-        width: 80%;
-        margin: 0 auto;
-        max-width: 1248px;
-    }
 
     .box {
         padding: 2rem;
 
-        &-number{
+        &-number {
             font-size: 8rem;
             font-weight: 900;
         }
 
-        &-signo{
+        &-signo {
             font-size: 2rem;
         }
     }
 
-    &-us {
-        width: 100%;
-        text-align: center;
-
-        h3{
-            margin-top: 0;
-        }
+    &-aboutus h3 {
+        margin-top: 0;
     }
 
     &-hero {
@@ -48,13 +41,8 @@
         height: 450px;
         background-color: $grey-1;
 
-        @media all and (max-width: 768px){
 
-            justify-content: center;
-
-        }
-
-        &__title{
+        &__title {
 
             display: flex;
             justify-content: center;
@@ -102,7 +90,6 @@
 
         &__info {
             color: $white;
-            padding: 0 1rem;
             max-width: 800px;
 
             @media all and (min-width: 769px){
@@ -115,28 +102,35 @@
                 margin-top: 0;
                 text-transform: uppercase;
                 position: relative;
+                margin-bottom: 4rem;
+
+                @media all and (min-width: 769px){
+
+                    margin-bottom: 0;
+
+                }
 
                 small {
                     display: block;
                 }
 
-                &.h1-line::after {
-                    position: absolute;
-                    left: 0;
-                    content: '';
-                    width: 100%;
-                    height: 6px;
-                    background: rgb(251,206,71);
-                    background: linear-gradient(90deg, rgba(251,206,71,0) 0%, rgba(251,206,71,1) 41%);
-                    margin-top: 1rem;
+                &.h1-line {
 
+                    padding-bottom: 2rem;
+
+                    &::after {
+                        position: absolute;
+                        left: 0;
+                        content: '';
+                        width: 100%;
+                        height: 6px;
+                        background: rgb(251,206,71);
+                        background: linear-gradient(90deg, rgba(251,206,71,0) 0%, rgba(251,206,71,1) 41%);
+                        margin-top: 1rem;
+
+                    }
                 }
 
-                @media all and (max-width: 768px){
-
-                    margin-bottom: 4rem;
-
-                }
 
             }
 
@@ -158,20 +152,18 @@
     }
 
     &-services {
-        background-color: $grey-1;
-        width: 100%;
 
-        h3 {
-            text-align: center;
-        }
+        background-color: $grey-1;
 
         p {
-            @media all and (max-width : 768px) {
-                text-align: center;
-            }
-        }
-    }
 
+            @media all and (min-width: 769px) {
+                text-align: left;
+            }
+
+        }
+
+    }
 
     @media all and (min-width: 769px){
         .grid-with-border {
