@@ -8,7 +8,9 @@
     }
 }
 
+
 .cognito {
+
     width: 40%;
     margin: 0 auto;
 
@@ -34,17 +36,20 @@
           animation: preloader 1.2s linear infinite;
         }
 
-
     }
 
-    @keyframes preloader {
+    .c-forms-form label,
+    .c-forms-form .c-forms-form-title h2,
+     #c-submit-button {
+         font-family: 'Avenir' !important;
+     }
 
-        0% {
-            transform: rotate(0deg);
-        }
+    .c-button-section {
+        text-align: center;
 
-        100% {
-            transform: rotate(360deg);
+        .c-action {
+            float: none;
+            display: inline-block;
         }
 
     }

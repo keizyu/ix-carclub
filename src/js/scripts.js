@@ -74,7 +74,7 @@ import Swiper, { Pagination, Autoplay } from 'swiper/core';
 
     Swiper.use([Pagination,Autoplay]);
 
-    const swiper = new Swiper('.swiper-container', {
+    new Swiper('.swiper-container', {
         loop: true,
         autoplay: {
             delay: 5000,
@@ -103,12 +103,12 @@ import Swiper, { Pagination, Autoplay } from 'swiper/core';
     }
 
     // Check if the elements are in viewport
-    
+
     const observer = new IntersectionObserver(handleIntersection);
 
     [].slice.call(target).forEach( el => {
         observer.observe(el);
-    })
+    });
 
 
 })(window, document);
