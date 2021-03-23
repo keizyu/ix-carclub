@@ -40,6 +40,11 @@
         background-repeat: no-repeat;
         height: 450px;
         background-color: $grey-1;
+        background-position: right center;
+
+        @media all and (max-width : 1024px) {
+            background-image: none !important;
+        }
 
 
         &__title {
@@ -73,9 +78,25 @@
 
         }
 
-        &__home {
-            background-color: $brand-primary;
+        &__img--wrapper {
+            height:100%;
+            padding:0;
+            display: none;
+
+            @media all and (min-width: 769px) {
+                display: block;
+            }
+
+            img {
+                object-fit: cover;
+                height: 100%;
+            }
+
         }
+
+        // &__home {
+        //     background-color: $brand-primary;
+        // }
 
         &__gracias {
             background-color: $white;
@@ -126,7 +147,7 @@
                         height: 6px;
                         background: rgb(251,206,71);
                         background: linear-gradient(90deg, rgba(251,206,71,0) 0%, rgba(251,206,71,1) 41%);
-                        margin-top: 1rem;
+                        bottom: 0;
 
                     }
                 }
@@ -137,7 +158,15 @@
             .btn {
 
                 font-size: 1.4rem;
-                margin-top: 2rem;
+                display: table;
+                margin: 4rem auto 0;
+
+                @media all and (min-width: 769px){
+
+                    margin: 2rem 0 0 0;
+                    display: inline-block;
+
+                }
 
                 &.btn-center {
                     display: table;
@@ -149,6 +178,11 @@
 
         }
 
+        .rowReverse {
+            @media all and (min-width: 769px) {
+                flex-direction: row-reverse;
+            }
+        }
     }
 
     &-services {

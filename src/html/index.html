@@ -4,26 +4,61 @@
             'meta-description': 'En CarClub Firestone Costa Rica no solo nos ocupamos de sus llantas, ofrecemos servicio completo: cambio de aceite, servicio de frenos, alineación y balanceo, amortiguadores, baterías.'
         })
 
-        <section class="section section-hero section-hero__home animated" style="background-image: url('/assets/img/hero-banner.jpg');">
+        <div class="swiper-container">
 
-                <div class="grid grid-middle">
+            <div class="swiper-wrapper">
 
-                    <div class="col-6_lg-8_md-10_sm-10" data-push-left="off-6_lg-4_md-2_sm-1">
+            <!-- Slides -->
+                @@loop('./_components/swiper-slides.html', [
+                    {
+                        "title": "CarClub Firestone <small>la solución automotriz</small>",
+                        "text": "<p>Nuestros  profesionales  cuentan  con  una  amplia  formación  y experiencia  en  el  mundo  automotriz lo  que  nos  hace  los  expertos  en  servicios  como  cambio  de aceite, llantas, suspensión y mantenimiento en general.</p><p>Somos expertos en llantas.</p>",
+                        "color": "white",
+                        "btnStyle": "solid",
+                        "btnColor": "black",
+                        "cta": true,
+                        "ctaText": "AGENDAR CITA",
+                        "ctaLink": "#",
+                        "imgAsBkg": false,
+                        "bkgImage": "/assets/img/hero-C1180x450-1.jpg",
+                        "bkgColor": "#E32313",
+                        "bkgPosition": "left"
+                    },
+                    {
+                        "title": "Another title",
+                        "text": "<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Rerum commodi blanditiis ipsam numquam laborum corrupti dignissimos qui, accusantium molestias, accusamus temporibus? Eos officiis earum natus dolorem quos totam reprehenderit libero?</p>",
+                        "color": "white",
+                        "btnStyle": "solid",
+                        "btnColor": "default",
+                        "cta": true,
+                        "ctaText": "Another CTA",
+                        "ctaLink": "#",
+                        "imgAsBkg": false,
+                        "bkgImage": "/assets/img/hero-C1180x450-2.jpg",
+                        "bkgColor": "#0F0F0F",
+                        "bkgPosition": "right"
+                    },
+                    {
+                        "title": "One more title",
+                        "text": "<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Rerum commodi blanditiis ipsam numquam laborum corrupti dignissimos qui, accusantium molestias, accusamus temporibus? Eos officiis earum natus dolorem quos totam reprehenderit libero?</p>",
+                        "color": "black",
+                        "btnStyle": "",
+                        "btnColor": "black",
+                        "cta": true,
+                        "ctaText": "Another CTA",
+                        "ctaLink": "#",
+                        "imgAsBkg": false,
+                        "bkgImage": "/assets/img/hero-C1180x450-3.jpg",
+                        "bkgColor": "#E7E7E7",
+                        "bkgPosition": "right"
+                    }
+                ])
 
-                        <div class="section-hero__info">
+            </div>
 
-                            <h1 class="h1-line">CarClub Firestone <small>la solución automotriz</small></h1>
-                            <p>Nuestros  profesionales  cuentan  con  una  amplia  formación  y experiencia  en  el  mundo  automotriz lo  que  nos  hace  los  expertos  en  servicios  como  cambio  de aceite, llantas, suspensión y mantenimiento en general.</p>
-                            <p>Somos expertos en llantas.</p>
-                            <a href="/agendar-cita-car-club-firestone.html" class="btn btn-border btn-center">AGENDAR CITA</a>
+            <div class="swiper-pagination"></div>
 
-                        </div>
-
-                    </div>
-
-                </div>
-
-        </section>
+        </div>
 
         <section class="section section-aboutus text-center">
 

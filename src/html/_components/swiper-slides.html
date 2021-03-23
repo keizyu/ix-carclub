@@ -1,18 +1,27 @@
 <div class="swiper-slide">
 
-    <section class="section section-hero section-hero__home @@if ( color === 'black' ) { color-black }" style="background-image: url('@@bkg-image');background-color: @@bkg-color ">
+    <section class="section section-hero @@if ( color == 'black' ) { color-black }" style="background-color: @@bkgColor; background-position: @@bkgPosition center; @@if ( imgAsBkg ) { background-image: url( '@@bkgImage' ) }">
 
-            <div class="grid grid-middle">
+            <div class="grid grid-middle @@if ( !imgAsBkg && bkgPosition == "right" ) { rowReverse } " >
 
-                <div  class="col-6_lg-7_md-10_sm-10" data-push-left="off-6_lg-5_md-2_sm-1" >
+                @@if ( !imgAsBkg ) {
+
+                    <div class="col-4 section-hero__img--wrapper">
+                        <img src="@@bkgImage" alt="CarClub Firestone">
+                    </div>
+
+                }
+
+                @@if ( imgAsBkg ) { <div @@if ( bkgPosition == 'left' ) { class="col-6_lg-7_md-10_sm-10" data-push-left="off-6_lg-5_md-1_sm-1" } @@if ( bkgPosition != 'left' ) { class="col-6_lg-5_md-10_sm-10" data-push-left="off-0_md-1_sm-1" }> }
+                @@if ( !imgAsBkg ) { <div class="col-8_sm-10" data-push-left="off-0_sm-1" > }
 
                     <div class="section-hero__info">
 
-                        <h1>@@title</h1>
+                        <h1 class="h1-line">@@title</h1>
                         @@text
 
                         @@if ( cta ) {
-                            <a href="@@ctaLink" class="btn @@if ( btnStyle === 'border' ) { btn-border } @@if ( color === 'black' ) { btn-black }">@@ctaText</a>
+                            <a href="@@ctaLink" class="btn @@if ( btnStyle == 'border' ) { btn-border } btn-@@btnColor ">@@ctaText</a>
                         }
 
                     </div>
