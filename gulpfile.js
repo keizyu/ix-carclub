@@ -3,17 +3,17 @@ const gulp = require('gulp'),
     sass = require('gulp-sass'),
     browserSync = require('browser-sync'),
     autoprefixer = require('gulp-autoprefixer'),
-    uglify = require('gulp-terser'),
+    uglify = require('gulp-uglify'),
+    concat = require('gulp-concat'),
     jshint = require('gulp-jshint'),
     header  = require('gulp-header'),
     rename = require('gulp-rename'),
     cssnano = require('gulp-cssnano'),
     fileinclude = require('gulp-file-include'),
     sourcemaps = require('gulp-sourcemaps'),
-    rollup = require('gulp-better-rollup'),
-    babel = require('rollup-plugin-babel'),
-    resolve = require('rollup-plugin-node-resolve'),
-    commonjs = require('rollup-plugin-commonjs'),
+    babel = require('gulp-babel'),
+    webpack = require('webpack-stream'),
+    plumber = require('gulp-plumber'),
     htmlmin = require('gulp-htmlmin'),
     package = require('./package.json');
 
@@ -52,8 +52,14 @@ gulp.task('js', () => {
     .pipe(sourcemaps.init())
     .pipe(jshint('.jshintrc'))
     .pipe(jshint.reporter('default'))
-    .pipe(header(banner, { package : package }))
-    .pipe(rollup({ plugins: [babel(), resolve(), commonjs()] }, 'umd'))
+    .pipe(plumber())
+    .pipe(webpack({
+        mode: 'production'
+    }))
+    .pipe(babel({
+        presets: [ '@babel/env' ]
+    }))
+    .pipe(concat('scripts.js'))
     .pipe(gulp.dest('app/assets/js'))
     .pipe(uglify())
     .on('error', function (err) { gutil.log(gutil.colors.red('[Error]'), err.toString()); })
