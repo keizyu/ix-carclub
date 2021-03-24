@@ -49,10 +49,27 @@
 
         &__title {
 
-            display: flex;
-            justify-content: center;
-            align-items: center;
             height: 300px;
+
+            &--centered {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                h1 {
+                    margin: 0 !important;
+                    border-top: 2px solid $white;
+                    border-bottom: 2px solid $white;
+                    padding: 2rem 0;
+                }
+
+                &.color-black {
+
+                    h1 { border-color: $black}
+
+                }
+
+            }
 
             .section-hero__info {
 
@@ -60,9 +77,6 @@
 
             }
 
-            h1 {
-                margin: 0 !important;
-            }
 
         }
 
@@ -160,6 +174,7 @@
                 font-size: 1.4rem;
                 display: table;
                 margin: 4rem auto 0;
+                text-transform: uppercase;
 
                 @media all and (min-width: 769px){
 
