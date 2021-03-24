@@ -28,6 +28,7 @@
     "gulp-uglifyes": "^0.2.1",
     "gulp-util": "^3.0.8",
     "jshint": "^2.8.0",
+    "minimatch": "^3.0.2",
     "rollup": "^1.32.1",
     "rollup-plugin-babel": "^4.4.0",
     "rollup-plugin-commonjs": "^10.1.0",
