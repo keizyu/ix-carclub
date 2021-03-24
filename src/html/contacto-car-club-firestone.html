@@ -21,12 +21,61 @@
     </div>
 </section>
 
-<div class="cognito">
 
-    <script src="https://www.cognitoforms.com/s/t1GNB9PiLEK4qzOnSceb-A"></script>
-    <script>Cognito.load("forms", { id: "3" });</script>
-    <div class="preloader"></div>
+<section class="section section-forms">
 
-</div>
+    <div class="container">
+
+        <form id="contact-form">
+
+            <div class="form-group">
+                <label for="reasonNodePath">Selecciona un motivo*</label>
+                <select id="reasonNodePath">
+                    <option value="">Motivo</option>
+                    <option value="Información de servicios">Información de servicios</option>
+                    <option value="Cotización">Cotización</option>
+                    <option value="Aclaraciones">Aclaraciones</option>
+                    <option value="Quejas">Quejas</option>
+                    <option value="Otros">Otros</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <!-- <label for="firstName">Nombre*</label> -->
+                <input type="text" name="firstName" id="firstName" placeholder="Nombre*">
+            </div>
+
+            <div class="form-group">
+                <!-- <label for="lastName">Apellidos*</label> -->
+                <input type="text" name="lastName" id="lastName" placeholder="Apellidos*">
+            </div>
+
+            <div class="form-group">
+                <!-- <label for="emailId">Email*</label> -->
+                <input type="email" name="emailId" id="emailId" placeholder="Email*">
+            </div>
+
+            <div class="form-group">
+                <!-- <label for="phone">Teléfono*</label> -->
+                <input type="text" name="phone" id="phone" placeholder="Teléfono*">
+            </div>
+
+            <div class="form-group">
+                <!-- <label for="comments">Introduce tu mensaje*</label> -->
+                <textarea rows="8" cols="80" name="comments" id="comments" placeholder="Introduce tu mensaje*"></textarea>
+            </div>
+
+            <div class="form-group">
+                <input type="checkbox" id="privacy">
+                <label for="comments">He leído y acepto la Política de Privacidad *</label>
+            </div>
+
+            <button type="submit">Enviar</button>
+
+        </form>
+
+    </div>
+
+</section>
 
 @@include('./_components/footer.html')

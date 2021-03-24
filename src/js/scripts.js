@@ -1,4 +1,5 @@
 import Swiper, { Pagination, Autoplay } from 'swiper/core';
+import axios from 'axios';
 
 (function (window, document, undefined) {
     'use strict';
@@ -110,5 +111,55 @@ import Swiper, { Pagination, Autoplay } from 'swiper/core';
         observer.observe(el);
     });
 
+
+    ////////////// POST CONTACT US DATA
+
+    window.addEventListener('load', () => {
+
+        const contactForm = document.getElementById('contact-form');
+
+        contactForm.addEventListener('submit', e => {
+
+            e.preventDefault();
+
+            let firstName = document.getElementById('firstName').value;
+            let lastName = document.getElementById('lastName').value;
+            let phone = document.getElementById('phone').value;
+            let emailId = document.getElementById('emailId').value;
+            let reasonNodePath = document.getElementById('reasonNodePath').value;
+            let comments = document.getElementById('comments').value;
+            let privacy = document.getElementById('privacy').checked;
+
+            console.log( firstName, lastName, phone, emailId, reasonNodePath, comments, privacy );
+
+            let options = {
+                method: 'POST',
+                url: '/batoforms/cc/v1/service/contactus',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                data: {
+                    firstName: firstName,
+                    lastName: lastName,
+                    phone: phone,
+                    emailId: emailId,
+                    reasonNodePath: reasonNodePath,
+                    comments: comments,
+                    privacy: privacy,
+                    recaptcha: true
+                }
+            };
+
+            axios.request(options)
+                .then( res => {
+                    console.log(res.data);
+                })
+                .catch( err => {
+                    console.error(err);
+                });
+
+        });
+
+    });
 
 })(window, document);
