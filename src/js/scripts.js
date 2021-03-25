@@ -112,54 +112,84 @@ import axios from 'axios';
     });
 
 
-    ////////////// POST CONTACT US DATA
+    ////////////// INSTERT RECAPTCHA SCRIPT TAG
+
+    const recaptchaSiteKey = '6LcSiY0aAAAAACubiKkvXX2ALO39D-fvUvGAAiOA';
+
+    function loadRecaptchaScript() {
+
+        let script = document.createElement('script');
+        script.src = 'https://www.google.com/recaptcha/api.js?render=' + recaptchaSiteKey;
+        document.getElementsByTagName('head')[0].appendChild(script);
+
+    }
+
+    ////////////// CONTACT US FORM HANDLER
 
     window.addEventListener('load', () => {
 
         const contactForm = document.getElementById('contact-form');
 
-        contactForm.addEventListener('submit', e => {
+        if ( contactForm ) {
 
-            e.preventDefault();
+            loadRecaptchaScript();
 
-            let firstName = document.getElementById('firstName').value;
-            let lastName = document.getElementById('lastName').value;
-            let phone = document.getElementById('phone').value;
-            let emailId = document.getElementById('emailId').value;
-            let reasonNodePath = document.getElementById('reasonNodePath').value;
-            let comments = document.getElementById('comments').value;
-            let privacy = document.getElementById('privacy').checked;
+            contactForm.addEventListener('submit', e => {
 
-            console.log( firstName, lastName, phone, emailId, reasonNodePath, comments, privacy );
+                e.preventDefault();
 
-            let options = {
-                method: 'POST',
-                url: '/batoforms/cc/v1/service/contactus',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                data: {
-                    firstName: firstName,
-                    lastName: lastName,
-                    phone: phone,
-                    emailId: emailId,
-                    reasonNodePath: reasonNodePath,
-                    comments: comments,
-                    privacy: privacy,
-                    recaptcha: true
-                }
-            };
+                let firstName = document.getElementById('firstName').value;
+                let lastName = document.getElementById('lastName').value;
+                let phone = document.getElementById('phone').value;
+                let emailId = document.getElementById('emailId').value;
+                let reasonNodePath = document.getElementById('reasonNodePath').value;
+                let comments = document.getElementById('comments').value;
+                let privacy = document.getElementById('privacy').checked;
 
-            axios.request(options)
-                .then( res => {
-                    console.log(res.data);
-                })
-                .catch( err => {
-                    console.error(err);
+                console.log( firstName, lastName, phone, emailId, reasonNodePath, comments, privacy );
+
+                grecaptcha.ready( () => {
+
+                    grecaptcha.execute( recaptchaSiteKey, { action: 'submit' } ).then( token => {
+
+                        console.log('g-recaptcha-response --->', token);
+
+                        let options = {
+                            method: 'POST',
+                            url: 'http://bsa-latam.icrossing.com:8080/batoforms/cc/v1/service/contactus',
+                            headers: {
+                                'Content-Type': 'application/json',
+                            },
+                            data: {
+                                firstName: firstName,
+                                lastName: lastName,
+                                phone: phone,
+                                emailId: emailId,
+                                reasonNodePath: reasonNodePath,
+                                comments: comments,
+                                privacy: privacy,
+                                recaptcha: true
+                            }
+                        };
+
+                        axios.request(options)
+                            .then( res => {
+                                console.log(res.data);
+                            })
+                            .catch( err => {
+                                console.error(err);
+                            });
+
+                    });
+
                 });
 
-        });
+            });
+
+        }
 
     });
+
+    ////
 
 })(window, document);
