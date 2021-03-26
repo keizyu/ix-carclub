@@ -175,6 +175,7 @@ import axios from 'axios';
                         axios.request(options)
                             .then( res => {
                                 console.log(res.data);
+                                window.location = "/gracias.html"
                             })
                             .catch( err => {
                                 console.error(err);

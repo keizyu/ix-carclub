@@ -1,0 +1,36 @@
+.section-forms {
+    &__info {
+        margin-bottom: 4rem;
+    }
+}
+
+.form {
+
+    &-group {
+
+        label {
+            display: block;
+            margin-bottom: 1rem;
+            font-weight: bolder;
+        }
+
+        select, input, textarea {
+
+            display: block;
+            width: 100%;
+            padding: 1rem;
+            max-width: 100%;
+            border: 1px solid $grey-1;
+            border-radius: 4px;
+
+        }
+
+    }
+
+    &-group, &-check {
+
+        margin: 1rem 0;
+
+    }
+
+}

@@ -175,6 +175,11 @@ h6 {
 
 }
 
+.color {
+
+	&-blue { color: $blue }
+}
+
 .mt0 {
 	margin-top: 0;
 }
