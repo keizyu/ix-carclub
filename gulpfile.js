@@ -95,10 +95,10 @@ gulp.task('fileinclude', () => {
             prefix: '@@',
             basepath: '@file'
         }))
-        // .pipe(htmlmin({ collapseWhitespace: true }))
+        .pipe(htmlmin({ collapseWhitespace: true }))
         .pipe(gulp.dest('app'))
         .pipe(browserSync.reload({stream:true}));
-        
+
 });
 
 gulp.task('start', ['css', 'js', 'browser-sync', 'fileinclude'], () => {

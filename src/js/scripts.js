@@ -175,7 +175,11 @@ import axios from 'axios';
                         axios.request(options)
                             .then( res => {
                                 console.log(res.data);
-                                window.location = "/gracias.html"
+
+                                if (parseInt(res.status) === 200 ) {
+                                    window.location = '/gracias.html';
+                                }
+                                
                             })
                             .catch( err => {
                                 console.error(err);
