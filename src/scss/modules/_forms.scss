@@ -12,11 +12,9 @@
         font-weight: bolder;
     }
 
-}
+    .form-group {
 
-.form {
-
-    &-group {
+        margin: 1rem 0;
 
         label {
             display: block;
@@ -68,25 +66,19 @@
             }
 
             ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-              color: $brand-primary;
-              opacity: 1; /* Firefox */
+                color: $brand-primary;
+                opacity: 1; /* Firefox */
             }
 
             :-ms-input-placeholder { /* Internet Explorer 10-11 */
-              color: $brand-primary;
+                color: $brand-primary;
             }
 
             ::-ms-input-placeholder { /* Microsoft Edge */
-              color: $brand-primary;
+                color: $brand-primary;
             }
 
         }
-
-    }
-
-    &-group, &-check {
-
-        margin: 1rem 0;
 
     }
 

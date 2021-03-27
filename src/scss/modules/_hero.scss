@@ -12,7 +12,6 @@
         background-image: none !important;
     }
 
-
     &__title {
 
         height: 300px;
@@ -69,19 +68,8 @@
 
     }
 
-    // &__home {
-    //     background-color: $brand-primary;
-    // }
-
     &__gracias {
         background-color: $white;
-    }
-
-
-    &.color-black {
-        h1, h2, h3, h4, h5, h6, p {
-            color: $black;
-        }
     }
 
     &__info {
@@ -154,9 +142,4 @@
 
     }
 
-    .rowReverse {
-        @media all and (min-width: 769px) {
-            flex-direction: row-reverse;
-        }
-    }
 }

@@ -1,0 +1,46 @@
+// HEADINGS
+h1, h2, h3 {
+	text-transform: uppercase;
+}
+
+h1, .h1 {
+
+	font-size: 2.7rem;
+	text-align: center;
+
+	small {
+		display: block;
+	}
+
+	@media all and (min-width: 570px){
+		font-size: 4rem;
+	}
+
+	@media all and (min-width: 769px){
+		font-size: 5rem;
+		text-align: left;
+	}
+}
+
+h2 {
+
+	text-align: center;
+	font-size: 2rem;
+
+
+	@media all and (min-width: 571px){
+		text-align: left;
+		font-size: 2.4rem;
+	}
+
+}
+
+h3 {
+	font-size: 1.6rem;
+
+}
+
+h6 {
+	font-size: 1.4rem;
+	margin: 1rem;
+}
