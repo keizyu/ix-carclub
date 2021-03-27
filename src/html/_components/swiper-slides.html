@@ -6,14 +6,14 @@
 
                 @@if ( !imgAsBkg ) {
 
-                    <div class="col-4 section-hero__img--wrapper">
+                    <div class="col-5_lg-4 section-hero__img--wrapper sm-hidden">
                         <img src="@@bkgImage" alt="CarClub Firestone">
                     </div>
 
                 }
 
                 @@if ( imgAsBkg ) { <div @@if ( bkgPosition == 'left' ) { class="col-6_lg-7_md-10_sm-10" data-push-left="off-6_lg-5_md-1_sm-1" } @@if ( bkgPosition != 'left' ) { class="col-6_lg-5_md-10_sm-10" data-push-left="off-0_md-1_sm-1" }> }
-                @@if ( !imgAsBkg ) { <div class="col-8_sm-10" data-push-left="off-0_sm-1" > }
+                @@if ( !imgAsBkg ) { <div class="col-7_lg-8_sm-10" data-push-left="off-0_sm-1" > }
 
                     <div class="section-hero__info">
 

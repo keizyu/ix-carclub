@@ -1,0 +1,44 @@
+.card-grid {
+
+    position: relative;
+    list-style: none;
+    text-align: center;
+
+    figure {
+
+        position: relative;
+        overflow: hidden;
+        margin: 0;
+        text-align: center;
+        cursor: pointer;
+
+        svg {
+            position: relative;
+            display: block;
+            opacity: 0.8;
+            height: 60px;
+        }
+
+        h3, p {
+            margin: 0;
+            text-align: center;
+        }
+
+        &:hover {
+            background-color: $grey-1;
+        }
+
+        figcaption {
+            color: $black;
+            backface-visibility: hidden;
+            text-align: center;
+            padding: 0 2em;
+
+            &::before, &::after {
+                pointer-events: none;
+            }
+
+        }
+
+    }
+}
