@@ -16,7 +16,7 @@
 
     <div class="grid-3-center">
 
-        <div class="col">
+        <div class="col-5_md-10">
 
             <div class="section-forms__info">
                 <p class="mt0">Si tiene dudas sobre nuestro servicio, por favor contáctenos a través de alguna de las opciones que ponemos a su disposición o visítenos directamente en nuestra sucursal ubicada en Belén, 300mts. al Oeste del puente de la Firestone de Lunes a Viernes de 7:00am a 5:00 pm y Sábados de 7:00am a 1:00pm.</p>
@@ -30,7 +30,7 @@
 
                 <div class="form-group">
                     <label for="reasonNodePath">Selecciona un motivo <sup>*</sup></label>
-                    <select id="reasonNodePath">
+                    <select id="reasonNodePath" data-pristine-required-message="Seleccione un motivo" required>
                         <option value="">Motivo</option>
                         <option value="Información de servicios">Información de servicios</option>
                         <option value="Cotización">Cotización</option>
@@ -42,32 +42,71 @@
 
                 <div class="form-group">
                     <!-- <label for="firstName">Nombre*</label> -->
-                    <input type="text" name="firstName" id="firstName" placeholder="Nombre*">
+                    <input
+                        type="text"
+                        name="firstName"
+                        id="firstName"
+                        placeholder="Nombre*"
+                        data-pristine-required-message="El nombre es obligatorio"
+                        minlength="3"
+                        data-pristine-minlength-message="El nombre debe tener al menos 3 caracteres"
+                        required >
                 </div>
 
                 <div class="form-group">
                     <!-- <label for="lastName">Apellidos*</label> -->
-                    <input type="text" name="lastName" id="lastName" placeholder="Apellidos*">
+                    <input
+                        type="text"
+                        name="lastName"
+                        id="lastName"
+                        placeholder="Apellidos*"
+                        data-pristine-required-message="El apellido es obligatorio"
+                        minlength="3"
+                        data-pristine-minlength-message="El apellido debe tener al menos 3 caracteres"
+                        required >
                 </div>
 
                 <div class="form-group">
                     <!-- <label for="emailId">Email*</label> -->
-                    <input type="email" name="emailId" id="emailId" placeholder="Email*">
+                    <input
+                        type="email"
+                        name="emailId"
+                        id="emailId"
+                        placeholder="Email*"
+                        data-pristine-required-message="El email es obligatorio"
+                        data-pristine-email-message="Este campo requiere una dirección de email válida"
+                        required >
                 </div>
 
                 <div class="form-group">
                     <!-- <label for="phone">Teléfono*</label> -->
-                    <input type="text" name="phone" id="phone" placeholder="Teléfono*">
+                    <input type="text" name="phone" id="phone" placeholder="Teléfono" >
                 </div>
 
                 <div class="form-group">
                     <!-- <label for="comments">Introduce tu mensaje*</label> -->
-                    <textarea rows="8" cols="80" name="comments" id="comments" placeholder="Introduce tu mensaje*"></textarea>
+                    <textarea
+                        rows="8"
+                        cols="80"
+                        name="comments"
+                        id="comments"
+                        placeholder="Introduce tu mensaje*"
+                        data-pristine-required-message="El mensaje es obligatorio"
+                        minlength="3"
+                        data-pristine-minlength-message="El mensaje debe tener al menos 3 caracteres"
+                        required ></textarea>
                 </div>
 
-                <div class="form-check">
-                    <input type="checkbox" id="privacy">
-                    <label for="comments">He leído y acepto el <a href="/legal/aviso-de-privacidad.html" class="color-blue">Consentimiento Informado</a> y el <a href="/legal/aviso-de-privacidad.html" class="color-blue">Aviso de Privacidad</a> <sup>*</sup></label>
+                <div class="form-group">
+                    <div class="inline-label">
+                        <input
+                            type="checkbox"
+                            id="privacy"
+                            name="privacy"
+                            data-pristine-required-message="Debes de aceptar el Aviso de Privacidad"
+                            required >
+                        <label for="comments">He leído y acepto el <a href="/legal/aviso-de-privacidad.html" class="color-blue">Consentimiento Informado</a> y el <a href="/legal/aviso-de-privacidad.html" class="color-blue">Aviso de Privacidad</a> <sup>*</sup></label>
+                    </div>
                 </div>
 
                 <button type="submit" class="btn btn-red">Enviar</button>
@@ -75,6 +114,7 @@
             </form>
 
         </div>
+        
     </div>
 
 </section>

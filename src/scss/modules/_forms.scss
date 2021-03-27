@@ -35,6 +35,53 @@
 
         }
 
+        .inline-label {
+
+            display: flex;
+
+            label {
+                margin: -.2rem 0 0 1rem;
+            }
+
+            label, select, input, textarea {
+                width: auto;
+            }
+
+        }
+
+        &.has-danger {
+
+            select {
+                color: $brand-primary;
+            }
+
+            select, input, textarea {
+                border-color: $brand-primary;
+            }
+
+            input[type="checkbox"] {
+                outline-color: $brand-primary;
+            }
+
+            .pristine-error {
+                color: $brand-primary;
+            }
+
+            ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+              color: $brand-primary;
+              opacity: 1; /* Firefox */
+            }
+
+            :-ms-input-placeholder { /* Internet Explorer 10-11 */
+              color: $brand-primary;
+            }
+
+            ::-ms-input-placeholder { /* Microsoft Edge */
+              color: $brand-primary;
+            }
+
+        }
+
     }
 
     &-group, &-check {

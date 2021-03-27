@@ -31,6 +31,7 @@
     "gulp-util": "^3.0.8",
     "jshint": "^2.8.0",
     "minimatch": "^3.0.2",
+    "pristinejs": "^0.1.9",
     "swiper": "^6.5.0",
     "utf-8-validate": "^5.0.4",
     "webpack-stream": "^6.1.2"

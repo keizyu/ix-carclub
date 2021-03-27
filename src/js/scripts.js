@@ -1,4 +1,5 @@
 import Swiper, { Pagination, Autoplay } from 'swiper/core';
+import Pristine from 'pristinejs';
 import axios from 'axios';
 
 (function (window, document, undefined) {
@@ -134,67 +135,77 @@ import axios from 'axios';
 
             loadRecaptchaScript();
 
+            let pristine = new Pristine(contactForm);
+
             contactForm.addEventListener('submit', e => {
 
                 e.preventDefault();
 
-                let firstName = document.getElementById('firstName').value;
-                let lastName = document.getElementById('lastName').value;
-                let phone = document.getElementById('phone').value;
-                let emailId = document.getElementById('emailId').value;
-                let reasonNodePath = document.getElementById('reasonNodePath').value;
-                let comments = document.getElementById('comments').value;
-                let privacy = document.getElementById('privacy').checked;
+                // check if the form is valid
+                let isValid = pristine.validate();
 
-                console.log( firstName, lastName, phone, emailId, reasonNodePath, comments, privacy );
+                if (isValid) {
 
-                grecaptcha.ready( () => {
+                    let firstName = document.getElementById('firstName').value;
+                    let lastName = document.getElementById('lastName').value;
+                    let phone = document.getElementById('phone').value;
+                    let emailId = document.getElementById('emailId').value;
+                    let reasonNodePath = document.getElementById('reasonNodePath').value;
+                    let comments = document.getElementById('comments').value;
+                    let privacy = document.getElementById('privacy').checked;
 
-                    grecaptcha.execute( recaptchaSiteKey, { action: 'submit' } ).then( token => {
+                    console.log( firstName, lastName, phone, emailId, reasonNodePath, comments, privacy );
 
-                        console.log('g-recaptcha-response --->', token);
+                    grecaptcha.ready( () => {
 
-                        let options = {
-                            method: 'POST',
-                            url: 'http://bsa-latam.icrossing.com:8080/batoforms/cc/v1/service/contactus',
-                            headers: {
-                                'Content-Type': 'application/json',
-                            },
-                            data: {
-                                firstName: firstName,
-                                lastName: lastName,
-                                phone: phone,
-                                emailId: emailId,
-                                reasonNodePath: reasonNodePath,
-                                comments: comments,
-                                privacy: privacy,
-                                recaptcha: true
-                            }
-                        };
+                        grecaptcha.execute( recaptchaSiteKey, { action: 'submit' } ).then( token => {
 
-                        axios.request(options)
-                            .then( res => {
-                                console.log(res.data);
+                            console.log('g-recaptcha-response --->', token);
 
-                                if (parseInt(res.status) === 200 ) {
-                                    window.location = '/gracias.html';
+                            let options = {
+                                method: 'POST',
+                                url: 'http://bsa-latam.icrossing.com:8080/batoforms/cc/v1/service/contactus',
+                                headers: {
+                                    'Content-Type': 'application/json',
+                                },
+                                data: {
+                                    firstName: firstName,
+                                    lastName: lastName,
+                                    phone: phone,
+                                    emailId: emailId,
+                                    reasonNodePath: reasonNodePath,
+                                    comments: comments,
+                                    privacy: privacy,
+                                    recaptcha: true
                                 }
-                                
-                            })
-                            .catch( err => {
-                                console.error(err);
-                            });
+                            };
+
+                            axios.request(options)
+                                .then( res => {
+                                    console.log(res.data);
+
+                                    if (parseInt(res.status) === 200 ) {
+                                        window.location = '/gracias.html';
+                                    }
+
+                                })
+                                .catch( err => {
+                                    console.error(err);
+                                });
+
+                        });
 
                     });
 
-                });
+
+                }
 
             });
+
 
         }
 
     });
 
-    ////
 
 })(window, document);
