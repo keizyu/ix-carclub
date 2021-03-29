@@ -113,14 +113,28 @@ import axios from 'axios';
     });
 
 
-    ////////////// INSTERT RECAPTCHA SCRIPT TAG
+    ////////////// INSERT RECAPTCHA SCRIPT TAG
 
-    const recaptchaSiteKey = '6LcSiY0aAAAAACubiKkvXX2ALO39D-fvUvGAAiOA';
+    const recaptchaSiteKey = {
+        local: '6LcSiY0aAAAAACubiKkvXX2ALO39D-fvUvGAAiOA',
+        lower: '6LctO5AaAAAAAHvJwNg5ACfXnC30xBpse04JfWQ_',
+        production: 'PROD KEY'
+    };
+
+    const host = window.location.hostname;
+
+    const envSiteKey =  ( host === 'carclub.firestone.co.cr' ) ? recaptchaSiteKey.production : (
+
+        ( host === 'cwh-int-cc.firestone.co.cr' || host === 'cwh-qa-cc.firestone.co.cr' || host === 'cwh-uat-cc.firestone.co.cr' ) ? recaptchaSiteKey.lower : recaptchaSiteKey.local
+
+    );
+
+    console.log('recaptchaSiteKey ----->', envSiteKey);
 
     function loadRecaptchaScript() {
 
         let script = document.createElement('script');
-        script.src = 'https://www.google.com/recaptcha/api.js?render=' + recaptchaSiteKey;
+        script.src = 'https://www.google.com/recaptcha/api.js?render=' + envSiteKey;
         document.getElementsByTagName('head')[0].appendChild(script);
 
     }
@@ -158,7 +172,7 @@ import axios from 'axios';
 
                     grecaptcha.ready( () => {
 
-                        grecaptcha.execute( recaptchaSiteKey, { action: 'submit' } ).then( token => {
+                        grecaptcha.execute( envSiteKey, { action: 'submit' } ).then( token => {
 
                             console.log('g-recaptcha-response --->', token);
 
