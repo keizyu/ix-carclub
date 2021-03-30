@@ -11,19 +11,186 @@
 
 </section>
 
-<section class="section section-contacto pb0">
-    <div class="section-contacto-info">
-        <h2>¿DESEA AGENDAR UNA CITA?</h2>
-        <p>Si busca mantenimiento de su vehículo visite nuestro taller de mantenimiento automotriz o solicite el servicio de CarClub Móvil. ¡Agende su cita directo aquí!.</p>
+<section class="section section-forms">
+
+    <div class="grid-3-center">
+
+        <div class="col-5_md-10">
+
+            <div class="section-forms__info">
+                <h2 class="mt0">¿DESEA AGENDAR UNA CITA?</h2>
+                <p>Si busca mantenimiento de su vehículo visite nuestro taller de mantenimiento automotriz o solicite el servicio de CarClub Móvil. ¡Agende su cita directo aquí!.</p>
+            </div>
+
+            <form id="schedule-form">
+
+                <div class="form-group">
+                    <label for="serviceWorkshop">Selecciona si su Servicio será en nuestras instalaciones o Taller a Domicilio necesario <sup>*</sup></label>
+                    <select id="serviceWorkshop" data-pristine-required-message="Seleccione el tipo de servicio" required>
+                        <option value="">Seleccione una opción</option>
+                        <option value="Taller de CarClub Firestone">Taller de CarClub Firestone</option>
+                        <option value="Taller de CarClub Móvil">Taller a Domicilio (CarClub Móvil)</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+
+                    <div class="">
+                        <label class="mb0">Servicios que desea realizar <sup>*</sup></label>
+                    </div>
+
+                    <div class="grid">
+
+                        <div class="col">
+
+                            <div class="inline-label">
+                                <input id="ch1" type="checkbox" min="1" name="tallerGroup" data-pristine-min-message="Selecciona por lo menos 1 servicio" required />
+                                <label for="ch1">Montaje y Balanceo de Llantas</label>
+                            </div>
+
+                            <div class="inline-label">
+                                <input id="ch2" type="checkbox" min="1" name="tallerGroup" data-pristine-min-message="Selecciona por lo menos 1 servicio" required />
+                                <label for="ch2">Cambio de Filtros</label>
+                            </div>
+
+                            <div class="inline-label">
+                                <input id="ch3" type="checkbox" min="1" name="tallerGroup" data-pristine-min-message="Selecciona por lo menos 1 servicio" required />
+                                <label for="ch3">Limpieza de A/C</label>
+                            </div>
+
+                            <div class="inline-label">
+                                <input id="ch4" type="checkbox" min="1" name="tallerGroup" data-pristine-min-message="Selecciona por lo menos 1 servicio" required />
+                                <label for="ch4">Desinfección de Vehículo</label>
+                            </div>
+
+                            <div class="inline-label">
+                                <input id="ch5" type="checkbox" min="1" name="tallerGroup" data-pristine-min-message="Selecciona por lo menos 1 servicio" required />
+                                <label for="ch5">Revisión y Cambio de liquído de Freno</label>
+                            </div>
+
+                            <div class="inline-label">
+                                <input id="ch6" type="checkbox" min="1" name="tallerGroup" data-pristine-min-message="Selecciona por lo menos 1 servicio" required />
+                                <label for="ch6">Revisión y Cambio de liquido refrigerante</label>
+                            </div>
+
+                        </div>
+
+                        <div class="col">
+
+                            <div class="inline-label">
+                                <input id="ch7" type="checkbox" min="1" name="tallerGroup" data-pristine-min-message="Selecciona por lo menos 1 servicio" required />
+                                <label for="ch7">Cambio de Aceite de Motor</label>
+                            </div>
+
+                            <div class="inline-label">
+                                <input id="ch8" type="checkbox" min="1" name="tallerGroup" data-pristine-min-message="Selecciona por lo menos 1 servicio" required />
+                                <label for="ch8">Cambio de Filtros A/C</label>
+                            </div>
+
+                            <div class="inline-label">
+                                <input id="ch9" type="checkbox" min="1" name="tallerGroup" data-pristine-min-message="Selecciona por lo menos 1 servicio" required />
+                                <label for="ch9">Mantenimiento completo de Freno</label>
+                            </div>
+
+                            <div class="inline-label">
+                                <input id="ch10" type="checkbox" min="1" name="tallerGroup" data-pristine-min-message="Selecciona por lo menos 1 servicio" required />
+                                <label for="ch10">Cambio de Batería</label>
+                            </div>
+
+                            <div class="inline-label">
+                                <input id="ch11" type="checkbox" min="1" name="tallerGroup" data-pristine-min-message="Selecciona por lo menos 1 servicio" required />
+                                <label for="ch11">Revisión y Cambio de fluido hidráulico</label>
+                            </div>
+
+                            <div class="inline-label">
+                                <input id="ch12" type="checkbox" min="1" name="tallerGroup" data-pristine-min-message="Selecciona por lo menos 1 servicio" required />
+                                <label for="ch12">Revisión General del Vehículo</label>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="form-group">
+                    <input type="text" id="date" placeholder="DD / MM / AAAA" >
+                </div>
+                <div class="form-group">
+                    <!-- <label for="firstName">Nombre*</label> -->
+                    <input
+                        type="text"
+                        name="firstName"
+                        id="firstName"
+                        placeholder="Nombre *"
+                        data-pristine-required-message="El nombre es obligatorio"
+                        minlength="3"
+                        data-pristine-minlength-message="El nombre debe tener al menos 3 caracteres"
+                        required >
+                </div>
+
+                <div class="form-group">
+                    <!-- <label for="lastName">Apellidos*</label> -->
+                    <input
+                        type="text"
+                        name="lastName"
+                        id="lastName"
+                        placeholder="Apellidos *"
+                        data-pristine-required-message="El apellido es obligatorio"
+                        minlength="3"
+                        data-pristine-minlength-message="El apellido debe tener al menos 3 caracteres"
+                        required >
+                </div>
+
+                <div class="form-group">
+                    <!-- <label for="emailId">Email*</label> -->
+                    <input
+                        type="email"
+                        name="emailId"
+                        id="emailId"
+                        placeholder="Email *"
+                        data-pristine-required-message="El email es obligatorio"
+                        data-pristine-email-message="Este campo requiere una dirección de email válida"
+                        required >
+                </div>
+
+                <div class="form-group">
+                    <!-- <label for="phone">Teléfono*</label> -->
+                    <input type="text" name="phone" id="phone" placeholder="Teléfono" >
+                </div>
+
+                <div class="form-group">
+                    <!-- <label for="comments">Introduce tu mensaje*</label> -->
+                    <textarea
+                        rows="8"
+                        cols="80"
+                        name="comments"
+                        id="comments"
+                        placeholder="Compartanos su dirección e  información adicional *"
+                        data-pristine-required-message="El mensaje es obligatorio"
+                        minlength="3"
+                        data-pristine-minlength-message="El mensaje debe tener al menos 3 caracteres"
+                        required ></textarea>
+                </div>
+
+                <div class="form-group">
+                    <div class="inline-label">
+                        <input
+                            type="checkbox"
+                            id="privacy"
+                            name="privacy"
+                            data-pristine-required-message="Debes de aceptar el Aviso de Privacidad"
+                            required >
+                        <label for="privacy">He leído y acepto el <a href="/legal/aviso-de-privacidad.html" class="color-blue">Consentimiento Informado</a> y el <a href="/legal/aviso-de-privacidad.html" class="color-blue">Aviso de Privacidad</a> <sup>*</sup></label>
+                    </div>
+                </div>
+
+            </form>
+
+        </div>
+
     </div>
+
 </section>
-
-<div class="cognito">
-
-    <script src="https://www.cognitoforms.com/s/t1GNB9PiLEK4qzOnSceb-A"></script>
-    <script>Cognito.load("forms", { id: "4" });</script>
-    <div class="preloader"></div>
-
-</div>
 
 @@include('./_components/footer.html')

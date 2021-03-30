@@ -29,9 +29,9 @@
             <form id="contact-form">
 
                 <div class="form-group">
-                    <label for="reasonNodePath">Selecciona un motivo <sup>*</sup></label>
+                    <!-- <label for="reasonNodePath">Seleccione un motivo <sup>*</sup></label> -->
                     <select id="reasonNodePath" data-pristine-required-message="Seleccione un motivo" required>
-                        <option value="">Motivo</option>
+                        <option value="">Seleccione un motivo <sup>*</sup></option>
                         <option value="Información de servicios">Información de servicios</option>
                         <option value="Cotización">Cotización</option>
                         <option value="Aclaraciones">Aclaraciones</option>
@@ -46,7 +46,7 @@
                         type="text"
                         name="firstName"
                         id="firstName"
-                        placeholder="Nombre*"
+                        placeholder="Nombre *"
                         data-pristine-required-message="El nombre es obligatorio"
                         minlength="3"
                         data-pristine-minlength-message="El nombre debe tener al menos 3 caracteres"
@@ -59,7 +59,7 @@
                         type="text"
                         name="lastName"
                         id="lastName"
-                        placeholder="Apellidos*"
+                        placeholder="Apellidos *"
                         data-pristine-required-message="El apellido es obligatorio"
                         minlength="3"
                         data-pristine-minlength-message="El apellido debe tener al menos 3 caracteres"
@@ -72,7 +72,7 @@
                         type="email"
                         name="emailId"
                         id="emailId"
-                        placeholder="Email*"
+                        placeholder="Email *"
                         data-pristine-required-message="El email es obligatorio"
                         data-pristine-email-message="Este campo requiere una dirección de email válida"
                         required >
@@ -90,7 +90,7 @@
                         cols="80"
                         name="comments"
                         id="comments"
-                        placeholder="Introduce tu mensaje*"
+                        placeholder="Introduce tu mensaje *"
                         data-pristine-required-message="El mensaje es obligatorio"
                         minlength="3"
                         data-pristine-minlength-message="El mensaje debe tener al menos 3 caracteres"
@@ -105,7 +105,7 @@
                             name="privacy"
                             data-pristine-required-message="Debes de aceptar el Aviso de Privacidad"
                             required >
-                        <label for="comments">He leído y acepto el <a href="/legal/aviso-de-privacidad.html" class="color-blue">Consentimiento Informado</a> y el <a href="/legal/aviso-de-privacidad.html" class="color-blue">Aviso de Privacidad</a> <sup>*</sup></label>
+                        <label for="privacy">He leído y acepto el <a href="/legal/aviso-de-privacidad.html" class="color-blue">Consentimiento Informado</a> y el <a href="/legal/aviso-de-privacidad.html" class="color-blue">Aviso de Privacidad</a> <sup>*</sup></label>
                     </div>
                 </div>
 
@@ -114,7 +114,7 @@
             </form>
 
         </div>
-        
+
     </div>
 
 </section>

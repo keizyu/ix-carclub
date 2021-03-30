@@ -113,7 +113,7 @@ import axios from 'axios';
     });
 
 
-    ////////////// INSERT RECAPTCHA SCRIPT TAG
+    ////////////// RECAPTCHA
 
     const recaptchaSiteKey = {
         local: '6LcSiY0aAAAAACubiKkvXX2ALO39D-fvUvGAAiOA',
@@ -178,7 +178,7 @@ import axios from 'axios';
 
                             let options = {
                                 method: 'POST',
-                                url: 'http://bsa-latam.icrossing.com:8080/batoforms/cc/v1/service/contactus',
+                                url: '/batoforms/cc/v1/service/contactus',
                                 headers: {
                                     'Content-Type': 'application/json',
                                 },
@@ -190,17 +190,17 @@ import axios from 'axios';
                                     reasonNodePath: reasonNodePath,
                                     comments: comments,
                                     privacy: privacy,
-                                    recaptcha: true
+                                    recaptchaResponse: token
                                 }
                             };
 
                             axios.request(options)
                                 .then( res => {
                                     console.log(res.data);
-
-                                    if (parseInt(res.status) === 200 ) {
-                                        window.location = '/gracias.html';
-                                    }
+                                    //
+                                    // if (parseInt(res.status) === 200 ) {
+                                    //     window.location = '/gracias.html';
+                                    // }
 
                                 })
                                 .catch( err => {

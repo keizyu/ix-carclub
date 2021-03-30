@@ -36,6 +36,7 @@
         .inline-label {
 
             display: flex;
+            margin: 1rem 0;
 
             label {
                 margin: -.2rem 0 0 1rem;
@@ -44,6 +45,8 @@
             label, select, input, textarea {
                 width: auto;
             }
+
+            label { font-weight: normal;}
 
         }
 
