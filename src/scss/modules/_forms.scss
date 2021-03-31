@@ -86,3 +86,17 @@
     }
 
 }
+
+// Datepicker
+
+.flatpickr-calendar {
+
+    .numInputWrapper span.arrowUp,
+    .numInputWrapper span.arrowDown {
+        display: none;
+    }
+
+    // .flatpickr-day.nextMonthDay[tabindex="-1"] {
+    //     color: $black;
+    // }
+}

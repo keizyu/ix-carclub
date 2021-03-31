@@ -1,6 +1,8 @@
 import Swiper, { Pagination, Autoplay } from 'swiper/core';
 import Pristine from 'pristinejs';
 import axios from 'axios';
+import flatpickr from 'flatpickr';
+import { Spanish } from 'flatpickr/dist/l10n/es';
 
 (function (window, document, undefined) {
     'use strict';
@@ -139,11 +141,13 @@ import axios from 'axios';
 
     }
 
-    ////////////// CONTACT US FORM HANDLER
 
     window.addEventListener('load', () => {
 
         const contactForm = document.getElementById('contact-form');
+        const scheduleForm = document.getElementById('schedule-form');
+
+        ////////////// CONTACT US FORM HANDLER
 
         if ( contactForm ) {
 
@@ -217,6 +221,66 @@ import axios from 'axios';
             });
 
 
+        }
+
+        ////////////// SCHEDULE AN APPOINTMENT FORM HANDLER
+
+        if (scheduleForm) {
+
+            loadRecaptchaScript();
+
+            let pristine = new Pristine(scheduleForm);
+
+            const dateEl = document.getElementById('date');
+            const timeEl = document.getElementById('time');
+
+            flatpickr( dateEl, {
+                dateFormat: 'D j F, Y',
+                locale: Spanish,
+                monthSelectorType: 'static',
+                minDate: new Date().fp_incr(1),
+                disable: [ d => {
+                    // disable sundays and enable only current year
+                    const currentYear = new Date().getFullYear();
+                    return ( d.getDay() === 0 || d.getFullYear() > currentYear );
+                }]
+            });
+
+            flatpickr( timeEl, {
+                enableTime: true,
+                noCalendar: true,
+                dateFormat: 'H:i',
+                minTime: '08:00',
+                maxTime: '17:00'
+            });
+
+            scheduleForm.addEventListener('submit', e => {
+
+                e.preventDefault();
+
+                // check if the form is valid
+                let isValid = pristine.validate();
+
+                let serviceWorkshop = document.getElementById('serviceWorkshop').value;
+                let firstName = document.getElementById('firstName').value;
+                let lastName = document.getElementById('lastName').value;
+                let phone = document.getElementById('phone').value;
+                let emailId = document.getElementById('emailId').value;
+                let comments = document.getElementById('comments').value;
+                let privacy = document.getElementById('privacy').checked;
+                let date = document.getElementById('date').value;
+                let time = document.getElementById('time').value;
+
+                console.log('DATA ---->: ', serviceWorkshop,firstName,lastName,phone,emailId,comments,date,time,privacy);
+
+                const textInputs = document.querySelectorAll('div.typeOfService input[type=checkbox]:checked');
+
+                // comma separated list checkboxes values
+                let typeOfService = [].slice.call(textInputs).map( el => el.value).join(', ');
+
+                console.log('comma separated list checkboxes values --->', typeOfService);
+
+            });
         }
 
     });
