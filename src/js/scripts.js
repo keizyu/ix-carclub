@@ -263,31 +263,131 @@ import { Spanish } from 'flatpickr/dist/l10n/es';
                 maxTime: '17:00'
             });
 
+            const workshop = document.getElementById('serviceWorkshop');
+            const tallerServices = document.getElementById('tallerServices');
+            const movilServices = document.getElementById('movilServices');
+            const zone = document.getElementById('zone');
+
+            // Show/hide taller or movil services checkboxes
+            workshop.addEventListener('change', () => {
+
+                if(workshop.value === 'taller') {
+
+                    tallerServices.classList.add('selectedType');
+                    movilServices.classList.remove('selectedType');
+                    zone.removeAttribute('required');
+
+                } else if (workshop.value === 'movil') {
+
+                    tallerServices.classList.remove('selectedType');
+                    movilServices.classList.add('selectedType');
+                    zone.setAttribute('required', 'true');
+
+                } else {
+
+                    tallerServices.classList.remove('selectedType');
+                    movilServices.classList.remove('selectedType');
+
+                }
+
+            });
+
             scheduleForm.addEventListener('submit', e => {
 
                 e.preventDefault();
 
                 // check if the form is valid
                 let isValid = pristine.validate();
+                
+                let zoneVa;
 
-                let serviceWorkshop = document.getElementById('serviceWorkshop').value;
-                let firstName = document.getElementById('firstName').value;
-                let lastName = document.getElementById('lastName').value;
-                let phone = document.getElementById('phone').value;
-                let emailId = document.getElementById('emailId').value;
-                let comments = document.getElementById('comments').value;
-                let privacy = document.getElementById('privacy').checked;
-                let date = document.getElementById('date').value;
-                let time = document.getElementById('time').value;
+                if ( zone.hasAttribute('required') && zone.value === '' ) {
+                    let par = zone.parentNode.closest('.form-group');
+                    zoneVa = false;
+                } else {
+                    zoneVa = true;
+                }
 
-                console.log('DATA ---->: ', serviceWorkshop,firstName,lastName,phone,emailId,comments,date,time,privacy);
+                console.log(isValid, zoneVa)
 
-                const textInputs = document.querySelectorAll('div.typeOfService input[type=checkbox]:checked');
+                if ( isValid && zoneValid ) {
 
-                // comma separated list checkboxes values
-                let typeOfService = [].slice.call(textInputs).map( el => el.value).join(', ');
+                    alert("valid form!")
 
-                console.log('comma separated list checkboxes values --->', typeOfService);
+                    let serviceWorkshop = document.getElementById('serviceWorkshop').value;
+                    serviceWorkshop = (serviceWorkshop === 'taller') ? 'Taller de CarClub Firestone' : (serviceWorkshop === 'movil') ? 'Taller a Domicilio (CarClub Móvil)' : 'Undefined type of service';
+                    let firstName = document.getElementById('firstName').value;
+                    let lastName = document.getElementById('lastName').value;
+                    let phone = document.getElementById('phone').value;
+                    let emailId = document.getElementById('emailId').value;
+                    let comments = document.getElementById('comments').value;
+                    let privacy = document.getElementById('privacy').checked;
+                    let date = document.getElementById('date').value;
+                    let time = document.getElementById('time').value;
+                    let zone = document.getElementById('zone').value;
+                    const textInputs = document.querySelectorAll('div.selectedType input[type=checkbox]:checked');
+                    let typeOfService = [].slice.call(textInputs).map( el => el.value).join(', ');
+                    let country = document.getElementsByTagName('html')[0].getAttribute('data-country');
+
+                    console.log('DATA ---->: ','serviceWorkshop: ' + serviceWorkshop,'firstName: ' + firstName,'lastName: ' + lastName,'phone: ' + phone,'emailId: ' + emailId,'comments: ' + comments,'date: ' + date,'time: ' + time,'privacy: ' + privacy,'zone: ' + zone);
+                    console.log('comma separated list checkboxes values --->', typeOfService);
+
+                    grecaptcha.ready( () => {
+
+                        grecaptcha.execute( envSiteKey, { action: 'submit' } ).then( token => {
+
+                            console.log('g-recaptcha-response --->', token);
+
+                            let options = {
+                                method: 'POST',
+                                url: 'https://ix-dev.firestonetire.com/batoforms/cc/v1/service/appointment',
+                                headers: {
+                                    'Content-Type': 'application/json',
+                                },
+                                data: {
+                                    firstName: firstName,
+                                    lastName: lastName,
+                                    phone: phone,
+                                    emailId: emailId,
+                                    serviceWorkshop: serviceWorkshop,
+                                    zone: zone,
+                                    typeOfService: typeOfService,
+                                    date: date,
+                                    time: time,
+                                    comments: comments,
+                                    privacy: privacy,
+                                    country: country,
+                                    recaptchaResponse: token,
+                                }
+                            };
+
+                            axios.request(options)
+                                .then( res => {
+                                    // console.log(res.data);
+
+                                    if (parseInt(res.status) === 200 ) {
+                                        window.location = '/gracias.html';
+                                    }
+
+                                })
+                                .catch( err => {
+
+                                    console.error(err);
+
+                                    if ( parseInt(err.status) === 500 ) {
+                                        alert(err.message)
+                                    } else {
+                                        alert("Hubo un error, por favor intente de nuevo más tarde")
+                                    }
+
+                                });
+
+                        });
+
+                    });
+
+
+                }
 
             });
         }

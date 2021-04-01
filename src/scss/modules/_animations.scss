@@ -86,3 +86,21 @@
 
 
 }
+
+.animBlock {
+	transition: opacity 1s, transform 0.65s;
+	opacity: 0;
+	visibility: hidden;
+	max-height: 0;
+	height: auto;
+
+	&.selectedType {
+
+		transform: translate3d(0,0,0);
+		opacity: 1;
+		visibility: visible;
+		max-height: fit-content;
+
+	}
+
+}
