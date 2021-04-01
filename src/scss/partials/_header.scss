@@ -174,18 +174,24 @@
     }
 
 
+
     .menu {
 
-        height: 100%;
+        @media all and (min-width : 769px) {
 
-        > li {
             height: 100%;
 
-            > a {
+            > li {
                 height: 100%;
+
+                > a {
+                    height: 100%;
+                }
             }
         }
     }
+
+
 
     /* Since we'll have the "ul li" "float:left"
      * we need to add a clear after the container. */

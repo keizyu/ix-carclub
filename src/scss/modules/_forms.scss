@@ -50,6 +50,10 @@
 
         }
 
+        .text-error {
+            color: $brand-primary
+        }
+
         &.has-danger {
 
             select {

@@ -183,7 +183,7 @@ import { Spanish } from 'flatpickr/dist/l10n/es';
 
                             let options = {
                                 method: 'POST',
-                                url: 'https://ix-dev.firestonetire.com/batoforms/cc/v1/service/contactus',
+                                url: '/batoforms/cc/v1/service/contactus',
                                 headers: {
                                     'Content-Type': 'application/json',
                                 },
@@ -213,9 +213,9 @@ import { Spanish } from 'flatpickr/dist/l10n/es';
                                     console.error(err);
 
                                     if ( parseInt(err.status) === 500 ) {
-                                        alert(err.message)
+                                        alert(err.message);
                                     } else {
-                                        alert("Hubo un error, por favor intente de nuevo más tarde")
+                                        alert('Hubo un error, por favor intente de nuevo más tarde');
                                     }
 
                                 });
@@ -233,6 +233,7 @@ import { Spanish } from 'flatpickr/dist/l10n/es';
         }
 
         ////////////// SCHEDULE AN APPOINTMENT FORM HANDLER
+
 
         if (scheduleForm) {
 
@@ -267,6 +268,12 @@ import { Spanish } from 'flatpickr/dist/l10n/es';
             const tallerServices = document.getElementById('tallerServices');
             const movilServices = document.getElementById('movilServices');
             const zone = document.getElementById('zone');
+            const zoneError = document.getElementById('zoneError');
+            const movilServicesChksArr = document.querySelectorAll('div.movilServicesChksArr input[type=checkbox]');
+            const movilServicesChksError = document.getElementById('movilServicesChksError');
+            const movilServicesChksParent = document.getElementById('movilServicesChksParent');
+            const tallerServicesChksArr = document.querySelectorAll('div.tallerServicesChksArr input[type=checkbox]');
+            const tallerServicesChksError = document.getElementById('tallerServicesChksError');
 
             // Show/hide taller or movil services checkboxes
             workshop.addEventListener('change', () => {
@@ -276,17 +283,24 @@ import { Spanish } from 'flatpickr/dist/l10n/es';
                     tallerServices.classList.add('selectedType');
                     movilServices.classList.remove('selectedType');
                     zone.removeAttribute('required');
+                    [].slice.call(tallerServicesChksArr).map( el => el.setAttribute('required', 'true') );
+                    [].slice.call(movilServicesChksArr).map( el => el.removeAttribute('required') );
 
                 } else if (workshop.value === 'movil') {
 
                     tallerServices.classList.remove('selectedType');
                     movilServices.classList.add('selectedType');
                     zone.setAttribute('required', 'true');
+                    [].slice.call(tallerServicesChksArr).map( el => el.removeAttribute('required') );
+                    [].slice.call(movilServicesChksArr).map( el => el.setAttribute('required', 'true') );
+
 
                 } else {
 
                     tallerServices.classList.remove('selectedType');
                     movilServices.classList.remove('selectedType');
+                    [].slice.call(tallerServicesChksArr).map( el => el.removeAttribute('required') );
+                    [].slice.call(movilServicesChksArr).map( el => el.removeAttribute('required') );
 
                 }
 
@@ -298,21 +312,112 @@ import { Spanish } from 'flatpickr/dist/l10n/es';
 
                 // check if the form is valid
                 let isValid = pristine.validate();
-                
-                let zoneVa;
 
+                let zoneValid;
+
+                // zone field validation
                 if ( zone.hasAttribute('required') && zone.value === '' ) {
-                    let par = zone.parentNode.closest('.form-group');
-                    zoneVa = false;
+
+                    const mainDiv = zone.parentNode.closest('.form-group');
+                    zoneError.setAttribute('style','display:block');
+                    mainDiv.classList.remove('has-success');
+                    mainDiv.classList.add('has-danger');
+
+                    zone.addEventListener('change', (e) => {
+
+                        if (e.target.value === '') {
+
+                            mainDiv.classList.remove('has-success');
+                            mainDiv.classList.add('has-danger');
+                            zoneError.setAttribute('style','display:block');
+
+                        } else {
+
+                            mainDiv.classList.remove('has-danger');
+                            mainDiv.classList.add('has-success');
+                            zoneError.setAttribute('style','display:none');
+
+                        }
+                    }, false);
+
+                    zoneValid = false;
+
                 } else {
-                    zoneVa = true;
+
+                    zoneValid = true;
+
                 }
 
-                console.log(isValid, zoneVa)
+                // movil checkboxes validation
+                const isMovilServicesRequired = [].slice.call(movilServicesChksArr).map( el => el.hasAttribute('required') );
+                const isMovilServicesChecked = [].slice.call(movilServicesChksArr).filter(chk => chk.checked);
+                let isMovilServicesValid;
 
-                if ( isValid && zoneValid ) {
+                if ( isMovilServicesRequired[0] && isMovilServicesChecked.length < 1 ) {
 
-                    alert("valid form!")
+                    movilServicesChksError.setAttribute('style','display:block');
+                    movilServicesChksParent.classList.remove('has-success');
+                    movilServicesChksParent.classList.add('has-danger');
+
+                    isMovilServicesValid = false;
+
+                } else {
+
+                    isMovilServicesValid = true;
+
+                }
+
+                let checkboxArray = Array.from( movilServicesChksArr );
+
+                function confirmMovilCheck() {
+                    // if (this.checked) {
+                        movilServicesChksError.setAttribute('style','display:none');
+                        movilServicesChksParent.classList.add('has-success');
+                        movilServicesChksParent.classList.remove('has-danger');
+                    // }
+                }
+
+                checkboxArray.forEach( checkbox => {
+                    checkbox.addEventListener('change', confirmMovilCheck);
+                });
+
+
+                // taller checkboxes validation
+                const isTallerServicesRequired = [].slice.call(tallerServicesChksArr).map( el => el.hasAttribute('required') );
+                const isTallerServicesChecked = [].slice.call(tallerServicesChksArr).filter(chk => chk.checked);
+                let isTallerServicesValid;
+
+                if ( isTallerServicesRequired[0] && isTallerServicesChecked.length < 1 ) {
+
+                    tallerServicesChksError.setAttribute('style','display:block');
+                    tallerServices.classList.remove('has-success');
+                    tallerServices.classList.add('has-danger');
+
+                    isTallerServicesValid = false;
+
+                } else {
+
+                    isTallerServicesValid = true;
+
+                }
+
+                let tallerCheckboxArray = Array.from( tallerServicesChksArr );
+
+                function confirmTallerCheck() {
+                    // if (this.checked) {
+                        tallerServicesChksError.setAttribute('style','display:none');
+                        tallerServices.classList.add('has-success');
+                        tallerServices.classList.remove('has-danger');
+                    // }
+                }
+
+                tallerCheckboxArray.forEach( checkbox => {
+                    checkbox.addEventListener('change', confirmTallerCheck);
+                });
+
+                console.log(isValid, zoneValid, isMovilServicesValid, isTallerServicesValid);
+
+                if ( isValid && zoneValid && isMovilServicesValid && isTallerServicesValid) {
 
                     let serviceWorkshop = document.getElementById('serviceWorkshop').value;
                     serviceWorkshop = (serviceWorkshop === 'taller') ? 'Taller de CarClub Firestone' : (serviceWorkshop === 'movil') ? 'Taller a Domicilio (CarClub Móvil)' : 'Undefined type of service';
@@ -340,7 +445,7 @@ import { Spanish } from 'flatpickr/dist/l10n/es';
 
                             let options = {
                                 method: 'POST',
-                                url: 'https://ix-dev.firestonetire.com/batoforms/cc/v1/service/appointment',
+                                url: '/batoforms/cc/v1/service/appointment',
                                 headers: {
                                     'Content-Type': 'application/json',
                                 },
@@ -366,7 +471,9 @@ import { Spanish } from 'flatpickr/dist/l10n/es';
                                     // console.log(res.data);
 
                                     if (parseInt(res.status) === 200 ) {
+
                                         window.location = '/gracias.html';
+
                                     }
 
                                 })
@@ -375,9 +482,13 @@ import { Spanish } from 'flatpickr/dist/l10n/es';
                                     console.error(err);
 
                                     if ( parseInt(err.status) === 500 ) {
-                                        alert(err.message)
+
+                                        alert(err.message);
+
                                     } else {
-                                        alert("Hubo un error, por favor intente de nuevo más tarde")
+
+                                        alert('Hubo un error, por favor intente de nuevo más tarde');
+
                                     }
 
                                 });
