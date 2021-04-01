@@ -162,7 +162,7 @@ import { Spanish } from 'flatpickr/dist/l10n/es';
                 // check if the form is valid
                 let isValid = pristine.validate();
 
-                if (isValid) {
+                if ( isValid ) {
 
                     let firstName = document.getElementById('firstName').value;
                     let lastName = document.getElementById('lastName').value;
@@ -171,8 +171,9 @@ import { Spanish } from 'flatpickr/dist/l10n/es';
                     let reasonNodePath = document.getElementById('reasonNodePath').value;
                     let comments = document.getElementById('comments').value;
                     let privacy = document.getElementById('privacy').checked;
+                    let country = document.getElementsByTagName('html')[0].getAttribute('data-country');
 
-                    console.log( firstName, lastName, phone, emailId, reasonNodePath, comments, privacy );
+                    // console.log( firstName, lastName, phone, emailId, reasonNodePath, comments, privacy );
 
                     grecaptcha.ready( () => {
 
@@ -182,7 +183,7 @@ import { Spanish } from 'flatpickr/dist/l10n/es';
 
                             let options = {
                                 method: 'POST',
-                                url: '/batoforms/cc/v1/service/contactus',
+                                url: 'https://ix-dev.firestonetire.com/batoforms/cc/v1/service/contactus',
                                 headers: {
                                     'Content-Type': 'application/json',
                                 },
@@ -194,21 +195,29 @@ import { Spanish } from 'flatpickr/dist/l10n/es';
                                     reasonNodePath: reasonNodePath,
                                     comments: comments,
                                     privacy: privacy,
-                                    recaptchaResponse: token
+                                    recaptchaResponse: token,
+                                    country: country
                                 }
                             };
 
                             axios.request(options)
                                 .then( res => {
-                                    console.log(res.data);
-                                    //
-                                    // if (parseInt(res.status) === 200 ) {
-                                    //     window.location = '/gracias.html';
-                                    // }
+                                    // console.log(res.data);
+
+                                    if (parseInt(res.status) === 200 ) {
+                                        window.location = '/gracias.html';
+                                    }
 
                                 })
                                 .catch( err => {
                                     console.error(err);
+
+                                    if ( parseInt(err.status) === 500 ) {
+                                        alert(err.message)
+                                    } else {
+                                        alert("Hubo un error, por favor intente de nuevo más tarde")
+                                    }
+
                                 });
 
                         });

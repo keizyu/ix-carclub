@@ -93,11 +93,15 @@ img {
 
 
 .mt0 {
-	margin-top: 0;
+	margin-top: 0 !important;
 }
 
 .mb0 {
 	margin-bottom: 0 !important;
+}
+
+.mt2 {
+	margin-top: 2rem;
 }
 
 .pt0 {
