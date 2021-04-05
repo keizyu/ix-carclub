@@ -7,6 +7,7 @@
     height: 450px;
     background-color: $grey-1;
     background-position: right center;
+    width: 100%;
 
     @media all and (max-width : 1024px) {
         background-image: none !important;
@@ -142,4 +143,9 @@
 
     }
 
+    &__back {
+        position: absolute;
+        top: 0;
+        z-index: -1
+    }
 }
