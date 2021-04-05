@@ -19,15 +19,15 @@ const gulp = require('gulp'),
 
 
 const banner = [
-  '/*!\n' +
-  ' * Last Build ' + new Date() + '\n' +
-  ' * <%= package.name %>\n' +
-  ' * <%= package.url %>\n' +
-  ' * @author <%= package.author %>\n' +
-  ' * @version <%= package.version %>\n' +
-  ' * Copyright ' + new Date().getFullYear() + '. <%= package.license %> licensed.\n' +
-  ' */',
-  '\n'
+    '/*!\n' +
+    ' * Last Build ' + new Date() + '\n' +
+    ' * <%= package.name %>\n' +
+    ' * <%= package.url %>\n' +
+    ' * @author <%= package.author %>\n' +
+    ' * @version <%= package.version %>\n' +
+    ' * Copyright ' + new Date().getFullYear() + '. <%= package.license %> licensed.\n' +
+    ' */',
+    '\n'
 ].join('');
 
 gulp.task('css', () => {
@@ -76,7 +76,10 @@ gulp.task('js', () => {
 gulp.task('browser-sync', () => {
     browserSync.init(null, {
         server: {
-            baseDir: "app"
+            baseDir: "app",
+            serveStaticOptions: {
+                extensions: ['html']
+            }
         }
     });
 });
