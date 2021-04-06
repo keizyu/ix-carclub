@@ -213,9 +213,9 @@ import { Spanish } from 'flatpickr/dist/l10n/es';
                                     console.error(err);
 
                                     if ( parseInt(err.status) === 500 ) {
-                                        alert(err.message);
+                                        window.alert(err.message);
                                     } else {
-                                        alert('Hubo un error, por favor intente de nuevo más tarde');
+                                        window.alert('Hubo un error, por favor intente de nuevo más tarde');
                                     }
 
                                 });
@@ -483,11 +483,11 @@ import { Spanish } from 'flatpickr/dist/l10n/es';
 
                                     if ( parseInt(err.status) === 500 ) {
 
-                                        alert(err.message);
+                                        window.alert(err.message);
 
                                     } else {
 
-                                        alert('Hubo un error, por favor intente de nuevo más tarde');
+                                        window.alert('Hubo un error, por favor intente de nuevo más tarde');
 
                                     }
 
