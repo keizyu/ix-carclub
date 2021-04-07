@@ -115,6 +115,11 @@ import { Spanish } from 'flatpickr/dist/l10n/es';
     });
 
 
+    // print year in footer
+    const fullYear = new Date().getFullYear();
+    document.getElementById('getFullYear').innerHTML = fullYear;
+
+
     ////////////// RECAPTCHA
 
     const recaptchaSiteKey = {
