@@ -5,9 +5,10 @@
     background-position: center;
     background-repeat: no-repeat;
     height: 450px;
-    background-color: $grey-1;
+    // background-color: $grey-1;
     background-position: right center;
     width: 100%;
+    background-image: url('/assets/img/background.png');
 
     @media all and (max-width : 1024px) {
         background-image: none !important;
