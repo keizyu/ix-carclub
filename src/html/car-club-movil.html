@@ -47,103 +47,43 @@
 
     <div class="container">
 
-        <h2 class="text-center">NUESTROS SERVICIOS</h2>
-
         <div class="grid card-grid">
-            <figure class="col-3_md-6_sm-12 hover-effect square-wrapper">
-                <div class="content box">
-                    <div class="">
-                        <svg class="icon services-icon tire-icon"><use xlink:href="#tire-icon"></use></svg>
-                    </div>
-                    <figcaption>
-                        <div>
-                            <h3>Montaje y Balanceo de Llantas</h3>
-                            <p>Las mejores llantas Firestone y Bridgestone para auto o camioneta.</p>
-                        </div>
-                    </figcaption>
-                </div>
-            </figure>
-            <figure class="col-3_md-6_sm-12 hover-effect square-wrapper">
-                <div class="content box">
-                    <div class="">
-                        <svg class="icon services-icon oil-icon"><use xlink:href="#oil-icon"></use></svg>
-                    </div>
-                    <figcaption>
-                        <div>
-                            <h3>Cambio de Aceite de Motor</h3>
-                            <p>Recuerde realizar el cambio  de  aceite  según corresponda.</p>
-                        </div>
-                    </figcaption>
-                </div>
-            </figure>
-            <figure class="col-3_md-6_sm-12 hover-effect square-wrapper">
-                <div class="content box">
-                    <div class="">
-                        <svg class="icon services-icon brakes-icon"><use xlink:href="#brakes-icon"></use></svg>
-                    </div>
-                    <figcaption>
-                        <div>
-                            <h3>Mantenimiento completo de Freno</h3>
-                            <p>Recuerde revisar sus frenos de forma  periódica  por su seguridad</p>
-                        </div>
-                    </figcaption>
-                </div>
-            </figure>
-            <figure class="col-3_md-6_sm-12 hover-effect square-wrapper">
-                <div class="content box">
-                    <div class="">
-                        <svg class="icon services-icon align-icon"><use xlink:href="#align-icon"></use></svg>
-                    </div>
-                    <figcaption>
-                        <div>
-                            <h3>Desinfección de Vehículo</h3>
-                            <p>Un desvió en la dirección al conducir; agende su cita.</p>
-                        </div>
-                    </figcaption>
-                </div>
-            </figure>
 
-            <figure class="col-3_md-6_sm-12 hover-effect square-wrapper">
-                <div class="content box">
-                    <div class="">
-                        <svg class="icon services-icon battery-icon"><use xlink:href="#battery-icon"></use></svg>
-                    </div>
-                    <figcaption>
-                        <div>
-                            <h3>Cambio de Batería</h3>
-                            <p>El corazón de su motor, asegúrese de que funciona bien.</p>
-                        </div>
-                    </figcaption>
-                </div>
-            </figure>
-
-            <figure class="col-3_md-6_sm-12 hover-effect square-wrapper">
-                <div class="content box">
-                    <div class="">
-                        <svg class="icon services-icon others-icon"><use xlink:href="#others-icon"></use></svg>
-                    </div>
-                    <figcaption>
-                        <div>
-                            <h3>Revisión y cambio de fluidos</h3>
-                            <p>Su taller por excelencia para realizar todo tipo de mantenimiento.</p>
-                        </div>
-                    </figcaption>
-                </div>
-            </figure>
-
-            <figure class="col-3_md-6_sm-12 hover-effect square-wrapper">
-                <div class="content box">
-                    <div class="">
-                        <svg class="icon services-icon maintenance-icon"><use xlink:href="#maintenance-icon"></use></svg>
-                    </div>
-                    <figcaption>
-                        <div>
-                            <h3>Revisión General del Vehículo</h3>
-                            <p>Somos su taller mecánico de confianza por excelencia.</p>
-                        </div>
-                    </figcaption>
-                </div>
-            </figure>
+            @@loop('./_components/services-grid-animated.html', [
+                {
+                    "iconID": "tire-icon",
+                    "serviceHeading": "Montaje y Balanceo de Llantas",
+                    "serviceBody": "Las mejores llantas Firestone y Bridgestone para auto o camioneta."
+                },{
+                    "iconID": "oil-icon",
+                    "serviceHeading": "Cambio de Aceite de Motor",
+                    "serviceBody": "Recuerde realizar el cambio  de  aceite  según corresponda."
+                },{
+                    "iconID": "ac-icon",
+                    "serviceHeading": "Cambio de Filtros <br>de A/C",
+                    "serviceBody": "Lorem <br>Ipsum."
+                },{
+                    "iconID": "brakes-icon",
+                    "serviceHeading": "Mantenimiento completo de Freno",
+                    "serviceBody": "Recuerde revisar sus frenos de forma  periódica  por su seguridad."
+                },{
+                    "iconID": "disinfection-icon",
+                    "serviceHeading": "Desinfección<br>de Vehículo",
+                    "serviceBody": "Lorem <br>Ipsum."
+                },{
+                    "iconID": "battery-icon",
+                    "serviceHeading": "Cambio de Batería",
+                    "serviceBody": "El corazón de su motor, asegúrese de que funciona bien."
+                },{
+                    "iconID": "fluid-icon",
+                    "serviceHeading": "Revisión y cambio de fluidos",
+                    "serviceBody": "Lorem <br>Ipsum."
+                },{
+                    "iconID": "others-icon",
+                    "serviceHeading": "Revisión General del Vehículo",
+                    "serviceBody": "Somos su taller mecánico de confianza por excelencia."
+                }
+            ])
 
         </div>
 

@@ -105,95 +105,51 @@
 
                 <h2 class="animated animated__backInUp">NUESTROS SERVICIOS</h2>
 
-                <div class="grid">
+                <div class="grid card-grid">
 
-                    <div class="col-4_md-6_sm-12 animated animated__backInUp">
-                        <div class="box">
-                            <div class="services-icon__container">
-                                <svg class="icon services-icon tire-icon"><use xlink:href="#tire-icon"></use></svg>
-                            </div>
-                            <h3>Servicio de Llantas</h3>
-                            <p>Las mejores llantas Firestone y Bridgestone para auto o camioneta.</p>
-                            <!-- <a href="#" class="btn">Más información</a> -->
-                        </div>
-                    </div>
-
-                    <div class="col-4_md-6_sm-12 animated animated__backInUp">
-                        <div class="box">
-                            <div class="services-icon__container">
-                                <svg class="icon services-icon oil-icon"><use xlink:href="#oil-icon"></use></svg>
-                            </div>
-                            <h3>Cambio de aceite</h3>
-                            <p>Recuerde realizar el cambio  de  aceite  según corresponda.</p>
-                            <!-- <a href="#" class="btn">Más información</a> -->
-                        </div>
-                    </div>
-
-                    <div class="col-4_md-6_sm-12 animated animated__backInUp">
-                        <div class="box">
-                            <div class="services-icon__container">
-                                <svg class="icon services-icon brakes-icon"><use xlink:href="#brakes-icon"></use></svg>
-                            </div>
-                            <h3>Servicio de Frenos</h3>
-                            <p>Recuerde revisar sus frenos de forma  periódica  por su seguridad</p>
-                            <!-- <a href="#" class="btn">Más información</a> -->
-                        </div>
-                    </div>
-
-                    <div class="col-4_md-6_sm-12 animated animated__backInUp">
-                        <div class="box">
-                            <div class="services-icon__container">
-                                <svg class="icon services-icon align-icon"><use xlink:href="#align-icon"></use></svg>
-                            </div>
-                            <h3>Alineamiento</h3>
-                            <p>Un desvió en la dirección al conducir; agende su cita.</p>
-                            <!-- <a href="#" class="btn">Más información</a> -->
-                        </div>
-                    </div>
-
-                    <div class="col-4_md-6_sm-12 animated animated__backInUp">
-                        <div class="box">
-                            <div class="services-icon__container">
-                                <svg class="icon services-icon maintenance-icon"><use xlink:href="#maintenance-icon"></use></svg>
-                            </div>
-                            <h3>Mantenimiento Automotriz</h3>
-                            <p>Somos su taller mecánico de confianza por excelencia.</p>
-                            <!-- <a href="#" class="btn">Más información</a> -->
-                        </div>
-                    </div>
-
-                    <div class="col-4_md-6_sm-12 animated animated__backInUp">
-                        <div class="box">
-                            <div class="services-icon__container">
-                                <svg class="icon services-icon battery-icon"><use xlink:href="#battery-icon"></use></svg>
-                            </div>
-                            <h3>Baterias</h3>
-                            <p>El corazón de su motor, asegúrese de que funciona bien.</p>
-                            <!-- <a href="#" class="btn">Más información</a> -->
-                        </div>
-                    </div>
-
-                    <div class="col-4_md-6_sm-12 animated animated__backInUp">
-                        <div class="box">
-                            <div class="services-icon__container">
-                                <svg class="icon services-icon balance-icon"><use xlink:href="#balance-icon"></use></svg>
-                            </div>
-                            <h3>Balanceo</h3>
-                            <p>Vibración en el volante, es hora de balancear sus llantas.</p>
-                            <!-- <a href="#" class="btn">Más información</a> -->
-                        </div>
-                    </div>
-
-                    <div class="col-4_md-6_sm-12 animated animated__backInUp">
-                        <div class="box">
-                            <div class="services-icon__container">
-                                <svg class="icon services-icon others-icon"><use xlink:href="#others-icon"></use></svg>
-                            </div>
-                            <h3>Otros servicios</h3>
-                            <p>Su taller por excelencia para realizar todo tipo de mantenimiento.</p>
-                            <!-- <a href="#" class="btn">Más información</a> -->
-                        </div>
-                    </div>
+                    @@loop('./_components/services-grid-animated.html', [
+                        {
+                            "iconID": "tire-icon",
+                            "serviceHeading": "Servicio de Llantas",
+                            "serviceBody": "Las mejores llantas Firestone y Bridgestone para auto o camioneta.",
+                            "serviceUrl": "/cambio-de-llantas"
+                        },{
+                            "iconID": "oil-icon",
+                            "serviceHeading": "Cambio de aceite",
+                            "serviceBody": "Recuerde realizar el cambio  de  aceite  según corresponda.",
+                            "serviceUrl": "/cambio-de-aceite"
+                        },{
+                            "iconID": "brakes-icon",
+                            "serviceHeading": "Servicio de Frenos",
+                            "serviceBody": "Recuerde revisar sus frenos de forma  periódica  por su seguridad.",
+                            "serviceUrl": "/frenos"
+                        },{
+                            "iconID": "align-icon",
+                            "serviceHeading": "Alineamiento",
+                            "serviceBody": "Un desvió en la dirección al conducir; agende su cita.",
+                            "serviceUrl": "/alineacion-de-llantas"
+                        },{
+                            "iconID": "maintenance-icon",
+                            "serviceHeading": "Mantenimiento Automotriz",
+                            "serviceBody": "Somos su taller mecánico de confianza por excelencia.",
+                            "serviceUrl": "/mantenimiento-preventivo-automotriz"
+                        },{
+                            "iconID": "battery-icon",
+                            "serviceHeading": "Baterias",
+                            "serviceBody": "El corazón de su motor, asegúrese de que funciona bien.",
+                            "serviceUrl": "/servicio-de-baterias-de-carro"
+                        },{
+                            "iconID": "balance-icon",
+                            "serviceHeading": "Balanceo",
+                            "serviceBody": "Vibración en el volante, es hora de balancear sus llantas.",
+                            "serviceUrl": "/balanceo-de-llantas"
+                        },{
+                            "iconID": "others-icon",
+                            "serviceHeading": "Otros servicios",
+                            "serviceBody": "Su taller por excelencia para realizar todo tipo de mantenimiento.",
+                            "serviceUrl": "/otros-servicios"
+                        }
+                    ])
 
                 </div>
             </div>
