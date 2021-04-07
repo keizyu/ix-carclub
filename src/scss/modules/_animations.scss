@@ -47,7 +47,7 @@
         margin: 0 auto;
     }
 
-    h3, p {
+    h3, p, a {
        transform: translate3d(0,40px,0);
    }
 
@@ -55,7 +55,7 @@
        transition: transform 0.35s;
     }
 
-    p {
+    p, a {
        opacity: 0;
        transition: opacity 0.2s, transform 0.35s;
    }
@@ -63,24 +63,29 @@
 
    &:hover {
 
-      svg, p {
-           opacity: 1;
-      }
+	   p, a {
+		   opacity: 1;
+		   transition-duration: 0.35s;
+	   }
 
-      svg {
+	   svg {
            transform: translate3d(0,-40px,0);
            opacity: 0;
-      }
+	   }
 
-      h3 {
+	   h3 {
            transform: translate3d(0,-30px,0);
-      }
+	   }
 
-      p {
-          transform: translate3d(0,-20px,0);
-          transition-delay: 0.05s;
-          transition-duration: 0.35s;
-      }
+	   p {
+		   transform: translate3d(0,-20px,0);
+		   transition-delay: 0.05s;
+	   }
+
+	   a {
+		   transform: translate3d(0,0,0);
+		   transition-delay: 0.1s;
+	   }
 
    }
 
