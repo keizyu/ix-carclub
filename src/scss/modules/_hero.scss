@@ -9,6 +9,10 @@
     background-position: right center;
     width: 100%;
 
+    &__servicesbkg{
+        background-image: url('/assets/img/background.png');
+    }
+
     @media all and (max-width : 1024px) {
         background-image: none !important;
     }
