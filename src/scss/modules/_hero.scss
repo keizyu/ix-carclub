@@ -15,7 +15,15 @@
 
     &__title {
 
-        height: 300px;
+        height: auto;
+        padding: 4rem 0;
+
+        @media all and (min-width: 769px){
+            height: 300px;
+            padding: 0;
+        }
+
+        h1 { margin: 0 }
 
         &--centered {
             display: flex;
@@ -23,7 +31,6 @@
             align-items: center;
 
             h1 {
-                margin: 0 !important;
                 border-top: 2px solid $white;
                 border-bottom: 2px solid $white;
                 padding: 2rem 0;
@@ -147,5 +154,13 @@
         position: absolute;
         top: 0;
         z-index: -1
+    }
+
+    &__red {
+        background-color: $brand-primary;
+    }
+
+    &__black {
+        background-color: $black
     }
 }

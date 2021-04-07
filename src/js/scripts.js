@@ -179,7 +179,7 @@ import { Spanish } from 'flatpickr/dist/l10n/es';
 
                         grecaptcha.execute( envSiteKey, { action: 'submit' } ).then( token => {
 
-                            console.log('g-recaptcha-response --->', token);
+                            // console.log('g-recaptcha-response --->', token);
 
                             let options = {
                                 method: 'POST',
@@ -434,14 +434,14 @@ import { Spanish } from 'flatpickr/dist/l10n/es';
                     let typeOfService = [].slice.call(textInputs).map( el => el.value).join(', ');
                     let country = document.getElementsByTagName('html')[0].getAttribute('data-country');
 
-                    console.log('DATA ---->: ','serviceWorkshop: ' + serviceWorkshop,'firstName: ' + firstName,'lastName: ' + lastName,'phone: ' + phone,'emailId: ' + emailId,'comments: ' + comments,'date: ' + date,'time: ' + time,'privacy: ' + privacy,'zone: ' + zone);
-                    console.log('comma separated list checkboxes values --->', typeOfService);
+                    // console.log('DATA ---->: ','serviceWorkshop: ' + serviceWorkshop,'firstName: ' + firstName,'lastName: ' + lastName,'phone: ' + phone,'emailId: ' + emailId,'comments: ' + comments,'date: ' + date,'time: ' + time,'privacy: ' + privacy,'zone: ' + zone);
+                    // console.log('comma separated list checkboxes values --->', typeOfService);
 
                     grecaptcha.ready( () => {
 
                         grecaptcha.execute( envSiteKey, { action: 'submit' } ).then( token => {
 
-                            console.log('g-recaptcha-response --->', token);
+                            // console.log('g-recaptcha-response --->', token);
 
                             let options = {
                                 method: 'POST',
