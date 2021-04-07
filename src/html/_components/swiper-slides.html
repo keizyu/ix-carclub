@@ -1,10 +1,10 @@
 <div class="swiper-slide">
 
-    <section class="section section-hero @@if ( color == 'black' ) { color-black }" style="background-color: @@bkgColor; background-position: @@bkgPosition center; @@if ( imgAsBkg ) { background-image: url( '@@bkgImage' ) }">
+    <section class="section section-hero @@if ( context.color == 'black' ) { color-black }" style="background-color: @@bkgColor; background-position: @@bkgPosition center; @@if ( context.imgAsBkg ) { background-image: url( '@@bkgImage' ) }">
 
-            <div class="grid grid-middle @@if ( !imgAsBkg && bkgPosition == "right" ) { rowReverse } " >
+            <div class="grid grid-middle @@if ( !context.imgAsBkg && context.bkgPosition == "right" ) { rowReverse } " >
 
-                @@if ( !imgAsBkg ) {
+                @@if ( !context.imgAsBkg ) {
 
                     <div class="col-5_lg-4 section-hero__img--wrapper sm-hidden">
                         <img src="@@bkgImage" alt="CarClub Firestone">
@@ -12,16 +12,16 @@
 
                 }
 
-                @@if ( imgAsBkg ) { <div @@if ( bkgPosition == 'left' ) { class="col-6_lg-7_md-10_sm-10" data-push-left="off-6_lg-5_md-1_sm-1" } @@if ( bkgPosition != 'left' ) { class="col-6_lg-5_md-10_sm-10" data-push-left="off-0_md-1_sm-1" }> }
-                @@if ( !imgAsBkg ) { <div class="col-7_lg-8_sm-10" data-push-left="off-0_sm-1" > }
+                @@if ( context.imgAsBkg ) { <div @@if ( context.bkgPosition == 'left' ) { class="col-6_lg-7_md-10_sm-10" data-push-left="off-6_lg-5_md-1_sm-1" } @@if ( context.bkgPosition != 'left' ) { class="col-6_lg-5_md-10_sm-10" data-push-left="off-0_md-1_sm-1" }> }
+                @@if ( !context.imgAsBkg ) { <div class="col-7_lg-8_sm-10" data-push-left="off-0_sm-1" > }
 
                     <div class="section-hero__info">
 
-                        <h1 class="h1-line">@@title</h1>
-                        @@text
+                        @@if ( context.title ) {<h1 class="h1-line">@@title</h1>}
+                        @@if ( context.text ) {@@text}
 
-                        @@if ( cta ) {
-                            <a href="@@ctaLink" class="btn @@if ( btnStyle == 'border' ) { btn-border } btn-@@btnColor btn-width__full">@@ctaText</a>
+                        @@if ( context.ctaLink && context.ctaText ) {
+                            <a href="@@ctaLink" class="btn @@if ( context.btnStyle == 'border' ) { btn-border } btn-@@btnColor btn-width__full">@@ctaText</a>
                         }
 
                     </div>
