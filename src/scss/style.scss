@@ -1,9 +1,15 @@
+
 //----------------------------------*\
 // CONFIG MODULES
 //----------------------------------*/
 
-@import 'modules/normalize';
+/* variables */
 @import 'modules/vars';
+
+/* mixins */
+@import 'modules/_mixins';
+
+@import 'modules/normalize';
 @import 'modules/grid/gridlex';
 @import 'modules/default';
 @import 'modules/wrappers';

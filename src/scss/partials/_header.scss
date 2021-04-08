@@ -6,7 +6,7 @@
     height: 58px;
 
     @media all and (min-width: 769px){
-        height: 67px;
+        height: 68px;
     }
 
     [id^=drop],
@@ -22,7 +22,7 @@
         display: flex;
         justify-content: flex-end;
         background-color: $white;
-        height: 33px;
+        height: 34px;
 
         &-item {
             margin-right: 16px;
@@ -74,7 +74,7 @@
             background-color: $brand-primary;
             cursor: pointer;
             float: right;
-            padding: 28px 20px;
+            padding: 14px;
             position: relative;
             user-select: none;
 
@@ -177,45 +177,8 @@
 
     .menu {
 
-        @media all and (min-width : 769px) {
+        > li > a {
 
-            height: 100%;
-
-            > li {
-                height: 100%;
-
-                > a {
-                    height: 100%;
-                }
-            }
-        }
-    }
-
-
-
-    /* Since we'll have the "ul li" "float:left"
-     * we need to add a clear after the container. */
-    &::after {
-        content: "";
-        display: table;
-        clear: both;
-    }
-
-}
-
-.ccnav .menu {
-
-    @media all and (max-width : 1024px) and (min-width : 769px) {
-        height: 100%;
-    }
-
-    > li {
-
-        @media all and (max-width : 1024px) and (min-width : 769px) {
-            height: 100%;
-        }
-
-        > a {
             text-transform: uppercase;
             font-weight: bolder;
             padding: 24px 25px;
@@ -247,7 +210,31 @@
             }
 
         }
+
+        @media all and (min-width : 769px) {
+
+            height: 100%;
+
+            > li {
+                height: 100%;
+
+                > a {
+                    height: 100%;
+                }
+            }
+
+        }
+
     }
+
+    /* Since we'll have the "ul li" "float:left"
+     * we need to add a clear after the container. */
+    &::after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+
 }
 
 .ccnav__menu-subnav:hover + a {
@@ -263,11 +250,15 @@
 
 
 
-
 /* Media Queries
 --------------------------------------------- */
 
 @media all and (max-width : 768px) {
+
+    .is-active .menu {
+        display: block !important;
+        width: 100%;
+    }
 
     .ccnav {
         margin: 0;

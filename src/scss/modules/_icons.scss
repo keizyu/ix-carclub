@@ -27,3 +27,76 @@
 	}
 
 }
+
+// hamburger icon
+$size: 30px;
+
+.burger-wrapper {
+
+    display: block;
+    position:relative;
+    width: $size;
+    height: $size;
+
+    bun {
+
+        &::before {
+            @include pill();
+            top: 10%;
+            right:0;
+        }
+
+        &::after {
+            @include pill();
+            bottom: 10%;
+            left:0;
+        }
+
+        burger {
+            position: absolute;
+            display: flex;
+            align-items: center;
+            height: $size;
+            width: $size;
+
+            &::before, &::after{
+                @include pill();
+            }
+        }
+    }
+
+    input {
+        display:block;
+        position: absolute;
+        opacity: 0;
+        z-index: 1;
+        width:$size;
+        height:$size;
+        cursor:pointer;
+
+        &:hover ~ bun {
+            &::before, &::after, ::before, ::after {
+                background: darken($white,5);
+            }
+        }
+
+        &:checked ~ bun {
+            &::before, &::after {
+                width:0;
+            }
+
+            burger {
+
+                &:before {
+                    transform:rotate(135deg);
+                }
+
+                &::after {
+                    transform:rotate(45deg);
+                    box-shadow:0 0 0 0 lighten($white,35);
+                }
+            }
+        }
+    }
+
+}

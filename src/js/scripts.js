@@ -11,7 +11,7 @@ import { Spanish } from 'flatpickr/dist/l10n/es';
 
     ////////////// ACTIVE SUBMENU
 
-    const checkbox = document.getElementById('drop');
+    const checkbox = document.getElementById('burger');
     const nav = document.getElementById('ccnav');
 
     checkbox.addEventListener('change', () => {
