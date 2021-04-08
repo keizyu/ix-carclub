@@ -3,14 +3,23 @@
 // CONFIG MODULES
 //----------------------------------*/
 
+@import 'modules/normalize';
+
 /* variables */
 @import 'modules/vars';
 
 /* mixins */
 @import 'modules/_mixins';
 
-@import 'modules/normalize';
+/* grid */
 @import 'modules/grid/gridlex';
+
+// Carousel
+@import 'node_modules/swiper/swiper-bundle';
+
+// Datepicker
+@import 'node_modules/flatpickr/dist/flatpickr';
+
 @import 'modules/default';
 @import 'modules/wrappers';
 @import 'modules/headings';
@@ -22,10 +31,6 @@
 @import 'modules/flipcards';
 @import 'modules/animations';
 @import 'modules/forms';
-
-// Carousel
-@import 'node_modules/swiper/swiper-bundle';
-@import 'node_modules/flatpickr/dist/flatpickr';
 
 
 //----------------------------------*\
