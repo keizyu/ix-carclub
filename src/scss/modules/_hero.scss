@@ -9,7 +9,7 @@
     background-position: right center;
     width: 100%;
 
-    @media all and (max-width : 1024px) {
+    @include screen('md', 'max') {
         background-image: none !important;
     }
 
@@ -18,7 +18,7 @@
         height: auto;
         padding: 4rem 0;
 
-        @media all and (min-width: 769px){
+        @include screen('sm', 'min') {
             height: 300px;
             padding: 0;
         }
@@ -83,7 +83,7 @@
         color: $white;
         max-width: 800px;
 
-        @media all and (min-width: 769px){
+        @include screen('sm', 'min') {
             padding: 0 5%;
 
         }
@@ -95,7 +95,7 @@
             position: relative;
             margin-bottom: 4rem;
 
-            @media all and (min-width: 769px){
+            @include screen('sm', 'min') {
 
                 margin-bottom: 0;
 
@@ -132,7 +132,7 @@
             margin: 4rem auto 0;
             text-transform: uppercase;
 
-            @media all and (min-width: 769px){
+            @include screen('sm', 'min') {
 
                 margin: 2rem 0 0 0;
                 display: inline-block;
@@ -161,7 +161,7 @@
         z-index: -1;
         background-color: $grey-5;
 
-        @media all and (max-width: 570px){
+        @include screen('xs', 'max') {
             height: 200px;
         }
 

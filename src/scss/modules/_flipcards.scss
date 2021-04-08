@@ -22,13 +22,13 @@
 
             text-align: center;
 
-            @media all and (min-width: 571px){
+            @include screen('xs', 'min') {
                 margin: 0;
             }
         }
 
         p {
-            @media all and (min-width: 571px){
+            @include screen('xs', 'min') {
                 font-size: 1.4rem;
             }
         }

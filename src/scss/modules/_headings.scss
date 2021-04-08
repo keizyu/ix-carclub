@@ -12,18 +12,19 @@ h1, .h1 {
 		display: block;
 	}
 
-	@media all and (min-width: 571px){
+	@include screen('xs', 'min') {
 		font-size: 4rem;
 	}
 
-	@media all and (min-width: 769px){
+	@include screen('sm', 'min') {
 		font-size: 4rem;
 		text-align: left;
 	}
 
-	@media all and (min-width : 1025px) {
+	@include screen('md', 'min') {
 		font-size: 5rem;
 	}
+
 }
 
 h2 {
@@ -32,7 +33,7 @@ h2 {
 	font-size: 2rem;
 
 
-	@media all and (min-width: 571px){
+	@include screen('xs', 'min') {
 		text-align: left;
 		font-size: 2.4rem;
 	}

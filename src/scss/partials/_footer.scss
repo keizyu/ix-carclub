@@ -68,7 +68,7 @@ footer {
 
 }
 
-@media all and (max-width: 768px) {
+@include screen('sm', 'max') {
 
     footer {
 
@@ -121,7 +121,7 @@ footer {
     }
 }
 
-@media all and (max-width: 570px) {
+@include screen('xs', 'max') {
 
     footer {
 

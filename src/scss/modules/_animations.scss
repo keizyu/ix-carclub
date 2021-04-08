@@ -45,7 +45,7 @@
         opacity: 1;
         margin: 0 auto;
 
-		@media all and (min-width: 571px){
+		@include screen('xs', 'min') {
 
 			transition: opacity 0.35s, transform 0.35s;
 	        transform: translate3d(0,0,0);
@@ -54,7 +54,7 @@
 
     }
 
-	@media all and (min-width: 571px){
+	@include screen('xs', 'min') {
 
 		h3, p, a {
 			transform: translate3d(0,40px,0);

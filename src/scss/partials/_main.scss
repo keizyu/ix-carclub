@@ -6,7 +6,7 @@
     flex: 1 0 auto;
     margin-top: 92px;
 
-    @media all and (min-width: 769px) {
+    @include screen('sm', 'min') {
         margin-top: 102px;
     }
 
@@ -24,7 +24,7 @@
 
         p {
 
-            @media all and (min-width: 769px) {
+            @include screen('sm', 'min') {
                 text-align: left;
             }
 
@@ -37,7 +37,7 @@
 
     }
 
-    @media all and (min-width: 769px){
+    @include screen('sm', 'min') {
         .grid-with-border {
             [class*=col-], [class*=col_], [class~=col] {
 

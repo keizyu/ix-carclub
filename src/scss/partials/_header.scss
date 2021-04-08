@@ -5,7 +5,7 @@
     background-color: $brand-primary;
     height: 58px;
 
-    @media all and (min-width: 769px){
+    @include screen('sm', 'min') {
         height: 68px;
     }
 
@@ -54,7 +54,7 @@
         left: 0;
         z-index: 3;
 
-        @media all and (min-width: 769px){
+        @include screen('sm', 'min') {
             left: -32px;
         }
 
@@ -211,7 +211,7 @@
 
         }
 
-        @media all and (min-width : 769px) {
+        @include screen('sm', 'min') {
 
             height: 100%;
 
@@ -253,7 +253,7 @@
 /* Media Queries
 --------------------------------------------- */
 
-@media all and (max-width : 768px) {
+@include screen('sm', 'max') {
 
     .is-active .menu {
         display: block !important;

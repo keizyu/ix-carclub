@@ -83,7 +83,7 @@ img {
 }
 
 .rowReverse {
-	@media all and (min-width: 769px) {
+	@include screen('sm', 'min') {
 		flex-direction: row-reverse;
 	}
 }
