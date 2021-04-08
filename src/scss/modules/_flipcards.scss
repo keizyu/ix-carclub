@@ -19,8 +19,12 @@
         }
 
         h3, p {
-            margin: 0;
+
             text-align: center;
+
+            @media all and (min-width: 571px){
+                margin: 0;
+            }
         }
 
         p {
