@@ -161,6 +161,10 @@
         z-index: -1;
         background-color: $grey-5;
 
+        @media all and (max-width: 570px){
+            height: 200px;
+        }
+
         &--top {
 
             h1 {
