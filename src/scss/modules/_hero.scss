@@ -23,18 +23,17 @@
             padding: 0;
         }
 
-        h1 { margin: 0 }
+        h1 {
+            margin: 0;
+            border-top: 2px solid $white;
+            border-bottom: 2px solid $white;
+            padding: 2rem 0;
+         }
 
         &--centered {
             display: flex;
             justify-content: center;
             align-items: center;
-
-            h1 {
-                border-top: 2px solid $white;
-                border-bottom: 2px solid $white;
-                padding: 2rem 0;
-            }
 
             &.color-black {
 
@@ -147,7 +146,12 @@
 
         }
 
-
+        &--full {
+            max-width: 100%;
+            h2 {
+                margin-bottom: 0;
+            }
+        }
     }
 
     &__back {
