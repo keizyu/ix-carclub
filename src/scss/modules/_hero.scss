@@ -9,10 +9,6 @@
     background-position: right center;
     width: 100%;
 
-    &__servicesbkg{
-        background-image: url('/assets/img/background.jpg');
-    }
-
     @media all and (max-width : 1024px) {
         background-image: none !important;
     }
@@ -155,9 +151,22 @@
     }
 
     &__back {
+        background-image: url('/assets/img/background.jpg');
         position: absolute;
         top: 0;
-        z-index: -1
+        z-index: -1;
+        background-color: $grey-5;
+
+        &--top {
+
+            h1 {
+                color: $white;
+                text-shadow: 0 0 10px transparentize($black, .5);
+            }
+
+            img { box-shadow: 0 0 20px 6px transparentize($black, .8); }
+        }
+
     }
 
     &__red {
@@ -167,4 +176,5 @@
     &__black {
         background-color: $black
     }
+
 }
