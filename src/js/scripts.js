@@ -210,7 +210,7 @@ import { Spanish } from 'flatpickr/dist/l10n/es';
                                     // console.log(res.data);
 
                                     if (parseInt(res.status) === 200 ) {
-                                        window.location = '/gracias.html';
+                                        window.location = '/gracias';
                                     }
 
                                 })
@@ -477,7 +477,7 @@ import { Spanish } from 'flatpickr/dist/l10n/es';
 
                                     if (parseInt(res.status) === 200 ) {
 
-                                        window.location = '/gracias.html';
+                                        window.location = '/gracias';
 
                                     }
 
