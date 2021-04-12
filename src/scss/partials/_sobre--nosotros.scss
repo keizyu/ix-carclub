@@ -39,3 +39,21 @@
         background-image: url('https://dummyimage.com/300x250/000/fff');
     }
 }
+
+@media all and (max-width: 769px){
+    .grid-container{
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        
+        .element1{
+            grid-column: 4/10;
+        }
+
+        .element2,
+        .element3,
+        .element7{
+            grid-column: 2/12;
+            padding: 0;
+        }
+    }
+}
