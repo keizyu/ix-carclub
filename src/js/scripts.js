@@ -40,6 +40,10 @@ import { Spanish } from 'flatpickr/dist/l10n/es';
 
     ////////////// COUNTER NUMBER
 
+    const format = num =>
+        String(num).replace(/(?<!\..*)(\d)(?=(?:\d{3})+(?:\.|$))/g, '$1,')
+    ;
+
     const boxNumbers = document.getElementsByClassName('box-number');
 
     function animateValue(obj, start, end, duration) {
@@ -51,7 +55,7 @@ import { Spanish } from 'flatpickr/dist/l10n/es';
             startTimestamp = startTimestamp ? timestamp : null;
 
             const progress = Math.min((timestamp - startTimestamp) / duration, 1);
-            obj.innerHTML = Math.floor(progress * (end - start) + start);
+            obj.innerHTML = format( Math.floor(progress * (end - start) + start) );
 
             if (progress < 1) {
                 window.requestAnimationFrame(step);
@@ -67,8 +71,9 @@ import { Spanish } from 'flatpickr/dist/l10n/es';
         for (let i = 0; i < boxNumbers.length; i++) {
 
             let numberValue = boxNumbers[i].getAttribute('data-number');
+            let timer = boxNumbers[i].getAttribute('data-timer');
 
-            animateValue(boxNumbers[i], 0, numberValue, 5000);
+            animateValue(boxNumbers[i], 0, numberValue, timer);
 
         }
 
