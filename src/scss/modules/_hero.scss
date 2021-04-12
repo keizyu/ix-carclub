@@ -12,6 +12,9 @@
     &__servicesbkg{
         background-image: url('/assets/img/background.png');
     }
+    &_sobre-nosotros{
+        background-image: url('/assets/img/servicio_mantenimiento_automotri.jpg');
+    }
 
     @media all and (max-width : 1024px) {
         background-image: none !important;

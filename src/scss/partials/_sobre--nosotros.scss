@@ -5,7 +5,7 @@
     padding: 0;
 
     .element1{
-        grid-column: 1/7;
+        grid-column: 2/7;
         justify-self: end;
     }
     .element2{
@@ -19,24 +19,24 @@
         padding: 30px 0;
     }
     .element-img{
-        border: 1px solid white;
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
         height: 250px;
         width: 100%;
     }
+    
     .element4{
         grid-column: 1/5;
-        background-image: url('https://dummyimage.com/300x250/000/fff');
+        background-image: url('/assets/img/servicio_mecanico.jpg');
     }
     .element5{
         grid-column: 5/9;
-        background-image: url('https://dummyimage.com/300x250/000/fff');
+        background-image: url('/assets/img/Servicios_automotrices.jpg');
     }
     .element6{
         grid-column: 9/13;
-        background-image: url('https://dummyimage.com/300x250/000/fff');
+        background-image: url('/assets/img/Taller_de_servicios.jpg');
     }
 }
 
@@ -46,7 +46,8 @@
         grid-template-columns: repeat(12, 1fr);
         
         .element1{
-            grid-column: 4/10;
+            grid-column: 3/11;
+            justify-self: center;
         }
 
         .element2,
