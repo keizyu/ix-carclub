@@ -42,11 +42,11 @@
 
     &-border {
 
-        background-color: transparent;
+        background-color: $grey-5;
         border: 2px solid $white;
 
         &:hover {
-            background-color: transparentize($white, 0.7);
+            background-color: transparentize($white, 0.8);
         }
 
         &.btn-black {
