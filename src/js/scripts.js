@@ -152,6 +152,11 @@ import { Spanish } from 'flatpickr/dist/l10n/es';
         const contactForm = document.getElementById('contact-form');
         const scheduleForm = document.getElementById('schedule-form');
 
+        // loader in submit
+        const submitbtn = document.getElementById('submitbtn');
+        let loader = document.createElement('div');
+        loader.className = 'loader';
+
         ////////////// CONTACT US FORM HANDLER
 
         if ( contactForm ) {
@@ -168,6 +173,9 @@ import { Spanish } from 'flatpickr/dist/l10n/es';
                 let isValid = pristine.validate();
 
                 if ( isValid ) {
+
+                    submitbtn.innerHTML = '';
+                    submitbtn.appendChild(loader);
 
                     let firstName = document.getElementById('firstName').value;
                     let lastName = document.getElementById('lastName').value;
@@ -216,6 +224,8 @@ import { Spanish } from 'flatpickr/dist/l10n/es';
                                 })
                                 .catch( err => {
                                     console.error(err);
+
+                                    document.getElementById('submitbtn').innerHTML = 'Enviar';
 
                                     if ( parseInt(err.status) === 500 ) {
                                         window.alert(err.message);
@@ -424,6 +434,9 @@ import { Spanish } from 'flatpickr/dist/l10n/es';
 
                 if ( isValid && zoneValid && isMovilServicesValid && isTallerServicesValid) {
 
+                    submitbtn.innerHTML = '';
+                    submitbtn.appendChild(loader);
+
                     let serviceWorkshop = document.getElementById('serviceWorkshop').value;
                     serviceWorkshop = (serviceWorkshop === 'taller') ? 'Taller de CarClub Firestone' : (serviceWorkshop === 'movil') ? 'Taller a Domicilio (CarClub Móvil)' : 'Undefined type of service';
                     let firstName = document.getElementById('firstName').value;
@@ -485,6 +498,7 @@ import { Spanish } from 'flatpickr/dist/l10n/es';
                                 .catch( err => {
 
                                     console.error(err);
+                                    document.getElementById('submitbtn').innerHTML = 'Enviar';
 
                                     if ( parseInt(err.status) === 500 ) {
 
