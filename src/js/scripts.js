@@ -124,6 +124,31 @@ import { Spanish } from 'flatpickr/dist/l10n/es';
     const fullYear = new Date().getFullYear();
     document.getElementById('getFullYear').innerHTML = fullYear;
 
+    // get Bing Map
+
+    const mapContainer = document.getElementById('map');
+
+    function getMap() {
+        
+        let map = new Microsoft.Maps.Map('#map', {
+            credentials: 'Alqx3peKgY_8B05zrSse0rDrgzAF9hoQ7hIDk1r8MVx9BO_4Pnk7n8FfGXXWWIdO',
+            center: new Microsoft.Maps.Location(9.994938,-84.170544),
+            zoom: 14
+        });
+
+        let center = map.getCenter();
+
+        //Create custom Pushpin
+        let pin = new Microsoft.Maps.Pushpin(center, {
+            title: 'CarClub',
+            subTitle: 'Firestone Costa Rica',
+            icon: '/assets/img/marker.svg',
+        });
+
+        //Add the pushpin to the map
+        map.entities.push(pin);
+
+    }
 
     ////////////// RECAPTCHA
 
@@ -163,6 +188,10 @@ import { Spanish } from 'flatpickr/dist/l10n/es';
         loader.className = 'loader';
 
         ////////////// CONTACT US FORM HANDLER
+
+        if ( mapContainer ) {
+            getMap();
+        }
 
         if ( contactForm ) {
 
@@ -528,6 +557,5 @@ import { Spanish } from 'flatpickr/dist/l10n/es';
         }
 
     });
-
 
 })(window, document);

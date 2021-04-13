@@ -118,4 +118,14 @@
 
 </section>
 
-@@include('./_components/footer.html')
+<section class="grid grid-center">
+
+    <div class="col-12">
+        <div id="map" style="position:relative;width:100%;height:400px;"></div>
+    </div>
+</section>
+
+
+@@include('./_components/footer.html', {
+    'getMap': true,
+})
