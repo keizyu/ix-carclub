@@ -1,27 +1,41 @@
-$line: 1px solid #000;
+$line: 1px solid $grey-2;
 
-footer {
-    background-color: #fff;
-	left: 0;
-	bottom: 0;
+.footer {
+
+    background-color: $white;
     width: 100%;
     flex-shrink: 0;
-    padding-top: 2rem;
+    // border-top: 1rem solid $grey-1;
 
     .first-section {
-    	width: 100%;
+
+        width: 100%;
     	display: flex;
         border-bottom: $line;
         text-align: center;
 
+        @include screen('md', 'max') {
+
+            flex-direction: column;
+            padding: 0;
+
+        }
+
         &_logo {
+
             width: 25%;
             text-align: center;
             display: flex;
             justify-content: center;
             align-items: center;
 
+            @include screen('md', 'max') {
+                background-color: $grey-1;
+                width: 100%;
+            }
+
             img {
+
                 width: 120px;
                 filter: grayscale(100%);
                 height: 100px;
@@ -34,121 +48,79 @@ footer {
         }
 
         &_datos {
+
             width: 75%;
             display: flex;
             align-items: center;
             justify-content: space-around;
-            p {
-                text-align: center;
+            margin: 1rem 0;
+
+            @include screen('md', 'max') {
+                width: 100%;
             }
+
+            @include screen('sm', 'max') {
+                flex-direction: column;
+            }
+
         }
+
 
     }
 
     .second-section {
-    	width: 100%;
+
+        width: 100%;
     	display: flex;
+
+        @include screen('md', 'max') {
+            flex-direction: column;
+            align-items: center;
+            padding-top: 1rem;
+        }
+
+
         &_datos {
+
             width: 75%;
             display: flex;
             align-items: center;
             justify-content: flex-start;
+
+            @include screen('md', 'max') {
+                justify-content: space-around;
+                width: 100%;
+            }
+
+            @include screen('sm', 'max') {
+                flex-direction: column;
+            }
+
             p {
-                padding-left: 50px;
+
+                padding: 0 3rem;
+
+                @include screen('md', 'max') {
+                    padding: 0;
+                }
+
             }
         }
+
         &_logo {
+
             width: 25%;
             height: 50px;
             display: flex;
             align-items: center;
             justify-content: center;
-        }
-    }
 
-}
-
-@include screen('sm', 'max') {
-
-    footer {
-
-        left: 0;
-        bottom: 0;
-        width: 100%;
-        text-align: center;
-        height: auto;
-
-        .first-section {
-    		width: 100%;
-    		height: auto;
-    		display: flex;
-            flex-direction: column;
-            padding: 0;
-            &_logo {
-                width: 100%;
-                height: 80px;
-            }
-            &_datos {
-                width: 100%;
-                display: flex;
-                flex-direction: column;
-                padding: 5px;
-                p {
-                    padding-bottom: 15px;
-                }
-            }
-    	}
-
-        .second-section{
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding-top: 20px;
-
-            &_datos{
-                justify-content: space-around;
-
-                p{
-                    padding: 0;
-                }
-            }
-
-            &_logo{
+            @include screen('md', 'max') {
                 width: 100%;
             }
+
         }
 
     }
-}
-
-@include screen('xs', 'max') {
-
-    footer {
-
-    	.second-section {
-    		width: 100%;
-    		height: auto;
-    		display: flex;
-    		flex-direction: column;
-            padding: 0;
-            &_datos {
-                width: 100%;
-                display: flex;
-                flex-direction: column;
-                p {
-                    padding-left: 0;
-                    padding-bottom: 10px;
-                }
-            }
-            &_logo {
-                width: 100%;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-            }
-    	}
-
-    }
-
 
 }
