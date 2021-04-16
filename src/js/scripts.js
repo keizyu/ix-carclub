@@ -40,10 +40,6 @@ import { Spanish } from 'flatpickr/dist/l10n/es';
 
     ////////////// COUNTER NUMBER
 
-    const format = num =>
-        String(num).replace(/(?<!\..*)(\d)(?=(?:\d{3})+(?:\.|$))/g, '$1,')
-    ;
-
     const boxNumbers = document.getElementsByClassName('box-number');
 
     function animateValue(obj, start, end, duration) {
@@ -55,7 +51,7 @@ import { Spanish } from 'flatpickr/dist/l10n/es';
             startTimestamp = startTimestamp ? timestamp : null;
 
             const progress = Math.min((timestamp - startTimestamp) / duration, 1);
-            obj.innerHTML = format( Math.floor(progress * (end - start) + start) );
+            obj.innerHTML = Math.floor(progress * (end - start) + start);
 
             if (progress < 1) {
                 window.requestAnimationFrame(step);
@@ -166,7 +162,6 @@ import { Spanish } from 'flatpickr/dist/l10n/es';
 
     );
 
-    // console.log('recaptchaSiteKey ----->', envSiteKey);
 
     function loadRecaptchaScript() {
 
@@ -220,13 +215,9 @@ import { Spanish } from 'flatpickr/dist/l10n/es';
                     let privacy = document.getElementById('privacy').checked;
                     let country = document.getElementsByTagName('html')[0].getAttribute('data-country');
 
-                    // console.log( firstName, lastName, phone, emailId, reasonNodePath, comments, privacy );
-
                     grecaptcha.ready( () => {
 
                         grecaptcha.execute( envSiteKey, { action: 'submit' } ).then( token => {
-
-                            // console.log('g-recaptcha-response --->', token);
 
                             let options = {
                                 method: 'POST',
@@ -249,7 +240,6 @@ import { Spanish } from 'flatpickr/dist/l10n/es';
 
                             axios.request(options)
                                 .then( res => {
-                                    // console.log(res.data);
 
                                     if (parseInt(res.status) === 200 ) {
                                         window.location = '/gracias';
@@ -464,8 +454,6 @@ import { Spanish } from 'flatpickr/dist/l10n/es';
                     checkbox.addEventListener('change', confirmTallerCheck);
                 });
 
-                console.log(isValid, zoneValid, isMovilServicesValid, isTallerServicesValid);
-
                 if ( isValid && zoneValid && isMovilServicesValid && isTallerServicesValid) {
 
                     submitbtn.innerHTML = '';
@@ -486,14 +474,9 @@ import { Spanish } from 'flatpickr/dist/l10n/es';
                     let typeOfService = [].slice.call(textInputs).map( el => el.value).join(', ');
                     let country = document.getElementsByTagName('html')[0].getAttribute('data-country');
 
-                    // console.log('DATA ---->: ','serviceWorkshop: ' + serviceWorkshop,'firstName: ' + firstName,'lastName: ' + lastName,'phone: ' + phone,'emailId: ' + emailId,'comments: ' + comments,'date: ' + date,'time: ' + time,'privacy: ' + privacy,'zone: ' + zone);
-                    // console.log('comma separated list checkboxes values --->', typeOfService);
-
                     grecaptcha.ready( () => {
 
                         grecaptcha.execute( envSiteKey, { action: 'submit' } ).then( token => {
-
-                            // console.log('g-recaptcha-response --->', token);
 
                             let options = {
                                 method: 'POST',
@@ -520,7 +503,6 @@ import { Spanish } from 'flatpickr/dist/l10n/es';
 
                             axios.request(options)
                                 .then( res => {
-                                    // console.log(res.data);
 
                                     if (parseInt(res.status) === 200 ) {
 
