@@ -21,6 +21,13 @@
                 @@body
             </div>
 
+            @@if ( context.youtubeID ) {
+                <div class="video_wrapper">
+                    <iframe width="838" height="470" src="https://www.youtube.com/embed/@@youtubeID?enablejsapi=1" frameborder="0"></iframe>
+                </div>
+            }
+
         </div>
+
     </div>
 </section>
