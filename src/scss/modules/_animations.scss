@@ -153,6 +153,7 @@
 		transform: translate3d(0,0,0);
 		opacity: 1;
 		visibility: visible;
+		max-height: -moz-max-content;
 		max-height: fit-content;
 
 	}
