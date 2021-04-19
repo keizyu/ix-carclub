@@ -203,6 +203,7 @@ import { Spanish } from 'flatpickr/dist/l10n/es';
 
                 if ( isValid ) {
 
+                    submitbtn.setAttribute('disabled', 'disabled');
                     submitbtn.innerHTML = '';
                     submitbtn.appendChild(loader);
 
@@ -249,7 +250,8 @@ import { Spanish } from 'flatpickr/dist/l10n/es';
                                 .catch( err => {
                                     console.error(err);
 
-                                    document.getElementById('submitbtn').innerHTML = 'Enviar';
+                                    submitbtn.removeAttribute('disabled');
+                                    submitbtn.innerHTML = 'Enviar';
 
                                     if ( parseInt(err.status) === 500 ) {
                                         window.alert(err.message);
@@ -456,6 +458,7 @@ import { Spanish } from 'flatpickr/dist/l10n/es';
 
                 if ( isValid && zoneValid && isMovilServicesValid && isTallerServicesValid) {
 
+                    submitbtn.setAttribute('disabled', 'disabled');
                     submitbtn.innerHTML = '';
                     submitbtn.appendChild(loader);
 
@@ -514,7 +517,8 @@ import { Spanish } from 'flatpickr/dist/l10n/es';
                                 .catch( err => {
 
                                     console.error(err);
-                                    document.getElementById('submitbtn').innerHTML = 'Enviar';
+                                    submitbtn.removeAttribute('disabled');
+                                    submitbtn.innerHTML = 'Enviar';
 
                                     if ( parseInt(err.status) === 500 ) {
 

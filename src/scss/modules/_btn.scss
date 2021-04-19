@@ -63,4 +63,9 @@
         text-align: center;
         font-size: 1.4rem;
     }
+
+    &[disabled] {
+        background-color: $grey-3;
+        cursor: not-allowed
+    }
 }
