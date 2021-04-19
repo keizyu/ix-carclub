@@ -411,11 +411,19 @@ import { Spanish } from 'flatpickr/dist/l10n/es';
                 let checkboxArray = Array.from( movilServicesChksArr );
 
                 function confirmMovilCheck() {
-                    // if (this.checked) {
+
+                    let isAnyChecked = [].slice.call(movilServicesChksArr).filter(chk => chk.checked);
+
+                    if ( isAnyChecked.length > 0 ) {
                         movilServicesChksError.setAttribute('style','display:none');
                         movilServicesChksParent.classList.add('has-success');
                         movilServicesChksParent.classList.remove('has-danger');
-                    // }
+                    } else {
+                        movilServicesChksError.setAttribute('style','display:block');
+                        movilServicesChksParent.classList.remove('has-success');
+                        movilServicesChksParent.classList.add('has-danger');
+                    }
+
                 }
 
                 checkboxArray.forEach( checkbox => {
@@ -445,11 +453,18 @@ import { Spanish } from 'flatpickr/dist/l10n/es';
                 let tallerCheckboxArray = Array.from( tallerServicesChksArr );
 
                 function confirmTallerCheck() {
-                    // if (this.checked) {
+                    let isAnyChecked = [].slice.call(tallerServicesChksArr).filter(chk => chk.checked);
+
+                    if ( isAnyChecked.length > 0 ) {
                         tallerServicesChksError.setAttribute('style','display:none');
                         tallerServices.classList.add('has-success');
                         tallerServices.classList.remove('has-danger');
-                    // }
+                    } else {
+                        tallerServicesChksError.setAttribute('style','display:block');
+                        tallerServices.classList.remove('has-success');
+                        tallerServices.classList.add('has-danger');
+                    }
+
                 }
 
                 tallerCheckboxArray.forEach( checkbox => {
