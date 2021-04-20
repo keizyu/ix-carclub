@@ -1,0 +1,95 @@
+// Define the breakpoints
+$breakpoint-xs: 576px;
+$breakpoint-sm: 768px;
+$breakpoint-md: 1024px;
+$breakpoint-lg: 1280px;
+
+@mixin screen($size, $type: max, $pixels: $breakpoint-xs) {
+
+    @if $type == 'max' {
+
+        @if $size == 'xs' {
+            @media screen and ($type + -width: $breakpoint-xs) {
+                @content;
+            }
+        }
+
+        @else if $size == 'sm' {
+            @media screen and ($type + -width: $breakpoint-sm) {
+                @content;
+            }
+        }
+
+        @else if $size == 'md' {
+            @media screen and ($type + -width: $breakpoint-md) {
+                @content;
+            }
+        }
+
+        @else if $size == 'lg' {
+            @media screen and ($type + -width: $breakpoint-lg) {
+                @content;
+            }
+        }
+
+        @else if $size == 'custom' {
+            @media screen and ($type + -width: $pixels + px) {
+                @content;
+            }
+        }
+
+        @else {
+            @content;
+        }
+
+    }
+
+    @if $type == 'min' {
+        @if $size == 'xs' {
+            @media screen and ($type + -width: $breakpoint-xs + 1 ) {
+                @content;
+            }
+        }
+
+        @else if $size == 'sm' {
+            @media screen and ($type + -width: $breakpoint-sm + 1) {
+                @content;
+            }
+        }
+
+        @else if $size == 'md' {
+            @media screen and ($type + -width: $breakpoint-md + 1) {
+                @content;
+            }
+        }
+
+        @else if $size == 'lg' {
+            @media screen and ($type + -width: $breakpoint-lg + 1) {
+                @content;
+            }
+        }
+
+        @else if $size == 'custom' {
+            @media screen and ($type + -width: $pixels + px) {
+                @content;
+            }
+        }
+
+        @else {
+            @content;
+        }
+    }
+
+}
+
+@mixin pill() {
+
+    content:'';
+    position:absolute;
+    width: 100%;
+    height: 12%;
+    background: $white;
+    border-radius: $size;
+    transition: all .5s cubic-bezier(.1, .9, 0, 1.2);
+
+}

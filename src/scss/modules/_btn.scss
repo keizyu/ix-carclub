@@ -1,0 +1,71 @@
+.btn {
+
+    font-size: 1.2rem;
+    color: $white;
+    cursor: pointer;
+    border: none;
+    background-color: $grey-3;
+    padding: 8px 40px;
+    display: inline-block;
+
+    &:hover {
+
+        color: $white;
+        background-color: lighten($grey-3, 10%);
+        text-decoration: none;
+
+    }
+
+    &-red{
+
+        background-color: $brand-primary;
+
+        &:hover{
+            background-color: lighten($brand-primary, 10%)
+        }
+
+    }
+
+    &-black{
+
+        background-color: $black;
+
+        &:hover{
+            background-color: lighten($black, 10%)
+        }
+
+    }
+
+    &-white {
+        background-color: white;
+    }
+
+    &-border {
+
+        background-color: $grey-5;
+        border: 2px solid $white;
+
+        &:hover {
+            background-color: transparentize($white, 0.8);
+        }
+
+        &.btn-black {
+            border-color: $black;
+            color: $black
+        }
+
+    }
+
+    &-width__full {
+        display: block;
+        width: 100%;
+        padding: 1.6rem;
+        text-align: center;
+        font-size: 1.4rem;
+    }
+
+    &[disabled] {
+        background-color: $grey-3;
+        cursor: not-allowed
+    }
+}

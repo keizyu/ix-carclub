@@ -1,0 +1,130 @@
+@@include('./_components/header.html', {
+    'metaTitle': 'Car Club móvil',
+    'metaDescription': 'En CarClub Firestone Costa Rica llevamos el servicio automotriz directo a su domicilio con CarClub Móvil. ¡Agende su cita!',
+    'metaKeywords': 'taller mécnico a domicilio, servicio firestone, firestone taller, servicio bridgestone, centro de servicio automotriz, servicios automotrices'
+})
+
+
+<div class="swiper-container">
+
+    <div class="swiper-wrapper">
+
+        <!-- Slides -->
+        @@loop('./_components/swiper-slides.html', [
+            {
+                "title": "CarClub Móvil es su Taller a domicilio",
+                "text": "<p>Nuestro taller móvil está equipado para realizar mantenimiento del vehículo a domicilio, con la exclusividad de que es el único taller Firestone móvil que va al cliente y que brinda un servicio completo, incluyendo cambio de llantas a domicilio.</p>",
+                "color": "white",
+                "btnStyle": "solid",
+                "btnColor": "black",
+                "ctaText": "AGENDAR CITA",
+                "ctaLink": "/agendar-cita-car-club-firestone",
+                "imgAsBkg": true,
+                "bkgImage": "/assets/img/C_1180x450_CarClub_Movil.jpg",
+                "bkgColor": "#E32313",
+                "bkgPosition": "right",
+            },
+            {
+                "title": "Expertos a Domicilio",
+                "text": "<p> Servicio sin salir de su casa u oficina.</p>",
+                "color": "white",
+                "btnStyle": "border",
+                "ctaText": "AGENDAR CITA",
+                "ctaLink": "/agendar-cita-car-club-firestone",
+                "imgAsBkg": true,
+                "bkgImage": "/assets/img/C_1180x450_CarClub_Movil_2.jpg",
+                "bkgColor": "#0F0F0F",
+                "bkgPosition": "right"
+            }
+        ])
+
+    </div>
+
+    <div class="swiper-pagination"></div>
+
+</div>
+
+<section class="section pb0">
+
+    <div class="grid grid-middle">
+        <div class="col-6_lg-8_md-10_sm-10" data-push-left="off-3_lg-2_md-1_sm-1">
+            <h2 class="text-center">NUESTROS SERVICIOS</h2>
+            <p>Los servicios están disponibles en la Gran Área Metropolitana y brindan la facilidad de realizar el mantenimiento del vehículo sin desplazarse del hogar.</p>
+            <p>Los servicios van desde el mantenimiento preventivo, mecánica rápida, hasta la solicitud, instalación y balanceo de llantas.</p>
+        </div>
+    </div>
+
+    <div class="section-services__wrapper">
+
+        <div class="grid-noGutter card-grid">
+
+            @@loop('./_components/services-grid-animated.html', [
+                {
+                    "iconID": "tire-icon",
+                    "serviceHeading": "Montaje y Balanceo de Llantas",
+                    "serviceBody": "Las mejores llantas Firestone y Bridgestone para auto o camioneta."
+                },{
+                    "iconID": "oil-icon",
+                    "serviceHeading": "Cambio de Aceite de Motor",
+                    "serviceBody": "Recuerde realizar el cambio  de  aceite  según corresponda."
+                },{
+                    "iconID": "ac-icon",
+                    "serviceHeading": "Cambio de Filtros <br>de A/C",
+                    "serviceBody": "Revisamos y cambiamos el filtro interior de cabina; este se debe reemplazar cada 6 meses pues filtra el aire que respiramos."
+                },{
+                    "iconID": "brakes-icon",
+                    "serviceHeading": "Mantenimiento completo de Freno",
+                    "serviceBody": "Recuerde revisar sus frenos de forma  periódica  por su seguridad."
+                },{
+                    "iconID": "disinfection-icon",
+                    "serviceHeading": "Desinfección<br>de Vehículo",
+                    "serviceBody": "Protegemos tanto a los ocupantes del vehículo como todos sus componentes internos, en tan sólo unos minutos por medio de una nube bactericida sin olor y sin residuos."
+                },{
+                    "iconID": "battery-icon",
+                    "serviceHeading": "Cambio de Batería",
+                    "serviceBody": "El corazón de su motor, asegúrese de que funciona bien."
+                },{
+                    "iconID": "fluid-icon",
+                    "serviceHeading": "Revisión y cambio de fluidos",
+                    "serviceBody": "Revisamos el estado de la vida útil del líquido de frenos, refrigerante, hidráulico, aceite de caja y diferenciales entre otros."
+                },{
+                    "iconID": "others-icon",
+                    "serviceHeading": "Revisión General del Vehículo",
+                    "serviceBody": "Somos su taller mecánico de confianza por excelencia."
+                }
+            ])
+
+        </div>
+
+    </div>
+</section>
+
+
+<section class="section pt0">
+
+    <div class="grid grid-middle">
+        <div class="col-6_lg-8_md-10_sm-10" data-push-left="off-3_lg-2_md-1_sm-1">
+
+            <h3>Zonas de cobertura:</h3>
+            <ul>
+                <li>Este: Cartago / Tres Ríos, Pinares, Curridabat, Desamparados.</li>
+                <li>Oeste: Alajuela / San Ramón, Palmares, Grecia, Poás.</li>
+                <li>Norte: Heredia / San Rafael, Sto Domingo, Sta Barbara, Barva.</li>
+                <li>Sur: San José / Escazú, Ciudad Colón, San Ana.</li>
+            </ul>
+            <p>Nuestro servicio a domicilio únicamente llega a cubrir sólo la gran área metropolitana.</p>
+
+            <h3>Horario:</h3>
+            <p>De lunes a viernes de 8:00 am a 5:00 pm, y sábado, de 8:00 a.m. a 1:00 p.m.</p>
+
+            <h3>Formas de Pago:</h3>
+            <p>Con tarjeta de Crédito o Débito (la móvil cuenta con datafono), o por medio de transferencia bancaria.</p>
+
+            <a href="/agendar-cita-car-club-firestone" class="btn btn-red btn-width__full mt4">AGENDAR CITA</a>
+
+        </div>
+    </div>
+</section>
+
+
+@@include('./_components/footer.html')

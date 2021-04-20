@@ -1,0 +1,110 @@
+<!doctype html>
+<html class="no-js" lang="es" data-country="CR">
+    <head>
+        <meta charset="utf-8">
+        <title>@@if ( context.metaTitle ) {@@metaTitle | }CarClub Firestone Costa Rica</title>
+
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        @@if (context.metaDescription) {<meta name="description" content="@@metaDescription">}
+        @@if (context.metaKeywords) {<meta name="keywords" content="@@metaKeywords">}
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+        <link rel="icon" href="/favicon.ico" />
+        <link rel="apple-touch-icon" sizes="57x57" href="/assets/favicons/apple-icon-57x57.png">
+        <link rel="apple-touch-icon" sizes="60x60" href="/assets/favicons/apple-icon-60x60.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="/assets/favicons/apple-icon-72x72.png">
+        <link rel="apple-touch-icon" sizes="76x76" href="/assets/favicons/apple-icon-76x76.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="/assets/favicons/apple-icon-114x114.png">
+        <link rel="apple-touch-icon" sizes="120x120" href="/assets/favicons/apple-icon-120x120.png">
+        <link rel="apple-touch-icon" sizes="144x144" href="/assets/favicons/apple-icon-144x144.png">
+        <link rel="apple-touch-icon" sizes="152x152" href="/assets/favicons/apple-icon-152x152.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicons/apple-icon-180x180.png">
+        <link rel="icon" type="image/png" sizes="192x192" href="/assets/favicons/android-icon-192x192.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicons/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="96x96" href="/assets/favicons/favicon-96x96.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicons/favicon-16x16.png">
+        <link rel="manifest" href="/assets/favicons/manifest.json">
+        <meta name="msapplication-TileColor" content="#ffffff">
+        <meta name="msapplication-TileImage" content="/assetsfavicons/ms-icon-144x144.png">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link href="/assets/css/style.min.css" rel="stylesheet">
+    </head>
+    <body>
+
+    @@include('./svg.html')
+
+    <header class="ccnav__header">
+
+        <div class="ccnav__social">
+            <div class="ccnav__social-item"><a href="tel:+506-4100-4400"><strong class="number">(+506) 4100-4400</strong></a></div>
+
+              <div class="ccnav__social-item">
+                  <a href="https://www.facebook.com/CarClubFirestoneCR" target="_blank">
+                      <svg class="icon facebook-logo"><use xlink:href="#fb-icon"></use></svg>
+                  </a>
+              </div>
+
+        </div>
+
+        <nav class="ccnav" id="ccnav">
+
+            <div class="ccnav__logo">
+              <a href="/">
+                <img src="/assets/img/Logo-CarCLub.svg" alt="CarClub Logo" />
+              </a>
+            </div>
+
+
+            <label for="drop" class="ccnav__toggle ccnav__icon-toggle">
+                <div class="burger-wrapper"><input id="burger" type="checkbox" /><bun><burger></burger></bun></div>
+            </label>
+
+            <ul class="menu" >
+
+                <li>
+
+                    <label for="drop-1" class="ccnav__toggle">SERVICIOS</label>
+
+                    <input type="checkbox" id="drop-1" />
+
+                    <ul class="ccnav__menu-subnav">
+                        <li><a href="/cambio-de-llantas">Servicio de Llantas</a></li>
+                        <li><a href="/cambio-de-aceite">Cambio de Aceite</a></li>
+                        <li><a href="/frenos">Servicio de Frenos</a></li>
+                        <li><a href="/alineacion-de-llantas">Alineamiento</a></li>
+                        <li><a href="/mantenimiento-preventivo-automotriz">Mantenimiento Automotriz</a></li>
+                        <li><a href="/servicio-de-baterias-de-carro">Baterias</a></li>
+                        <li><a href="/balanceo-de-llantas">Balanceo</a></li>
+                        <li><a href="/otros-servicios">Otros Servicios</a></li>
+                    </ul>
+
+                    <a>
+                        SERVICIOS
+                        <svg class="icon caret-down"><use xlink:href="#caret-down"></use></svg>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="/car-club-movil"><span>CARCLUB M&Oacute;VIL</span></a>
+                </li>
+
+                <li>
+                    <a href="/agendar-cita-car-club-firestone"><span>AGENDE SU CITA</span></a>
+                </li>
+
+                <li>
+                    <a href="/taller-mecanico-automotriz"><span>SOBRE NOSOTROS</span></a>
+                </li>
+
+                <li>
+                    <a href="/contacto-car-club-firestone"><span>CONT&Aacute;CTENOS</span></a>
+                </li>
+
+
+            </ul>
+        </nav>
+
+    </header>
+
+    <main class="main">

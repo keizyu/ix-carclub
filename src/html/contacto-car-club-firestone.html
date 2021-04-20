@@ -1,0 +1,131 @@
+@@include('./_components/header.html', {
+    'metaTitle': 'Contacto',
+    'metaDescription': "En Car Club Firestone le apoyamos con el mantenimiento de su carro. Contáctenos al (+506) 4100-4400. Belén, 300mts al Oeste del puente de la Firestone."
+})
+
+<section class="section section-hero section-hero__title section-hero__title--centered section-hero__black" style="background-image: url('/assets/img/C_Back_ContactUs_1180x300_2.jpg');">
+
+    <div class="section-hero__info">
+        <h1 class="mb0">Contáctenos</h1>
+    </div>
+
+</section>
+
+
+<section class="section section-forms">
+
+    <div class="grid-3-center">
+
+        <div class="col-5_md-10">
+
+            <div class="section-forms__info">
+                <p class="mt0">Si tiene dudas sobre nuestro servicio, por favor contáctenos a través de alguna de las opciones que ponemos a su disposición o visítenos directamente en nuestra sucursal ubicada en Belén, 300mts. al Oeste del puente de la Firestone <a href="#map" class="color-blue">(Ver mapa)</a> de Lunes a Viernes de 7:00am a 5:00 pm y Sábados de 7:00am a 1:00pm.</p>
+                <ul>
+                    <li>Teléfono: <a href="tel:+506-4100-4400"><strong>(+506) 4100-4400</strong></a></li>
+                    <li>Whatsapp: <a href="https://wa.me/50672397278?text=Hola%20me%20gustar%C3%ADa%20saber%20m%C3%A1s%20informaci%C3%B3n%20sobre%20los%20servicios%20de..."><strong>(+506) 7239-7278</strong></a></li>
+                </ul>
+            </div>
+
+            <form id="contact-form">
+
+                <div class="form-group">
+                    <!-- <label for="reasonNodePath">Seleccione un motivo <sup>*</sup></label> -->
+                    <select id="reasonNodePath" data-pristine-required-message="Seleccione un motivo" required>
+                        <option value="">Seleccione un motivo <sup>*</sup></option>
+                        <option value="Aclaraciones">Aclaraciones</option>
+                        <option value="Cotización">Cotización</option>
+                        <option value="Información de servicios">Información general</option>
+                        <option value="Quejas">Quejas</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <!-- <label for="firstName">Nombre*</label> -->
+                    <input
+                        type="text"
+                        name="firstName"
+                        id="firstName"
+                        placeholder="Nombre *"
+                        data-pristine-required-message="El nombre es obligatorio"
+                        minlength="3"
+                        data-pristine-minlength-message="El nombre debe tener al menos 3 caracteres"
+                        required >
+                </div>
+
+                <div class="form-group">
+                    <!-- <label for="lastName">Apellidos*</label> -->
+                    <input
+                        type="text"
+                        name="lastName"
+                        id="lastName"
+                        placeholder="Apellidos *"
+                        data-pristine-required-message="El apellido es obligatorio"
+                        minlength="3"
+                        data-pristine-minlength-message="El apellido debe tener al menos 3 caracteres"
+                        required >
+                </div>
+
+                <div class="form-group">
+                    <!-- <label for="emailId">Email*</label> -->
+                    <input
+                        type="email"
+                        name="emailId"
+                        id="emailId"
+                        placeholder="Email *"
+                        data-pristine-required-message="El email es obligatorio"
+                        data-pristine-email-message="Este campo requiere una dirección de email válida"
+                        required >
+                </div>
+
+                <div class="form-group">
+                    <!-- <label for="phone">Teléfono*</label> -->
+                    <input type="number" name="phone" id="phone" placeholder="Teléfono" >
+                </div>
+
+                <div class="form-group">
+                    <!-- <label for="comments">Introduce tu mensaje*</label> -->
+                    <textarea
+                        rows="8"
+                        cols="80"
+                        name="comments"
+                        id="comments"
+                        placeholder="Introduce tu mensaje *"
+                        data-pristine-required-message="El mensaje es obligatorio"
+                        minlength="3"
+                        data-pristine-minlength-message="El mensaje debe tener al menos 3 caracteres"
+                        required ></textarea>
+                </div>
+
+                <div class="form-group">
+                    <div class="inline-label">
+                        <input
+                            type="checkbox"
+                            id="privacy"
+                            name="privacy"
+                            data-pristine-required-message="Debes de aceptar el Aviso de Privacidad"
+                            required >
+                        <label for="privacy">He leído y acepto el <a href="/legal/consentimiento-informado" class="color-blue">Consentimiento Informado</a> y el <a href="/legal/aviso-de-privacidad" class="color-blue">Aviso de Privacidad</a> <sup>*</sup></label>
+                    </div>
+                </div>
+
+                <button id="submitbtn" type="submit" class="btn btn-red">Enviar</button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section class="grid grid-center">
+
+    <div class="col-12">
+        <div id="map" style="position:relative;width:100%;height:400px;"></div>
+    </div>
+</section>
+
+
+@@include('./_components/footer.html', {
+    'getMap': true,
+})

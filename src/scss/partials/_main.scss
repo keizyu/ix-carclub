@@ -1,3 +1,53 @@
 .main {
 
+    min-width: 320px;
+
+    //sticky footer
+    flex: 1 0 auto;
+    margin-top: 92px;
+
+    @include screen('sm', 'min') {
+        margin-top: 102px;
+    }
+
+}
+
+.section {
+
+    &-aboutus h3 {
+        margin-top: 0;
+    }
+
+    &-services {
+
+        background-color: $grey-1;
+
+        p {
+
+            @include screen('sm', 'min') {
+                text-align: left;
+            }
+
+        }
+
+        &__wrapper {
+            max-width: 1112px;
+            margin: 0 auto;
+        }
+
+    }
+
+    @include screen('sm', 'min') {
+        .grid-with-border {
+            [class*=col-], [class*=col_], [class~=col] {
+
+                &:nth-child(3n + 2) .box {
+                    border-left: 1px solid $grey-3;
+                    border-right: 1px solid $grey-3;
+                }
+
+            }
+        }
+    }
+
 }

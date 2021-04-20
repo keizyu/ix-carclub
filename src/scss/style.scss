@@ -1,13 +1,42 @@
+
 //----------------------------------*\
 // CONFIG MODULES
 //----------------------------------*/
 
-// Config modules
-@import 'modules/_normalize.scss';
+@import 'modules/normalize';
+
+/* variables */
+@import 'modules/vars';
+
+/* mixins */
+@import 'modules/_mixins';
+
+/* grid */
+@import 'modules/grid/gridlex';
+
+// Carousel
+@import 'node_modules/swiper/swiper-bundle';
+
+// Datepicker
+@import 'node_modules/flatpickr/dist/flatpickr';
+
+@import 'modules/default';
+@import 'modules/wrappers';
+@import 'modules/headings';
+@import 'modules/btn';
+@import 'modules/color';
+@import 'modules/icons';
+@import 'modules/hero';
+@import 'modules/slider';
+@import 'modules/flipcards';
+@import 'modules/animations';
+@import 'modules/forms';
+
+
 //----------------------------------*\
 // PARTIALS
 //----------------------------------*/
 
-@import 'partials/_header.scss';
-@import 'partials/_main.scss';
-@import 'partials/_footer.scss';
+@import 'partials/header';
+@import 'partials/main';
+@import 'partials/footer';

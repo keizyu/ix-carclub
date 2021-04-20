@@ -1,0 +1,16 @@
+<figure class="col-3_md-6_xs-12 hover-effect square-wrapper">
+    <div class="content box">
+        @@if ( context.iconID ) {
+            <div class="">
+                <svg class="icon services-icon @@iconID"><use xlink:href="#@@iconID"></use></svg>
+            </div>
+        }
+        <figcaption>
+            <div>
+                @@if ( context.serviceHeading ) {<h3>@@serviceHeading</h3>}
+                @@if ( context.serviceBody ) {<p>@@serviceBody</p>}
+                @@if ( context.serviceUrl ) {<a href="@@serviceUrl" class="btn btn-red">VER SERVICIO</a>}
+            </div>
+        </figcaption>
+    </div>
+</figure>

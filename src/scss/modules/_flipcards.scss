@@ -1,0 +1,54 @@
+.card-grid {
+
+    position: relative;
+    list-style: none;
+    text-align: center;
+
+    figure {
+
+        position: relative;
+        overflow: hidden;
+        margin: 0;
+        text-align: center;
+
+        svg {
+            position: relative;
+            display: block;
+            opacity: 0.8;
+            height: 60px;
+        }
+
+        h3, p {
+
+            text-align: center;
+
+            @include screen('xs', 'min') {
+                margin: 0;
+            }
+        }
+
+        p {
+            @include screen('xs', 'min') {
+                font-size: 1.4rem;
+            }
+        }
+
+
+        &:hover {
+            background-color: $grey-1;
+        }
+
+        figcaption {
+            color: $black;
+            backface-visibility: hidden;
+            text-align: center;
+            padding: 0;
+
+            &::before, &::after {
+                pointer-events: none;
+            }
+
+        }
+
+    }
+}

@@ -1,0 +1,22 @@
+@@include('./_components/header.html')
+
+
+<section class="section section-hero section-hero__full section-hero__gracias color-black text-center">
+
+    <div class="container">
+
+        <div id="content">
+            <h1 class="text-center">¡GRACIAS POR CONTACTARNOS!</h1>
+            <p>En breve un Asesor de Servicio de CarClub Firestone Costa Rica<br />se pondrá en contacto con usted<span id="appt"></span>.</p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<script type="text/javascript">
+    let path = document.referrer ? (new URL(document.referrer)).pathname : undefined;if ( path == '/agendar-cita-car-club-firestone') {let parent = document.getElementById('content');let spamAd = document.createElement('p');spamAd.innerHTML = 'Le sugerimos revisar su correo no deseado (o SPAM) en caso de que la información de su cita no se encuentre en su bandeja de entrada.';parent.appendChild(spamAd);let apptParent = document.getElementById('appt');let apptTxt = document.createElement('span');apptTxt.innerHTML = ' para dar seguimiento a la confirmación de su cita';apptParent.appendChild(apptTxt);}
+</script>
+
+@@include('./_components/footer.html')

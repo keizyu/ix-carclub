@@ -1,0 +1,307 @@
+@@include('./_components/header.html', {
+    'metaTitle': 'Agendar Cita',
+    'metaDescription': 'Si busca mantenimiento de su carro o camioneta visite nuestro taller de mantenimiento automotriz o solicite el servicio de CarClub móvil. ¡Agende su cita directo aquí!'
+})
+
+<section class="section section-hero section-hero__red section-hero__title" style="background-image: url('/assets/img/C_Back_Schedule_an_Appointment1180x300.jpg');">
+
+    <div class="grid grid-middle">
+        <div class="col-5_lg-6_md-10_sm-10" data-push-left="off-7_lg-6_md-1_sm-1">
+            <div class="section-hero__info">
+                <h1 class="text-center mb0">Agende su cita</h1>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+<section class="section section-forms">
+
+    <div class="grid-3-center">
+
+        <div class="col-5_md-10">
+
+            <div class="section-forms__info">
+                <h2 class="mt0">¿DESEA AGENDAR UNA CITA?</h2>
+                <p>Si busca mantenimiento de su vehículo visite nuestro taller de mantenimiento automotriz o solicite el servicio de CarClub Móvil. ¡Agende su cita directo aquí!.</p>
+            </div>
+
+            <form id="schedule-form">
+
+                <div class="form-group">
+                    <label for="serviceWorkshop">Selecciona si su Servicio será en nuestras instalaciones o Taller a Domicilio <sup>*</sup></label>
+                    <select id="serviceWorkshop" data-pristine-required-message="Seleccione el tipo de servicio" required>
+                        <option value="">Seleccione una opción</option>
+                        <option value="taller">Taller de CarClub Firestone</option>
+                        <option value="movil">Taller a Domicilio (CarClub Móvil)</option>
+                    </select>
+                </div>
+
+                <div class="animBlock" id="tallerServices">
+
+                    <div class="form-group mt0 mb0 tallerServicesChksArr">
+
+                        <div>
+                            <label class="mb0">Servicios que desea realizar <sup>*</sup></label>
+                        </div>
+
+                        <div class="grid">
+
+                            <div class="col">
+
+                                <div class="inline-label">
+                                    <input value="Alineamiento" id="ch1" type="checkbox" name="tallerGroup" />
+                                    <label for="ch1">Alineamiento</label>
+                                </div>
+
+                                <div class="inline-label">
+                                    <input value="Cambio de Aceite de Motor" id="ch2" type="checkbox" name="tallerGroup" />
+                                    <label for="ch2">Cambio de Aceite de Motor</label>
+                                </div>
+
+                                <div class="inline-label">
+                                    <input value="Cambio de Bateria" id="ch3" type="checkbox" name="tallerGroup" />
+                                    <label for="ch3">Cambio de Bateria</label>
+                                </div>
+
+                                <div class="inline-label">
+                                    <input value="Servicio de Llantas" id="ch4" type="checkbox" name="tallerGroup" />
+                                    <label for="ch4">Servicio de Llantas</label>
+                                </div>
+
+                            </div>
+
+                            <div class="col">
+
+                                <div class="inline-label">
+                                    <input value="Mantenimiento Automotriz" id="ch5" type="checkbox" name="tallerGroup" />
+                                    <label for="ch5">Mantenimiento Automotriz</label>
+                                </div>
+
+                                <div class="inline-label">
+                                    <input value="Mantenimiento completo de Freno" id="ch6" type="checkbox" name="tallerGroup" />
+                                    <label for="ch6">Mantenimiento completo de Freno</label>
+                                </div>
+
+                                <div class="inline-label">
+                                    <input value="Balanceo de Llantas" id="ch7" type="checkbox" name="tallerGroup" />
+                                    <label for="ch7">Balanceo de Llantas</label>
+                                </div>
+
+                                <div class="inline-label">
+                                    <input value="Otros Servicios" id="ch8" type="checkbox" name="tallerGroup" />
+                                    <label for="ch8">Otros Servicios</label>
+                                </div>
+
+
+
+                            </div>
+
+                        </div>
+
+                        <div id="tallerServicesChksError" class="text-error" style="display:none">Selecciona por lo menos 1 servicio a realizar</div>
+
+                    </div>
+
+                </div>
+
+                <div class="animBlock" id="movilServices">
+
+                    <div class="form-group mt0 mb0">
+                        <label for="zone">Seleccione la Zona en la que desea el Servicio de Taller a Domicilio <sup>*</sup></label>
+                        <select id="zone">
+                            <option value="">Zona</option>
+                            <option disabled class="mt2">ESTE ---------</option>
+                            <option value="Este: Cartago / Tres Ríos">Cartago / Tres Ríos</option>
+                            <option value="Este: Cartago / Pinares">Cartago / Pinares</option>
+                            <option value="Este: Cartago / Curridabat">Cartago / Curridabat</option>
+                            <option value="Este: Cartago / Desamparados">Cartago / Desamparados</option>
+                            <option disabled class="mt2">OESTE ---------</option>
+                            <option value="Oeste: Alajuela / San Ramón">Alajuela / San Ramón</option>
+                            <option value="Oeste: Alajuela / Palmares">Alajuela / Palmares</option>
+                            <option value="Oeste: Alajuela / Grecia">Alajuela / Grecia</option>
+                            <option value="Oeste: Alajuela / Poás">Alajuela / Poás</option>
+                            <option disabled class="mt2">NORTE ---------</option>
+                            <option value="Norte: Heredia / Sto Domingo">Heredia / Sto Domingo</option>
+                            <option value="Norte: Heredia / Sta Barbara">Heredia / Sta Barbara</option>
+                            <option value="Norte: Heredia / San Rafael Barva">Heredia / San Rafael Barva</option>
+                            <option disabled class="mt2">SUR ---------</option>
+                            <option value="Sur: San José / Escazú">San José / Escazú</option>
+                            <option value="Sur: San José / Ciudad Colón">San José / Ciudad Colón</option>
+                            <option value="Sur: San José / San Ana">San José / San Ana</option>
+                        </select>
+                        <div id="zoneError" class="text-error" style="display:none">Seleccione la zona</div>
+                    </div>
+
+                    <div class="form-group movilServicesChksArr" id="movilServicesChksParent">
+
+                        <div class="">
+                            <label class="mb0">Servicios que desea realizar <sup>*</sup></label>
+                        </div>
+
+                        <div class="grid">
+
+                            <div class="col">
+
+                                <div class="inline-label">
+                                    <input value="Montaje y Balanceo de Llantas" id="movch1" type="checkbox" name="movilGroup" />
+                                    <label for="movch1">Montaje y Balanceo de Llantas</label>
+                                </div>
+
+                                <div class="inline-label">
+                                    <input value="Cambio de Aceite de Motor" id="movch7" type="checkbox" name="movilGroup" />
+                                    <label for="movch7">
+                                        Cambio de Aceite de Motor
+                                        <ul>
+                                            <li>Cambio de Filtros</li>
+                                        </ul>
+                                    </label>
+                                </div>
+
+                                <div class="inline-label">
+                                    <input value="Cambio de Filtros A/C" id="movch8" type="checkbox" name="movilGroup" />
+                                    <label for="movch8">
+                                        Cambio de Filtros A/C
+                                        <ul>
+                                            <li>Limpieza de A/C</li>
+                                        </ul>
+                                    </label>
+                                </div>
+
+                                <div class="inline-label">
+                                    <input value="Mantenimiento completo de Freno" id="movch9" type="checkbox" name="movilGroup" />
+                                    <label for="movch9">Mantenimiento completo de Freno</label>
+                                </div>
+
+                            </div>
+
+                            <div class="col">
+
+                                <div class="inline-label">
+                                    <input value="Desinfección de Vehículo" id="movch4" type="checkbox" name="movilGroup" />
+                                    <label for="movch4">Desinfección de Vehículo</label>
+                                </div>
+
+                                <div class="inline-label">
+                                    <input value="Cambio de Batería" id="movch10" type="checkbox" name="movilGroup" />
+                                    <label for="movch10">Cambio de Batería</label>
+                                </div>
+
+                                <div class="inline-label">
+                                    <input value="Revisión y Cambio de fluidos" id="movch11" type="checkbox" name="movilGroup" />
+                                    <label for="movch11">
+                                        Revisión y Cambio de fluidos
+                                        <ul>
+                                            <li>Líquido de freno</li>
+                                            <li>Hidráulico</li>
+                                            <li>Refrigerante</li>
+                                        </ul>
+                                    </label>
+                                </div>
+
+                                <div class="inline-label">
+                                    <input value="Revisión General del Vehículo" id="movch12" type="checkbox" name="movilGroup" />
+                                    <label for="movch12">Revisión General del Vehículo</label>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <div id="movilServicesChksError" class="text-error" style="display:none">Selecciona por lo menos 1 servicio a realizar</div>
+
+                    </div>
+
+                </div>
+
+                <div class="form-group">
+                    <label for="date">¿En qué fecha le gustaría visitarnos/recibirnos? <sup>*</sup></label>
+                    <input type="text" id="date" placeholder="Elige la fecha" required data-pristine-required-message="La fecha es obligatoria">
+                </div>
+
+                <div class="form-group">
+                    <label for="time">Hora de la cita <sup>*</sup></label>
+                    <input type="text" id="time" placeholder="Elige la hora" required data-pristine-required-message="La hora es obligatoria">
+                    <div><em>Servicio a domicilio disponible&nbsp;entre 08:00 a.m. y 05:00 p.m.</em></div>
+                </div>
+
+                <div class="form-group">
+                    <!-- <label for="firstName">Nombre*</label> -->
+                    <input
+                        type="text"
+                        name="firstName"
+                        id="firstName"
+                        placeholder="Nombre *"
+                        data-pristine-required-message="El nombre es obligatorio"
+                        minlength="3"
+                        data-pristine-minlength-message="El nombre debe tener al menos 3 caracteres"
+                        required >
+                </div>
+
+                <div class="form-group">
+                    <!-- <label for="lastName">Apellidos*</label> -->
+                    <input
+                        type="text"
+                        name="lastName"
+                        id="lastName"
+                        placeholder="Apellidos *"
+                        data-pristine-required-message="El apellido es obligatorio"
+                        minlength="3"
+                        data-pristine-minlength-message="El apellido debe tener al menos 3 caracteres"
+                        required >
+                </div>
+
+                <div class="form-group">
+                    <!-- <label for="emailId">Email*</label> -->
+                    <input
+                        type="email"
+                        name="emailId"
+                        id="emailId"
+                        placeholder="Email *"
+                        data-pristine-required-message="El email es obligatorio"
+                        data-pristine-email-message="Este campo requiere una dirección de email válida"
+                        required >
+                </div>
+
+                <div class="form-group">
+                    <!-- <label for="phone">Teléfono*</label> -->
+                    <input type="number" name="phone" id="phone" placeholder="Teléfono" >
+                </div>
+
+                <div class="form-group">
+                    <!-- <label for="comments">Introduce tu mensaje*</label> -->
+                    <textarea
+                        rows="8"
+                        cols="80"
+                        name="comments"
+                        id="comments"
+                        placeholder="Compártanos su dirección o cualquier información adicional *"
+                        data-pristine-required-message="El mensaje es obligatorio"
+                        minlength="3"
+                        data-pristine-minlength-message="El mensaje debe tener al menos 3 caracteres"
+                        required ></textarea>
+                </div>
+
+                <div class="form-group">
+                    <div class="inline-label">
+                        <input
+                            type="checkbox"
+                            id="privacy"
+                            name="privacy"
+                            data-pristine-required-message="Debes de aceptar el Aviso de Privacidad"
+                            required >
+                        <label for="privacy">He leído y acepto el <a href="/legal/consentimiento-informado" class="color-blue">Consentimiento Informado</a> y el <a href="/legal/aviso-de-privacidad" class="color-blue">Aviso de Privacidad</a> <sup>*</sup></label>
+                    </div>
+                </div>
+
+                <button id="submitbtn" type="submit" class="btn btn-red">Enviar</button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</section>
+
+@@include('./_components/footer.html')

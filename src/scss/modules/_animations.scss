@@ -1,0 +1,161 @@
+.animated {
+
+	transition: opacity 1s, transform 0.65s;
+	opacity: 0;
+
+	&__backInUp {
+		transform: translate3d(0,20px,0);
+	}
+
+	&.visible {
+
+		transform: translate3d(0,0,0);
+		opacity: 1;
+
+		@for $i from 1 through 10 {
+		  &:nth-child(#{$i}){
+			 transition-delay: #{$i * 0.05}s;
+		  }
+		}
+
+	}
+}
+
+
+.loader {
+
+	margin: 0 auto;
+	width: 14px;
+	height: 14px;
+	border-radius: 50%;
+	background: $white;
+	background: linear-gradient(to right, $white 10%, rgba(255, 255, 255, 0) 42%);
+	position: relative;
+	animation: load3 1.4s infinite linear;
+	transform: translateZ(0);
+
+	&::before {
+		width: 50%;
+		height: 50%;
+		background: $white;
+		border-radius: 100% 0 0 0;
+		position: absolute;
+		top: 0;
+		left: 0;
+		content: '';
+	}
+
+	&::after {
+		background: $grey-3;
+		width: 75%;
+		height: 75%;
+		border-radius: 50%;
+		content: '';
+		margin: auto;
+		position: absolute;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		right: 0;
+	}
+}
+
+@keyframes load3 {
+
+	0% {
+		transform: rotate(0deg);
+	}
+
+	100% {
+		transform: rotate(360deg);
+	}
+
+}
+
+
+.hover-effect {
+
+	display: flex;
+    align-items: center;
+
+    svg {
+
+        opacity: 1;
+        margin: 0 auto;
+
+		@include screen('xs', 'min') {
+
+			transition: opacity 0.35s, transform 0.35s;
+	        transform: translate3d(0,0,0);
+
+		}
+
+    }
+
+	@include screen('xs', 'min') {
+
+		h3, p, a {
+			transform: translate3d(0,40px,0);
+		}
+
+	    h3 {
+	       transition: transform 0.35s;
+	    }
+
+	    p, a {
+			opacity: 0;
+			transition: opacity 0.2s, transform 0.35s;
+		}
+
+	   &:hover {
+
+		   p, a {
+			   opacity: 1;
+			   transition-duration: 0.35s;
+		   }
+
+		   svg {
+	           transform: translate3d(0,-40px,0);
+	           opacity: 0;
+		   }
+
+		   h3 {
+	           transform: translate3d(0,-30px,0);
+		   }
+
+		   p {
+			   transform: translate3d(0,-20px,0);
+			   transition-delay: 0.05s;
+		   }
+
+		   a {
+			   transform: translate3d(0,0,0);
+			   transition-delay: 0.1s;
+		   }
+
+	   }
+
+
+	}
+
+
+}
+
+.animBlock {
+	transition: opacity 1s, transform 0.65s;
+	opacity: 0;
+	visibility: hidden;
+	max-height: 0;
+	height: auto;
+
+	&.selectedType {
+
+		transform: translate3d(0,0,0);
+		opacity: 1;
+		visibility: visible;
+		max-height: -moz-max-content;
+		max-height: fit-content;
+
+	}
+
+}

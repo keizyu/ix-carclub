@@ -1,0 +1,62 @@
+.container {
+	width: 80%;
+	margin: 0 auto;
+	max-width: 1248px;
+}
+
+.square-wrapper {
+    position: relative;
+
+	.content {
+		width: 100%;
+		padding: 4rem;
+	}
+
+	@include screen('md', 'min') {
+
+		width: 50%;
+
+	    &::after {
+	        content: "";
+	        display: block;
+	        padding-bottom: 100%;
+	    }
+
+	    .content {
+	        position: absolute;
+			padding: 4rem 2rem 2rem;
+			height: 100%;
+	    }
+
+	}
+
+}
+
+.box {
+	padding: 2rem;
+
+	&-number {
+		font-size: 8rem;
+		font-weight: 900;
+	}
+
+	&-signo {
+		font-size: 2rem;
+	}
+}
+
+.video_wrapper {
+	position: relative;
+	padding-bottom: 56.25%; /*panorámico*/
+	padding-top: 25px;
+	height: 0;
+
+	iframe {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+	}
+	
+}
