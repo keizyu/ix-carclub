@@ -63,6 +63,22 @@ img {
 
 	}
 
+	ul, ol {
+		li { margin-top: 1rem; }
+	}
+
+	ul.check {
+		list-style: none;
+		position: relative;
+		li {
+			&::before {
+				content: "\2714\0020";
+				position: absolute;
+				margin-left: -2rem;
+			}
+		}
+	}
+
 }
 
 .hidden {
