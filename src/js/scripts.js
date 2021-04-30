@@ -266,7 +266,7 @@ import { Spanish } from 'flatpickr/dist/l10n/es';
         const contactForm = document.getElementById('contact-form');
         const scheduleForm = document.getElementById('schedule-form');
 
-        // loader in submit
+        // submit loader
         const submitbtn = document.getElementById('submitbtn');
         let loader = document.createElement('div');
         loader.className = 'loader';
@@ -376,8 +376,8 @@ import { Spanish } from 'flatpickr/dist/l10n/es';
 
             let pristine = new Pristine(scheduleForm);
 
-            const dateEl = document.getElementById('date');
-            const timeEl = document.getElementById('time');
+            const dateEl = document.getElementById('date'),
+                  timeEl = document.getElementById('time');
 
             flatpickr( dateEl, {
                 dateFormat: 'D j F, Y',
@@ -399,16 +399,19 @@ import { Spanish } from 'flatpickr/dist/l10n/es';
                 maxTime: '17:00'
             });
 
-            const workshop = document.getElementById('serviceWorkshop');
-            const tallerServices = document.getElementById('tallerServices');
-            const movilServices = document.getElementById('movilServices');
-            const zone = document.getElementById('zone');
-            const zoneError = document.getElementById('zoneError');
-            const movilServicesChksArr = document.querySelectorAll('div.movilServicesChksArr input[type=checkbox]');
-            const movilServicesChksError = document.getElementById('movilServicesChksError');
-            const movilServicesChksParent = document.getElementById('movilServicesChksParent');
-            const tallerServicesChksArr = document.querySelectorAll('div.tallerServicesChksArr input[type=checkbox]');
-            const tallerServicesChksError = document.getElementById('tallerServicesChksError');
+            const workshop = document.getElementById('serviceWorkshop'),
+                  tallerServices = document.getElementById('tallerServices'),
+                  movilServices = document.getElementById('movilServices');
+
+            const zoneArr = document.querySelectorAll('#zone select');
+
+            const movilServicesChksArr = document.querySelectorAll('div.movilServicesChksArr input[type=checkbox]'),
+                  movilServicesChksError = document.getElementById('movilServicesChksError'),
+                  movilServicesChksParent = document.getElementById('movilServicesChksParent');
+
+            const tallerServicesChksArr = document.querySelectorAll('div.tallerServicesChksArr input[type=checkbox]'),
+                  tallerServicesChksError = document.getElementById('tallerServicesChksError');
+
 
             // Show/hide taller or movil services checkboxes
             workshop.addEventListener('change', () => {
@@ -589,7 +592,8 @@ import { Spanish } from 'flatpickr/dist/l10n/es';
                     checkbox.addEventListener('change', confirmTallerCheck);
                 });
 
-                if ( isValid && zoneValid && isMovilServicesValid && isTallerServicesValid) {
+
+                if ( isValid && zoneValid && isMovilServicesValid && isTallerServicesValid ) {
 
                     submitbtn.setAttribute('disabled', 'disabled');
                     submitbtn.innerHTML = '';
