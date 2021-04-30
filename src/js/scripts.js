@@ -171,6 +171,95 @@ import { Spanish } from 'flatpickr/dist/l10n/es';
 
     }
 
+    ////////////// ZONE
+
+    function loadZoneDependant( provinciaSel,ciudadSel,barrioSel ) {
+
+        let stateObject = {
+            'SAN JOSE': {
+                'SAN JOSE': ['El Carmen','Merced','Hospital','Catedral','Zapote','San Fco.de Dos Ríos','Uruca','Mata Redonda','Pavas','Hatillo','San Sebastián'],
+                'ESCAZU': ['Escazú','San Antonio','San Rafael'],
+                'DESAMPARADOS': ['Desamparados','San Miguel','San Juan de Dios','San Rafael Arriba','San Antonio','Frailes','Patarrá','San Cristóbal','Rosario','Damas','San Rafael Abajo','Gravilias'],
+                'PURISCAL': ['Santiago'],
+                'ASERRI': ['Aserrí','Tarbaca','Vuelta de Jorco','San Gabriel','Legua','Monterrey','Salitrillos'],
+                'MORA': ['Colón','Guayabo','Tabarcia','Piedras Negras','Picagres'],
+                'GOICOECHEA': ['Guadalupe','San Francisco','Calle Blancos','Mata de Plátano','Ipís','Rancho Redondo'],
+                'SANTA ANA': ['Santa Ana','Salitral','Pozos','Uruca','Piedades','Brasil'],
+                'ALAJUELITA': ['Alajuelita','San Josecito','San Antonio','Concepción','San Felipe'],
+                'VASQUEZ DE CORONADO':['San Isidro','San Rafael','Dulce Nombre de Jesús','Patalillo','Cascajal'],
+                'ACOSTA': ['San Ignacio','Guaitíl','Palmichal','Cangrejal','Sabanillas'],
+                'TIBAS': ['San Juan','Cinco Esquinas','Anselmo Llorente','Colima'],
+                'MORAVIA': ['San Vicente','San Jerónimo','Trinidad'],
+                'MONTES DE OCA': ['San Pedro','Sabanilla','Mercedes','San Rafael'],
+                'TURRUBARES': ['San Pablo','San Pedro','San Juan de Mata','San Luis'],
+                'CURRIDABAT': ['Curridabat','Granadilla','Sánchez','Tirrases'],
+                'PEREZ ZELEDON': ['San Isidro de El General','General']
+            },
+            'ALAJUELA': {
+                'ALAJUELA': ['Alajuela','San José','Carrizal','San Antonio','Guácima','San Isidro','Sabanilla','San Rafael','Río Segundo','Desamparados','Turrúcares','Tambor','La Garita','Sarapiquí'],
+                'SAN RAMON': ['San Ramón'],
+                'GRECIA': ['Grecia','San Isidro','San José','San Roque','Tacares','Río Cuarto','Puente de Piedra'],
+                'ATENAS': ['Atenas'],
+                'NARANJO': ['Naranjo'],
+                'PALMARES': ['Palmares'],
+                'POAS': ['San Pedro'],
+                'OROTINA': ['Orotina','Coyolar'],
+                'SAN CARLOS': ['Quesada'],
+                'ALFARO RUIZ': ['Zarcero','Laguna','Tapezco','Zapote'],
+                'VALVERDE VEGA': ['Sarchí Norte','Sarchí Sur']
+            },
+            'CARTAGO': {
+                'CARTAGO': ['Oriental','Occidental','Carmen','San Nicolás','Aguacaliente  o  San Fco.','Guadalupe o Arenilla','Corralillo','Tierra Blanca','Dulce Nombre','Llano Grande','Quebradilla'],
+                'PARAISO': ['Paraíso','Santiago','Orosi','Cachí'],
+                'LA UNION': ['Tres Ríos','San Diego','San Juan','San Rafael','Concepción','Dulce Nombre','San Ramón','JIMENEZ','Juan Viñas','Tucurrique','Pejibaye'],
+                'TURRIALBA': ['Turrialba'],
+                'ALVARADO': ['Pacayas','Cervantes','Capellades'],
+                'OREAMUNO': ['San Rafael','Cot','Potrero Cerrado'],
+                'EL GUARCO': ['El Tejar','San Isidro']
+            },
+            'HEREDIA': {
+                'HEREDIA': ['Heredia','Mercedes','San Francisco','Ulloa','Vara Blanca'],
+                'BARVA': ['Barva','San Pedro','San Pablo','San Roque','Santa Lucía','San José de La Montaña'],
+                'SANTO DOMINGO': ['Santo Domingo','San Vicente','San Miguel','Paracito','Santo Tomás','Santa Rosa','Tures','Pará'],
+                'SANTA BARBARA': ['Santa Bárbara','San Pedro','San Juan','Jesús','Santo Domingo','Purabá'],
+                'SAN RAFAEL': ['San Rafael','San Josecito','Santiago','Angeles','Concepción'],
+                'SAN ISIDRO': ['San Isidro','San José','Concepción','San Francisco'],
+                'BELEN': ['San Antonio','Rivera','Asunción'],
+                'FLORES': ['San Joaquín','Barrantes','Llorente'],
+                'SAN PABLO': ['San Pablo'],
+            }
+        };
+
+        for (let state in stateObject) {
+            provinciaSel.options[provinciaSel.options.length] = new Option(state, state);
+        }
+
+        provinciaSel.onchange = function () {
+            ciudadSel.length = 1; // remove all options bar first
+            barrioSel.length = 1; // remove all options bar first
+
+            if (this.selectedIndex < 1) { return; } // done
+
+            for (let county in stateObject[this.value]) {
+                ciudadSel.options[ciudadSel.options.length] = new Option(county, county);
+            }
+
+        };
+
+        provinciaSel.onchange(); // reset in case page is reloaded
+
+        ciudadSel.onchange = function () {
+            barrioSel.length = 1; // remove all options bar first
+            if (this.selectedIndex < 1) { return; } // done
+
+            let cities = stateObject[provinciaSel.value][this.value];
+            for (let i = 0; i < cities.length; i++) {
+                barrioSel.options[barrioSel.options.length] = new Option(cities[i], cities[i]);
+            }
+        };
+
+    }
+
 
     window.addEventListener('load', () => {
 
@@ -278,7 +367,12 @@ import { Spanish } from 'flatpickr/dist/l10n/es';
 
         if (scheduleForm) {
 
+            const provinciaSel = document.getElementById('provinciaSel'),
+                ciudadSel = document.getElementById('ciudadSel'),
+                barrioSel = document.getElementById('barrioSel');
+
             loadRecaptchaScript();
+            loadZoneDependant( provinciaSel,ciudadSel,barrioSel );
 
             let pristine = new Pristine(scheduleForm);
 
@@ -323,7 +417,7 @@ import { Spanish } from 'flatpickr/dist/l10n/es';
 
                     tallerServices.classList.add('selectedType');
                     movilServices.classList.remove('selectedType');
-                    zone.removeAttribute('required');
+                    [].slice.call(zoneArr).map( el => el.removeAttribute('required') );
                     [].slice.call(tallerServicesChksArr).map( el => el.setAttribute('required', 'true') );
                     [].slice.call(movilServicesChksArr).map( el => el.removeAttribute('required') );
 
@@ -331,15 +425,36 @@ import { Spanish } from 'flatpickr/dist/l10n/es';
 
                     tallerServices.classList.remove('selectedType');
                     movilServices.classList.add('selectedType');
-                    zone.setAttribute('required', 'true');
+                    [].slice.call(zoneArr).map( el => el.setAttribute('required', 'true') );
                     [].slice.call(tallerServicesChksArr).map( el => el.removeAttribute('required') );
                     [].slice.call(movilServicesChksArr).map( el => el.setAttribute('required', 'true') );
 
+                        provinciaSel.addEventListener('change', e => {
+
+                            if ( e.target.value !== '' ) {
+                                ciudadSel.removeAttribute('disabled');
+                            } else {
+                                ciudadSel.setAttribute('disabled','disabled');
+                                barrioSel.setAttribute('disabled','disabled');
+                            }
+
+                        });
+
+                        ciudadSel.addEventListener('change', e => {
+
+                            if ( e.target.value !== '' ) {
+                                barrioSel.removeAttribute('disabled');
+                            } else {
+                                barrioSel.setAttribute('disabled','disabled');
+                            }
+
+                        });
 
                 } else {
 
                     tallerServices.classList.remove('selectedType');
                     movilServices.classList.remove('selectedType');
+                    [].slice.call(zoneArr).map( el => el.removeAttribute('required') );
                     [].slice.call(tallerServicesChksArr).map( el => el.removeAttribute('required') );
                     [].slice.call(movilServicesChksArr).map( el => el.removeAttribute('required') );
 
@@ -356,38 +471,41 @@ import { Spanish } from 'flatpickr/dist/l10n/es';
 
                 let zoneValid;
 
-                // zone field validation
-                if ( zone.hasAttribute('required') && zone.value === '' ) {
+                [].slice.call(zoneArr).map( el => {
 
-                    const mainDiv = zone.parentNode.closest('.form-group');
-                    zoneError.setAttribute('style','display:block');
-                    mainDiv.classList.remove('has-success');
-                    mainDiv.classList.add('has-danger');
+                        if ( el.hasAttribute('required') && el.value === '' ) {
 
-                    zone.addEventListener('change', (e) => {
-
-                        if (e.target.value === '') {
-
+                            const mainDiv = el.parentNode.closest('.form-group');
+                            // zoneError.setAttribute('style','display:block');
                             mainDiv.classList.remove('has-success');
                             mainDiv.classList.add('has-danger');
-                            zoneError.setAttribute('style','display:block');
+
+                            el.addEventListener('change', (e) => {
+
+                                if (e.target.value === '') {
+
+                                    mainDiv.classList.remove('has-success');
+                                    mainDiv.classList.add('has-danger');
+
+                                } else {
+
+                                    mainDiv.classList.remove('has-danger');
+                                    mainDiv.classList.add('has-success');
+
+                                }
+
+                            }, false);
+
+                            zoneValid = false;
 
                         } else {
 
-                            mainDiv.classList.remove('has-danger');
-                            mainDiv.classList.add('has-success');
-                            zoneError.setAttribute('style','display:none');
+                            zoneValid = true;
 
                         }
-                    }, false);
 
-                    zoneValid = false;
+                });
 
-                } else {
-
-                    zoneValid = true;
-
-                }
 
                 // movil checkboxes validation
                 const isMovilServicesRequired = [].slice.call(movilServicesChksArr).map( el => el.hasAttribute('required') );
@@ -487,7 +605,7 @@ import { Spanish } from 'flatpickr/dist/l10n/es';
                     let privacy = document.getElementById('privacy').checked;
                     let date = document.getElementById('date').value;
                     let time = document.getElementById('time').value;
-                    let zone = document.getElementById('zone').value;
+                    let zone = provinciaSel.value + ', ' + ciudadSel.value + ', ' + barrioSel.value + '.';
                     const textInputs = document.querySelectorAll('div.selectedType input[type=checkbox]:checked');
                     let typeOfService = [].slice.call(textInputs).map( el => el.value).join(', ');
                     let country = document.getElementsByTagName('html')[0].getAttribute('data-country');
