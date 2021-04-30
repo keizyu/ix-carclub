@@ -129,7 +129,9 @@ import { Spanish } from 'flatpickr/dist/l10n/es';
         let map = new Microsoft.Maps.Map('#map', {
             credentials: 'Alqx3peKgY_8B05zrSse0rDrgzAF9hoQ7hIDk1r8MVx9BO_4Pnk7n8FfGXXWWIdO',
             center: new Microsoft.Maps.Location(9.994938,-84.170544),
-            zoom: 13
+            zoom: 15,
+            mapTypeId: Microsoft.Maps.MapTypeId.grayscale,
+            disableScrollWheelZoom: true
         });
 
         let center = map.getCenter();
