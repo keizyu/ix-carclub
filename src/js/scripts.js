@@ -601,8 +601,7 @@ import { Spanish } from 'flatpickr/dist/l10n/es';
                     submitbtn.innerHTML = '';
                     submitbtn.appendChild(loader);
 
-                    let serviceWorkshop = document.getElementById('serviceWorkshop').value;
-                    serviceWorkshop = (serviceWorkshop === 'taller') ? 'Taller de CarClub Firestone' : (serviceWorkshop === 'movil') ? 'Taller a Domicilio (CarClub Móvil)' : 'Undefined type of service';
+                    let serviceWorkshop = (workshop.value === 'taller') ? 'Taller de CarClub Firestone' : (workshop.value === 'movil') ? 'Taller a Domicilio (CarClub Móvil)' : 'Undefined type of service';
                     let firstName = document.getElementById('firstName').value;
                     let lastName = document.getElementById('lastName').value;
                     let phone = document.getElementById('phone').value;
@@ -611,7 +610,7 @@ import { Spanish } from 'flatpickr/dist/l10n/es';
                     let privacy = document.getElementById('privacy').checked;
                     let date = document.getElementById('date').value;
                     let time = document.getElementById('time').value;
-                    let zone = provinciaSel.value + ', ' + ciudadSel.value + ', ' + barrioSel.value + '.';
+                    let zone = (workshop.value === 'movil') ? (provinciaSel.value + ', ' + ciudadSel.value + ', ' + barrioSel.value + '.') : '';
                     const textInputs = document.querySelectorAll('div.selectedType input[type=checkbox]:checked');
                     let typeOfService = [].slice.call(textInputs).map( el => el.value).join(', ');
                     let country = document.getElementsByTagName('html')[0].getAttribute('data-country');
