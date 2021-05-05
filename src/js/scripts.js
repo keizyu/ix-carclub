@@ -178,57 +178,57 @@ import { Spanish } from 'flatpickr/dist/l10n/es';
     function loadZoneDependant( provinciaSel,ciudadSel,barrioSel ) {
 
         let stateObject = {
-            'SAN JOSE': {
-                'SAN JOSE': ['El Carmen','Merced','Hospital','Catedral','Zapote','San Fco.de Dos Ríos','Uruca','Mata Redonda','Pavas','Hatillo','San Sebastián'],
-                'ESCAZU': ['Escazú','San Antonio','San Rafael'],
-                'DESAMPARADOS': ['Desamparados','San Miguel','San Juan de Dios','San Rafael Arriba','San Antonio','Frailes','Patarrá','San Cristóbal','Rosario','Damas','San Rafael Abajo','Gravilias'],
-                'PURISCAL': ['Santiago'],
-                'ASERRI': ['Aserrí','Tarbaca','Vuelta de Jorco','San Gabriel','Legua','Monterrey','Salitrillos'],
-                'MORA': ['Colón','Guayabo','Tabarcia','Piedras Negras','Picagres'],
-                'GOICOECHEA': ['Guadalupe','San Francisco','Calle Blancos','Mata de Plátano','Ipís','Rancho Redondo'],
-                'SANTA ANA': ['Santa Ana','Salitral','Pozos','Uruca','Piedades','Brasil'],
-                'ALAJUELITA': ['Alajuelita','San Josecito','San Antonio','Concepción','San Felipe'],
-                'VASQUEZ DE CORONADO':['San Isidro','San Rafael','Dulce Nombre de Jesús','Patalillo','Cascajal'],
-                'ACOSTA': ['San Ignacio','Guaitíl','Palmichal','Cangrejal','Sabanillas'],
-                'TIBAS': ['San Juan','Cinco Esquinas','Anselmo Llorente','Colima'],
-                'MORAVIA': ['San Vicente','San Jerónimo','Trinidad'],
-                'MONTES DE OCA': ['San Pedro','Sabanilla','Mercedes','San Rafael'],
-                'TURRUBARES': ['San Pablo','San Pedro','San Juan de Mata','San Luis'],
-                'CURRIDABAT': ['Curridabat','Granadilla','Sánchez','Tirrases'],
-                'PEREZ ZELEDON': ['San Isidro de El General','General']
+            'San José': {
+                'San José': ['El Carmen','Merced','Hospital','Catedral','Zapote','San Fco.De Dos Ríos','Uruca','Mata Redonda','Pavas','Hatillo','San Sebastián'],
+                'Escazú': ['Escazú','San Antonio','San Rafael'],
+                'Desamparados': ['Desamparados','San Miguel','San Juan De Dios','San Rafael Arriba','San Antonio','Frailes','Patarrá','San Cristóbal','Rosario','Damas','San Rafael Abajo','Gravilias'],
+                'Puriscal': ['Santiago'],
+                'Aserrí': ['Aserrí','Tarbaca','Vuelta De Jorco','San Gabriel','Legua','Monterrey','Salitrillos'],
+                'Mora': ['Colón','Guayabo','Tabarcia','Piedras Negras','Picagres'],
+                'Goicoechea': ['Guadalupe','San Francisco','Calle Blancos','Mata De Plátano','Ipís','Rancho Redondo'],
+                'Santa Ana': ['Santa Ana','Salitral','Pozos','Uruca','Piedades','Brasil'],
+                'Alajuelita': ['Alajuelita','San Josécito','San Antonio','Concepción','San Felipe'],
+                'Vázquez de Coronado':['San Isidro','San Rafael','Dulce Nombre De Jesús','Patalillo','Cascajal'],
+                'Acosta': ['San Ignacio','Guaitíl','Palmichal','Cangrejal','Sabanillas'],
+                'Tibás': ['San Juan','Cinco Esquinas','Anselmo Llorente','Colima'],
+                'Moravia': ['San Vicente','San Jerónimo','Trinidad'],
+                'Montes De Oca': ['San Pedro','Sabanilla','Mercedes','San Rafael'],
+                'Turrubares': ['San Pablo','San Pedro','San Juan De Mata','San Luis'],
+                'Curridabat': ['Curridabat','Granadilla','Sánchez','Tirrases'],
+                'Pérez Zeledón': ['San Isidro De El General','General']
             },
-            'ALAJUELA': {
-                'ALAJUELA': ['Alajuela','San José','Carrizal','San Antonio','Guácima','San Isidro','Sabanilla','San Rafael','Río Segundo','Desamparados','Turrúcares','Tambor','La Garita','Sarapiquí'],
-                'SAN RAMON': ['San Ramón'],
-                'GRECIA': ['Grecia','San Isidro','San José','San Roque','Tacares','Río Cuarto','Puente de Piedra'],
-                'ATENAS': ['Atenas'],
-                'NARANJO': ['Naranjo'],
-                'PALMARES': ['Palmares'],
-                'POAS': ['San Pedro'],
-                'OROTINA': ['Orotina','Coyolar'],
-                'SAN CARLOS': ['Quesada'],
-                'ALFARO RUIZ': ['Zarcero','Laguna','Tapezco','Zapote'],
-                'VALVERDE VEGA': ['Sarchí Norte','Sarchí Sur']
+            'Alajuela': {
+                'Alajuela': ['Alajuela','San José','Carrizal','San Antonio','Guácima','San Isidro','Sabanilla','San Rafael','Río Segundo','Desamparados','Turrúcares','Tambor','La Garita','Sarapiquí'],
+                'San Ramón': ['San Ramón'],
+                'Grecia': ['Grecia','San Isidro','San José','San Roque','Tacares','Río Cuarto','Puente De Piedra'],
+                'Atenas': ['Atenas'],
+                'Naranjo': ['Naranjo'],
+                'Palmares': ['Palmares'],
+                'Poas': ['San Pedro'],
+                'Orotina': ['Orotina','Coyolar'],
+                'San Carlos': ['Quesada'],
+                'Alfaro Ruiz': ['Zarcero','Laguna','Tapezco','Zapote'],
+                'Valverde Vega': ['Sarchí Norte','Sarchí Sur']
             },
-            'CARTAGO': {
-                'CARTAGO': ['Oriental','Occidental','Carmen','San Nicolás','Aguacaliente  o  San Fco.','Guadalupe o Arenilla','Corralillo','Tierra Blanca','Dulce Nombre','Llano Grande','Quebradilla'],
-                'PARAISO': ['Paraíso','Santiago','Orosi','Cachí'],
-                'LA UNION': ['Tres Ríos','San Diego','San Juan','San Rafael','Concepción','Dulce Nombre','San Ramón','JIMENEZ','Juan Viñas','Tucurrique','Pejibaye'],
-                'TURRIALBA': ['Turrialba'],
-                'ALVARADO': ['Pacayas','Cervantes','Capellades'],
-                'OREAMUNO': ['San Rafael','Cot','Potrero Cerrado'],
-                'EL GUARCO': ['El Tejar','San Isidro']
+            'Cartago': {
+                'Cartago': ['Oriental','Occidental','Carmen','San Nicolás','Aguacaliente  O  San Fco.','Guadalupe O Arenilla','Corralillo','Tierra Blanca','Dulce Nombre','Llano Grande','Quebradilla'],
+                'Paraíso': ['Paraíso','Santiago','Orosi','Cachí'],
+                'La Unión': ['Tres Ríos','San Diego','San Juan','San Rafael','Concepción','Dulce Nombre','San Ramón','Jiménez','Juan Viñas','Tucurrique','Pejibaye'],
+                'Turrialba': ['Turrialba'],
+                'Alvarado': ['Pacayas','Cervantes','Capellades'],
+                'Oreamuno': ['San Rafael','Cot','Potrero Cerrado'],
+                'El Guarco': ['El Tejar','San Isidro']
             },
-            'HEREDIA': {
-                'HEREDIA': ['Heredia','Mercedes','San Francisco','Ulloa','Vara Blanca'],
-                'BARVA': ['Barva','San Pedro','San Pablo','San Roque','Santa Lucía','San José de La Montaña'],
-                'SANTO DOMINGO': ['Santo Domingo','San Vicente','San Miguel','Paracito','Santo Tomás','Santa Rosa','Tures','Pará'],
-                'SANTA BARBARA': ['Santa Bárbara','San Pedro','San Juan','Jesús','Santo Domingo','Purabá'],
-                'SAN RAFAEL': ['San Rafael','San Josecito','Santiago','Angeles','Concepción'],
-                'SAN ISIDRO': ['San Isidro','San José','Concepción','San Francisco'],
-                'BELEN': ['San Antonio','Rivera','Asunción'],
-                'FLORES': ['San Joaquín','Barrantes','Llorente'],
-                'SAN PABLO': ['San Pablo'],
+            'Heredia': {
+                'Heredia': ['Heredia','Mercedes','San Francisco','Ulloa','Vara Blanca'],
+                'Barva': ['Barva','San Pedro','San Pablo','San Roque','Santa Lucía','San José De La Montaña'],
+                'Santo Domingo': ['Santo Domingo','San Vicente','San Miguel','Paracito','Santo Tomás','Santa Rosa','Tures','Pará'],
+                'Santa Barbara': ['Santa Bárbara','San Pedro','San Juan','Jesús','Santo Domingo','Purabá'],
+                'San Rafael': ['San Rafael','San Josécito','Santiago','Angeles','Concepción'],
+                'San Isidro': ['San Isidro','San José','Concepción','San Francisco'],
+                'Belén': ['San Antonio','Rivera','Asunción'],
+                'Flores': ['San Joaquín','Barrantes','Llorente'],
+                'San Pablo': ['San Pablo'],
             }
         };
 
