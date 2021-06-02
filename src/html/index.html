@@ -1,7 +1,8 @@
 
         @@include('./_components/header.html', {
             'metaTitle': '',
-            'metaDescription': 'En CarClub Firestone Costa Rica no solo nos ocupamos de sus llantas, ofrecemos servicio completo: cambio de aceite, servicio de frenos, alineación y balanceo, amortiguadores, baterías.'
+            'metaDescription': 'En CarClub Firestone Costa Rica no solo nos ocupamos de sus llantas, ofrecemos servicio completo: cambio de aceite, servicio de frenos, alineación y balanceo, amortiguadores, baterías.',
+            'metaGoogleSiteVerification': 'aIkj7LB97jXL801OTjRmIfvTHNUpBoNBuPUYRZqulG4'
         })
 
         <div class="swiper-container">
@@ -37,15 +38,15 @@
                         "bkgPosition": "right"
                     },
                     {
-                        "title": "SERVICIO AUTOMOTRIZ PARA SU VEHÍCULO",
-                        "text": "<p>No importa si maneja carro o camioneta, nuestros profesionales le ofrecerán los mejores servicios.</p>",
+                        "title": "NUEVO SERVICIO DE TALLER MECÁNICO A DOMICILIO",
+                        "text": "<p>Con CarClub Móvil obtenga mantenimiento para su auto sin salir de su casa u oficina.</p>",
                         "color": "white",
                         "btnStyle": "border",
                         "btnColor": "default",
-                        "ctaText": "AGENDAR CITA",
-                        "ctaLink": "/agendar-cita-car-club-firestone",
-                        "imgAsBkg": false,
-                        "bkgImage": "/assets/img/hero-C1180x450-2.jpg",
+                        "ctaText": "Conozca más sobre CarClub Móvil",
+                        "ctaLink": "/car-club-movil",
+                        "imgAsBkg": true,
+                        "bkgImage": "/assets/img/C_1180x450_CarClub_Movil_2.jpg",
                         "bkgColor": "#0F0F0F",
                         "bkgPosition": "right"
                     }
@@ -67,7 +68,7 @@
 
                     <div class="col-4_md-6_sm-12 animated animated__backInUp">
                         <div class="box">
-                            <span class="box-number" data-number="5500" data-timer="4000" ></span><span class="box-signo">+</span>
+                            <span class="box-number" data-number="5500" data-timer="3000" ></span><span class="box-signo">+</span>
                             <!-- <h3>ESPECIALISTAS EN TU SEGURIDAD</h3> -->
                             <p>Vehículos atendidos por año confirman que somos una solución automotriz de confianza para nuestros clientes</p>
                         </div>
@@ -75,7 +76,7 @@
 
                     <div class="col-4_md-6_sm-12 animated animated__backInUp">
                         <div class="box">
-                            <span class="box-number" data-number="28000" data-timer="6000" ></span><span class="box-signo">+</span>
+                            <span class="box-number" data-number="28000" data-timer="3500" ></span><span class="box-signo">+</span>
                             <!-- <h3>SERVICIO Y CALIDAD</h3> -->
                             <p>Clientes satisfechos desde 2014</p>
                         </div>
@@ -83,9 +84,9 @@
 
                     <div class="col-4_md-6_sm-12 animated animated__backInUp" data-push-left="off-0_md-3_sm-0">
                         <div class="box">
-                            <span class="box-number" data-number="16" data-timer="3500" ></span><span class="box-signo">+</span>
+                            <span class="box-number" data-number="16" data-timer="3000" ></span><span class="box-signo">+</span>
                             <!-- <h3>LAS MEJORES OPCIONES</h3> -->
-                            <p>De las marcas en productos líderes en el mercado garantizan un excelente mantenimiento a tú vehículo</p>
+                            <p>De las marcas en productos líderes en el mercado garantizan un excelente mantenimiento a su vehículo</p>
                         </div>
                     </div>
 
@@ -161,4 +162,6 @@
         </section>
 
         @@include('./_components/date.html')
-        @@include('./_components/footer.html')
+        @@include('./_components/footer.html', {
+            'getSchema': true,
+        })

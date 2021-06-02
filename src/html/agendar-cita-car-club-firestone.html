@@ -19,7 +19,7 @@
 
     <div class="grid-3-center">
 
-        <div class="col-5_md-10">
+        <div class="col-5_lg-6_md-10">
 
             <div class="section-forms__info">
                 <h2 class="mt0">¿DESEA AGENDAR UNA CITA?</h2>
@@ -29,7 +29,7 @@
             <form id="schedule-form">
 
                 <div class="form-group">
-                    <label for="serviceWorkshop">Selecciona si su Servicio será en nuestras instalaciones o Taller a Domicilio <sup>*</sup></label>
+                    <label for="serviceWorkshop">Seleccione si su servicio será en nuestras instalaciones o Taller a Domicilio <sup>*</sup></label>
                     <select id="serviceWorkshop" data-pristine-required-message="Seleccione el tipo de servicio" required>
                         <option value="">Seleccione una opción</option>
                         <option value="taller">Taller de CarClub Firestone</option>
@@ -107,30 +107,33 @@
 
                 <div class="animBlock" id="movilServices">
 
-                    <div class="form-group mt0 mb0">
-                        <label for="zone">Seleccione la Zona en la que desea el Servicio de Taller a Domicilio <sup>*</sup></label>
-                        <select id="zone">
-                            <option value="">Zona</option>
-                            <option disabled class="mt2">ESTE ---------</option>
-                            <option value="Este: Cartago / Tres Ríos">Cartago / Tres Ríos</option>
-                            <option value="Este: Cartago / Pinares">Cartago / Pinares</option>
-                            <option value="Este: Cartago / Curridabat">Cartago / Curridabat</option>
-                            <option value="Este: Cartago / Desamparados">Cartago / Desamparados</option>
-                            <option disabled class="mt2">OESTE ---------</option>
-                            <option value="Oeste: Alajuela / San Ramón">Alajuela / San Ramón</option>
-                            <option value="Oeste: Alajuela / Palmares">Alajuela / Palmares</option>
-                            <option value="Oeste: Alajuela / Grecia">Alajuela / Grecia</option>
-                            <option value="Oeste: Alajuela / Poás">Alajuela / Poás</option>
-                            <option disabled class="mt2">NORTE ---------</option>
-                            <option value="Norte: Heredia / Sto Domingo">Heredia / Sto Domingo</option>
-                            <option value="Norte: Heredia / Sta Barbara">Heredia / Sta Barbara</option>
-                            <option value="Norte: Heredia / San Rafael Barva">Heredia / San Rafael Barva</option>
-                            <option disabled class="mt2">SUR ---------</option>
-                            <option value="Sur: San José / Escazú">San José / Escazú</option>
-                            <option value="Sur: San José / Ciudad Colón">San José / Ciudad Colón</option>
-                            <option value="Sur: San José / San Ana">San José / San Ana</option>
-                        </select>
-                        <div id="zoneError" class="text-error" style="display:none">Seleccione la zona</div>
+                    <div id="zone" class="grid">
+
+                        <div class="col-12">
+                            <label for="provinciaSel"><strong>Seleccione la Zona en la que desea el Servicio de Taller a Domicilio <sup>*</sup></strong></label>
+                        </div>
+                        <div class="col-4_sm-12">
+                            <div class="form-group mt0 mb0">
+                                <select name="optone" id="provinciaSel" size="1">
+                                    <option value="" selected="selected">Seleccione Provincia</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-4_sm-12">
+                            <div class="form-group mt0 mb0">
+                                <select name="opttwo" id="ciudadSel" size="1" disabled>
+                                    <option value="" selected="selected">Seleccione Canton</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-4_sm-12">
+                            <div class="form-group mt0 mb0">
+                                <select name="optthree" id="barrioSel" size="1" disabled>
+                                    <option value="" selected="selected">Seleccione Distrito</option>
+                                </select>
+                            </div>
+                        </div>
+
                     </div>
 
                     <div class="form-group movilServicesChksArr" id="movilServicesChksParent">
@@ -275,7 +278,7 @@
                         cols="80"
                         name="comments"
                         id="comments"
-                        placeholder="Compártanos su dirección o cualquier información adicional *"
+                        placeholder="Compártanos su dirección (sólo en caso de servicio móvil) o cualquier información adicional *"
                         data-pristine-required-message="El mensaje es obligatorio"
                         minlength="3"
                         data-pristine-minlength-message="El mensaje debe tener al menos 3 caracteres"

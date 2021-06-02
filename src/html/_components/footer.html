@@ -40,5 +40,8 @@
     @@if ( context.getMap ) {<script type='text/javascript' src='https://www.bing.com/api/maps/mapcontrol?callback=GetMap' async defer></script>}
     <script src="/assets/js/scripts.min.js"></script>
 
+    @@if ( context.getSchema ) {
+        @@include('./schema.html')
+    }
 </body>
 </html>

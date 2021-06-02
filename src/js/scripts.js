@@ -129,7 +129,9 @@ import { Spanish } from 'flatpickr/dist/l10n/es';
         let map = new Microsoft.Maps.Map('#map', {
             credentials: 'Alqx3peKgY_8B05zrSse0rDrgzAF9hoQ7hIDk1r8MVx9BO_4Pnk7n8FfGXXWWIdO',
             center: new Microsoft.Maps.Location(9.994938,-84.170544),
-            zoom: 13
+            zoom: 15,
+            mapTypeId: Microsoft.Maps.MapTypeId.grayscale,
+            disableScrollWheelZoom: true
         });
 
         let center = map.getCenter();
@@ -171,13 +173,102 @@ import { Spanish } from 'flatpickr/dist/l10n/es';
 
     }
 
+    ////////////// ZONE
+
+    function loadZoneDependant( provinciaSel,ciudadSel,barrioSel ) {
+
+        let stateObject = {
+            'San José': {
+                'San José': ['El Carmen','Merced','Hospital','Catedral','Zapote','San Fco.De Dos Ríos','Uruca','Mata Redonda','Pavas','Hatillo','San Sebastián'],
+                'Escazú': ['Escazú','San Antonio','San Rafael'],
+                'Desamparados': ['Desamparados','San Miguel','San Juan De Dios','San Rafael Arriba','San Antonio','Frailes','Patarrá','San Cristóbal','Rosario','Damas','San Rafael Abajo','Gravilias'],
+                'Puriscal': ['Santiago'],
+                'Aserrí': ['Aserrí','Tarbaca','Vuelta De Jorco','San Gabriel','Legua','Monterrey','Salitrillos'],
+                'Mora': ['Colón','Guayabo','Tabarcia','Piedras Negras','Picagres'],
+                'Goicoechea': ['Guadalupe','San Francisco','Calle Blancos','Mata De Plátano','Ipís','Rancho Redondo'],
+                'Santa Ana': ['Santa Ana','Salitral','Pozos','Uruca','Piedades','Brasil'],
+                'Alajuelita': ['Alajuelita','San Josécito','San Antonio','Concepción','San Felipe'],
+                'Vázquez de Coronado':['San Isidro','San Rafael','Dulce Nombre De Jesús','Patalillo','Cascajal'],
+                'Acosta': ['San Ignacio','Guaitíl','Palmichal','Cangrejal','Sabanillas'],
+                'Tibás': ['San Juan','Cinco Esquinas','Anselmo Llorente','Colima'],
+                'Moravia': ['San Vicente','San Jerónimo','Trinidad'],
+                'Montes De Oca': ['San Pedro','Sabanilla','Mercedes','San Rafael'],
+                'Turrubares': ['San Pablo','San Pedro','San Juan De Mata','San Luis'],
+                'Curridabat': ['Curridabat','Granadilla','Sánchez','Tirrases'],
+                'Pérez Zeledón': ['San Isidro De El General','General']
+            },
+            'Alajuela': {
+                'Alajuela': ['Alajuela','San José','Carrizal','San Antonio','Guácima','San Isidro','Sabanilla','San Rafael','Río Segundo','Desamparados','Turrúcares','Tambor','La Garita','Sarapiquí'],
+                'San Ramón': ['San Ramón'],
+                'Grecia': ['Grecia','San Isidro','San José','San Roque','Tacares','Río Cuarto','Puente De Piedra'],
+                'Atenas': ['Atenas'],
+                'Naranjo': ['Naranjo'],
+                'Palmares': ['Palmares'],
+                'Poas': ['San Pedro'],
+                'Orotina': ['Orotina','Coyolar'],
+                'San Carlos': ['Quesada'],
+                'Alfaro Ruiz': ['Zarcero','Laguna','Tapezco','Zapote'],
+                'Valverde Vega': ['Sarchí Norte','Sarchí Sur']
+            },
+            'Cartago': {
+                'Cartago': ['Oriental','Occidental','Carmen','San Nicolás','Aguacaliente  O  San Fco.','Guadalupe O Arenilla','Corralillo','Tierra Blanca','Dulce Nombre','Llano Grande','Quebradilla'],
+                'Paraíso': ['Paraíso','Santiago','Orosi','Cachí'],
+                'La Unión': ['Tres Ríos','San Diego','San Juan','San Rafael','Concepción','Dulce Nombre','San Ramón','Jiménez','Juan Viñas','Tucurrique','Pejibaye'],
+                'Turrialba': ['Turrialba'],
+                'Alvarado': ['Pacayas','Cervantes','Capellades'],
+                'Oreamuno': ['San Rafael','Cot','Potrero Cerrado'],
+                'El Guarco': ['El Tejar','San Isidro']
+            },
+            'Heredia': {
+                'Heredia': ['Heredia','Mercedes','San Francisco','Ulloa','Vara Blanca'],
+                'Barva': ['Barva','San Pedro','San Pablo','San Roque','Santa Lucía','San José De La Montaña'],
+                'Santo Domingo': ['Santo Domingo','San Vicente','San Miguel','Paracito','Santo Tomás','Santa Rosa','Tures','Pará'],
+                'Santa Barbara': ['Santa Bárbara','San Pedro','San Juan','Jesús','Santo Domingo','Purabá'],
+                'San Rafael': ['San Rafael','San Josécito','Santiago','Angeles','Concepción'],
+                'San Isidro': ['San Isidro','San José','Concepción','San Francisco'],
+                'Belén': ['San Antonio','Rivera','Asunción'],
+                'Flores': ['San Joaquín','Barrantes','Llorente'],
+                'San Pablo': ['San Pablo'],
+            }
+        };
+
+        for (let state in stateObject) {
+            provinciaSel.options[provinciaSel.options.length] = new Option(state, state);
+        }
+
+        provinciaSel.onchange = function () {
+            ciudadSel.length = 1; // remove all options bar first
+            barrioSel.length = 1; // remove all options bar first
+
+            if (this.selectedIndex < 1) { return; } // done
+
+            for (let county in stateObject[this.value]) {
+                ciudadSel.options[ciudadSel.options.length] = new Option(county, county);
+            }
+
+        };
+
+        provinciaSel.onchange(); // reset in case page is reloaded
+
+        ciudadSel.onchange = function () {
+            barrioSel.length = 1; // remove all options bar first
+            if (this.selectedIndex < 1) { return; } // done
+
+            let cities = stateObject[provinciaSel.value][this.value];
+            for (let i = 0; i < cities.length; i++) {
+                barrioSel.options[barrioSel.options.length] = new Option(cities[i], cities[i]);
+            }
+        };
+
+    }
+
 
     window.addEventListener('load', () => {
 
         const contactForm = document.getElementById('contact-form');
         const scheduleForm = document.getElementById('schedule-form');
 
-        // loader in submit
+        // submit loader
         const submitbtn = document.getElementById('submitbtn');
         let loader = document.createElement('div');
         loader.className = 'loader';
@@ -278,12 +369,17 @@ import { Spanish } from 'flatpickr/dist/l10n/es';
 
         if (scheduleForm) {
 
+            const provinciaSel = document.getElementById('provinciaSel'),
+                ciudadSel = document.getElementById('ciudadSel'),
+                barrioSel = document.getElementById('barrioSel');
+
             loadRecaptchaScript();
+            loadZoneDependant( provinciaSel,ciudadSel,barrioSel );
 
             let pristine = new Pristine(scheduleForm);
 
-            const dateEl = document.getElementById('date');
-            const timeEl = document.getElementById('time');
+            const dateEl = document.getElementById('date'),
+                  timeEl = document.getElementById('time');
 
             flatpickr( dateEl, {
                 dateFormat: 'D j F, Y',
@@ -305,16 +401,19 @@ import { Spanish } from 'flatpickr/dist/l10n/es';
                 maxTime: '17:00'
             });
 
-            const workshop = document.getElementById('serviceWorkshop');
-            const tallerServices = document.getElementById('tallerServices');
-            const movilServices = document.getElementById('movilServices');
-            const zone = document.getElementById('zone');
-            const zoneError = document.getElementById('zoneError');
-            const movilServicesChksArr = document.querySelectorAll('div.movilServicesChksArr input[type=checkbox]');
-            const movilServicesChksError = document.getElementById('movilServicesChksError');
-            const movilServicesChksParent = document.getElementById('movilServicesChksParent');
-            const tallerServicesChksArr = document.querySelectorAll('div.tallerServicesChksArr input[type=checkbox]');
-            const tallerServicesChksError = document.getElementById('tallerServicesChksError');
+            const workshop = document.getElementById('serviceWorkshop'),
+                  tallerServices = document.getElementById('tallerServices'),
+                  movilServices = document.getElementById('movilServices');
+
+            const zoneArr = document.querySelectorAll('#zone select');
+
+            const movilServicesChksArr = document.querySelectorAll('div.movilServicesChksArr input[type=checkbox]'),
+                  movilServicesChksError = document.getElementById('movilServicesChksError'),
+                  movilServicesChksParent = document.getElementById('movilServicesChksParent');
+
+            const tallerServicesChksArr = document.querySelectorAll('div.tallerServicesChksArr input[type=checkbox]'),
+                  tallerServicesChksError = document.getElementById('tallerServicesChksError');
+
 
             // Show/hide taller or movil services checkboxes
             workshop.addEventListener('change', () => {
@@ -323,7 +422,7 @@ import { Spanish } from 'flatpickr/dist/l10n/es';
 
                     tallerServices.classList.add('selectedType');
                     movilServices.classList.remove('selectedType');
-                    zone.removeAttribute('required');
+                    [].slice.call(zoneArr).map( el => el.removeAttribute('required') );
                     [].slice.call(tallerServicesChksArr).map( el => el.setAttribute('required', 'true') );
                     [].slice.call(movilServicesChksArr).map( el => el.removeAttribute('required') );
 
@@ -331,15 +430,36 @@ import { Spanish } from 'flatpickr/dist/l10n/es';
 
                     tallerServices.classList.remove('selectedType');
                     movilServices.classList.add('selectedType');
-                    zone.setAttribute('required', 'true');
+                    [].slice.call(zoneArr).map( el => el.setAttribute('required', 'true') );
                     [].slice.call(tallerServicesChksArr).map( el => el.removeAttribute('required') );
                     [].slice.call(movilServicesChksArr).map( el => el.setAttribute('required', 'true') );
 
+                        provinciaSel.addEventListener('change', e => {
+
+                            if ( e.target.value !== '' ) {
+                                ciudadSel.removeAttribute('disabled');
+                            } else {
+                                ciudadSel.setAttribute('disabled','disabled');
+                                barrioSel.setAttribute('disabled','disabled');
+                            }
+
+                        });
+
+                        ciudadSel.addEventListener('change', e => {
+
+                            if ( e.target.value !== '' ) {
+                                barrioSel.removeAttribute('disabled');
+                            } else {
+                                barrioSel.setAttribute('disabled','disabled');
+                            }
+
+                        });
 
                 } else {
 
                     tallerServices.classList.remove('selectedType');
                     movilServices.classList.remove('selectedType');
+                    [].slice.call(zoneArr).map( el => el.removeAttribute('required') );
                     [].slice.call(tallerServicesChksArr).map( el => el.removeAttribute('required') );
                     [].slice.call(movilServicesChksArr).map( el => el.removeAttribute('required') );
 
@@ -356,38 +476,41 @@ import { Spanish } from 'flatpickr/dist/l10n/es';
 
                 let zoneValid;
 
-                // zone field validation
-                if ( zone.hasAttribute('required') && zone.value === '' ) {
+                [].slice.call(zoneArr).map( el => {
 
-                    const mainDiv = zone.parentNode.closest('.form-group');
-                    zoneError.setAttribute('style','display:block');
-                    mainDiv.classList.remove('has-success');
-                    mainDiv.classList.add('has-danger');
+                        if ( el.hasAttribute('required') && el.value === '' ) {
 
-                    zone.addEventListener('change', (e) => {
-
-                        if (e.target.value === '') {
-
+                            const mainDiv = el.parentNode.closest('.form-group');
+                            // zoneError.setAttribute('style','display:block');
                             mainDiv.classList.remove('has-success');
                             mainDiv.classList.add('has-danger');
-                            zoneError.setAttribute('style','display:block');
+
+                            el.addEventListener('change', (e) => {
+
+                                if (e.target.value === '') {
+
+                                    mainDiv.classList.remove('has-success');
+                                    mainDiv.classList.add('has-danger');
+
+                                } else {
+
+                                    mainDiv.classList.remove('has-danger');
+                                    mainDiv.classList.add('has-success');
+
+                                }
+
+                            }, false);
+
+                            zoneValid = false;
 
                         } else {
 
-                            mainDiv.classList.remove('has-danger');
-                            mainDiv.classList.add('has-success');
-                            zoneError.setAttribute('style','display:none');
+                            zoneValid = true;
 
                         }
-                    }, false);
 
-                    zoneValid = false;
+                });
 
-                } else {
-
-                    zoneValid = true;
-
-                }
 
                 // movil checkboxes validation
                 const isMovilServicesRequired = [].slice.call(movilServicesChksArr).map( el => el.hasAttribute('required') );
@@ -471,14 +594,14 @@ import { Spanish } from 'flatpickr/dist/l10n/es';
                     checkbox.addEventListener('change', confirmTallerCheck);
                 });
 
-                if ( isValid && zoneValid && isMovilServicesValid && isTallerServicesValid) {
+
+                if ( isValid && zoneValid && isMovilServicesValid && isTallerServicesValid ) {
 
                     submitbtn.setAttribute('disabled', 'disabled');
                     submitbtn.innerHTML = '';
                     submitbtn.appendChild(loader);
 
-                    let serviceWorkshop = document.getElementById('serviceWorkshop').value;
-                    serviceWorkshop = (serviceWorkshop === 'taller') ? 'Taller de CarClub Firestone' : (serviceWorkshop === 'movil') ? 'Taller a Domicilio (CarClub Móvil)' : 'Undefined type of service';
+                    let serviceWorkshop = (workshop.value === 'taller') ? 'Taller de CarClub Firestone' : (workshop.value === 'movil') ? 'Taller a Domicilio (CarClub Móvil)' : 'Undefined type of service';
                     let firstName = document.getElementById('firstName').value;
                     let lastName = document.getElementById('lastName').value;
                     let phone = document.getElementById('phone').value;
@@ -487,7 +610,7 @@ import { Spanish } from 'flatpickr/dist/l10n/es';
                     let privacy = document.getElementById('privacy').checked;
                     let date = document.getElementById('date').value;
                     let time = document.getElementById('time').value;
-                    let zone = document.getElementById('zone').value;
+                    let zone = (workshop.value === 'movil') ? (provinciaSel.value + ', ' + ciudadSel.value + ', ' + barrioSel.value + '.') : '';
                     const textInputs = document.querySelectorAll('div.selectedType input[type=checkbox]:checked');
                     let typeOfService = [].slice.call(textInputs).map( el => el.value).join(', ');
                     let country = document.getElementsByTagName('html')[0].getAttribute('data-country');
