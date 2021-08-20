@@ -152,7 +152,7 @@ import { Spanish } from 'flatpickr/dist/l10n/es';
 
     const recaptchaSiteKey = {
         local: '6LcSiY0aAAAAACubiKkvXX2ALO39D-fvUvGAAiOA',
-        lower: '6LctO5AaAAAAAHvJwNg5ACfXnC30xBpse04JfWQ_',
+        lower: '6Le1_JIbAAAAAMQlU__Tg8jRRTOLhDgHKbGN1zB1',
         production: '6Lf4seMUAAAAAJyAHQ9h2MAfO1OqxKxAfpX1iWl0'
     };
 
