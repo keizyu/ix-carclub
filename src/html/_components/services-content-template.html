@@ -23,7 +23,7 @@
 
             @@if ( context.youtubeID ) {
                 <div class="video_wrapper">
-                    <iframe width="838" height="470" src="https://www.youtube.com/embed/@@youtubeID?enablejsapi=1" frameborder="0"></iframe>
+                    <iframe @@if ( context.videoWrapperID ) { id="@@videoWrapperID" } width="838" height="470" src="https://www.youtube.com/embed/@@youtubeID?enablejsapi=1" frameborder="0"></iframe>
                 </div>
             }
 
